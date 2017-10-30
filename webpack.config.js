@@ -5,7 +5,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './index.js'
+    // app: './index.js'
+    app: './src/app.js'
   },
   resolve: {
       alias: {
@@ -19,13 +20,13 @@ module.exports = {
   },
   module: {
     rules: [
-        // {
-        //     test: /\.css$/,
-        //     use: [
-        //       'style-loader',
-        //       'css-loader'
-        //     ]
-        // },
+        {
+            test: /\.css$/,
+            use: [
+              'style-loader',
+              'css-loader'
+            ]
+        }
         // {
         //     test: /\.(png|jpg|gif)$/,
         //     use: [
@@ -42,7 +43,7 @@ module.exports = {
   },
   plugins: [
         new HtmlWebpackPlugin({
-          title: "glAvatar demo"
+          title: "gl-avatar-three-js"
         })
     ],
   devServer: {
