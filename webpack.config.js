@@ -43,7 +43,8 @@ module.exports = {
   },
   plugins: [
         new HtmlWebpackPlugin({
-          title: "gl-avatar-three-js"
+          title: "gl-avatar-three-js",
+          template: "html/test-template.html"
         })
     ],
   devServer: {

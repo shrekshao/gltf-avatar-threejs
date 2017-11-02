@@ -5,8 +5,8 @@
  * @author Takahiro / https://github.com/takahirox
  * @author Don McCurdy / https://www.donmccurdy.com
  */
-
-THREE.GLTFLoader = ( function () {
+module.exports = function( THREE ) {
+	return ( function () {
 
 	function GLTFLoader( manager ) {
 
@@ -2403,3 +2403,4 @@ THREE.GLTFLoader = ( function () {
 	return GLTFLoader;
 
 } )();
+};
