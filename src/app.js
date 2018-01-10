@@ -273,6 +273,14 @@ function getEnvMap() {
 }
 var sceneList = [
     {
+        name : 'Saber-body-walk', url : './models/gltf/saber-body-walk/saber-body-walk.gltf',
+        cameraPos: new THREE.Vector3(3, 2, 3),
+        objectRotation: new THREE.Euler(0, 0, 0),
+        addLights: true,
+        extensions: ['glTF'],
+        addEnvMap: true
+    },
+    {
         name : 'BoomBox (PBR)', url : './models/gltf/BoomBox/%s/BoomBox.gltf',
         cameraPos: new THREE.Vector3(0.02, 0.01, 0.03),
         objectRotation: new THREE.Euler(0, Math.PI, 0),
@@ -451,3 +459,10 @@ document.getElementById('extensions_list').onchange = selectExtension;
 document.getElementById('animation_toggle').onclick = toggleAnimations;
 
 onload();
+
+
+
+
+
+
+
