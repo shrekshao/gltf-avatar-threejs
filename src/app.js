@@ -466,3 +466,24 @@ onload();
 
 
 
+// function createBones ( object, jsonBones ) {
+// 	/* adapted from the THREE.SkinnedMesh constructor */
+// 	// create bone instances from json bone data
+//   const bones = jsonBones.map( gbone => {
+// 		bone = new THREE.Bone()
+// 		bone.name = gbone.name
+// 		bone.position.fromArray( gbone.pos )
+// 		bone.quaternion.fromArray( gbone.rotq )
+// 		if ( gbone.scl !== undefined ) bone.scale.fromArray( gbone.scl )
+// 		return bone
+//   } )
+//   // add bone instances to the root object
+// 	jsonBones.forEach( ( gbone, index ) => {
+//       if ( gbone.parent !== -1 && gbone.parent !== null && bones[ gbone.parent ] !== undefined ) {
+//         bones[ gbone.parent ].add( bones[ index ] )
+//       } else {
+//         object.add( bones[ index ] )
+//       }
+//   } )
+// 	return bones
+// }
