@@ -8,6 +8,10 @@
 module.exports = function( THREE ) {
 	return ( function () {
 
+		// temp
+		var gl_avatar_skeleton = null;
+
+
 	function GLTFLoader( manager ) {
 
 		this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
@@ -34,7 +38,11 @@ module.exports = function( THREE ) {
 
 				try {
 
-					scope.parse( data, path, onLoad, onError );
+					scope.parse( data, path, function(data){
+						data.gl_avatar_skeleton = gl_avatar_skeleton;
+						onLoad(data);
+					}
+						, onError );
 
 				} catch ( e ) {
 
@@ -197,6 +205,10 @@ module.exports = function( THREE ) {
 		KHR_LIGHTS: 'KHR_lights',
 		KHR_MATERIALS_COMMON: 'KHR_materials_common',
 		KHR_MATERIALS_PBR_SPECULAR_GLOSSINESS: 'KHR_materials_pbrSpecularGlossiness'
+
+
+
+		, GL_AVATAR: 'gl_avatar'
 	};
 
 	/**
@@ -2279,7 +2291,15 @@ module.exports = function( THREE ) {
 
 									}
 
-									child.bind( new THREE.Skeleton( bones, boneInverses ), child.matrixWorld );
+
+									// temp test
+
+									var skeleton = new THREE.Skeleton( bones, boneInverses );
+									gl_avatar_skeleton = skeleton;
+									child.bind( skeleton, child.matrixWorld );
+									// child.bind( new THREE.Skeleton( bones, boneInverses ), child.matrixWorld );
+
+									
 
 								}
 

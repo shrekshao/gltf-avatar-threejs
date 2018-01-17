@@ -461,7 +461,29 @@ document.getElementById('animation_toggle').onclick = toggleAnimations;
 onload();
 
 
+document.getElementById('maid_clothes_btn').onclick = function() {
+    // test
+    // load maid dress
+    loader.load( 'models/gltf/saber-maid-dress/saber-maid-dress.gltf', function(data) {
+        gltf = data;
+        var object = gltf.scene;
+        // status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";
 
+
+        object.traverse( function ( node ) {
+            if ( node.isMesh ) node.castShadow = true;
+        } );
+
+
+        console.log(gltf.gl_avatar_skeleton);
+        // create skinned mesh and .bind(skeleotn)
+
+        scene.add( object );
+        onWindowResize();
+    }, undefined, function ( error ) {
+        console.error( error );
+    } );
+};
 
 
 
