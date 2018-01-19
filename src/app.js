@@ -148,6 +148,9 @@ function initScene(index) {
     status.innerHTML = "Loading...";
     loader.load( url, function(data) {
         gltf = data;
+
+        console.log(gltf.gl_avatar);
+
         var object = gltf.scene;
         status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";
         if (sceneInfo.cameraPos)
@@ -465,7 +468,7 @@ document.getElementById('maid_clothes_btn').onclick = function() {
     // test
     // load maid dress
     loader.load( 'models/gltf/saber-maid-dress/saber-maid-dress.gltf', function(data) {
-        gltf = data;
+        // gltf = data;
         var object = gltf.scene;
         // status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";
 
@@ -475,7 +478,8 @@ document.getElementById('maid_clothes_btn').onclick = function() {
         } );
 
 
-        console.log(gltf.gl_avatar_skeleton);
+        console.log(gltf.extensions.gl_avatar);
+        // console.log(gltf.gl_avatar_skeleton);
         // create skinned mesh and .bind(skeleotn)
 
         scene.add( object );

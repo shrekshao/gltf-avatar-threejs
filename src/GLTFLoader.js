@@ -88,6 +88,12 @@ module.exports = function( THREE ) {
 
 			if ( json.extensionsUsed ) {
 
+				if( json.extensionsUsed.indexOf( EXTENSIONS.GL_AVATAR ) >= 0 ) {
+
+					extensions[ EXTENSIONS.GL_AVATAR ] = new GLTFAvatarExtension( json );
+
+				}
+
 				if( json.extensionsUsed.indexOf( EXTENSIONS.KHR_LIGHTS ) >= 0 ) {
 
 					extensions[ EXTENSIONS.KHR_LIGHTS ] = new GLTFLightsExtension( json );
@@ -125,7 +131,9 @@ module.exports = function( THREE ) {
 					scene: scene,
 					scenes: scenes,
 					cameras: cameras,
-					animations: animations
+					animations: animations,
+
+					gl_avatar: parser.extensions && parser.extensions['gl_avatar']
 				};
 
 				onLoad( glTF );
@@ -196,8 +204,42 @@ module.exports = function( THREE ) {
 		KHR_BINARY_GLTF: 'KHR_binary_glTF',
 		KHR_LIGHTS: 'KHR_lights',
 		KHR_MATERIALS_COMMON: 'KHR_materials_common',
-		KHR_MATERIALS_PBR_SPECULAR_GLOSSINESS: 'KHR_materials_pbrSpecularGlossiness'
+		KHR_MATERIALS_PBR_SPECULAR_GLOSSINESS: 'KHR_materials_pbrSpecularGlossiness',
+		GL_AVATAR: 'gl_avatar'
 	};
+
+	/**
+	 * gl_avatar
+	 */
+	function GLTFAvatarExtension( json ) {
+		this.name = EXTENSIONS.GL_AVATAR;
+
+		var extension = ( json.extensions && json.extensions[ EXTENSIONS.GL_AVATAR ] ) || {};
+
+		var type = this.type = extension.type || "skeleton";
+
+		if (type === "skeleton") {
+
+			// parser
+
+			this.skeletons = {};
+			this.skinId2SkeletonKey = {};
+			var skins = extension.skins || {};
+
+			// store id first, will get replaced with skeleton object in parser
+			for (var s in skins) {
+				this.skeletons[s] = skins[s];
+				this.skinId2SkeletonKey[skins[s]] = s;
+			}
+
+		} else {
+			// must be skin (clothes)
+
+			this.visibility = extensions.visibility;
+		}
+	}
+
+
 
 	/**
 	 * Lights Extension
@@ -2090,6 +2132,7 @@ module.exports = function( THREE ) {
 
 		var nodes = json.nodes || [];
 		var skins = json.skins || [];
+		var gl_avatar = this.extensions[EXTENSIONS.GL_AVATAR];
 
 		// Nothing in the node definition indicates whether it is a Bone or an
 		// Object3D. Use the skins' joint references to mark bones.
@@ -2278,8 +2321,22 @@ module.exports = function( THREE ) {
 										}
 
 									}
+									
 
-									child.bind( new THREE.Skeleton( bones, boneInverses ), child.matrixWorld );
+									// gl_avatar: only referenced skeleton will be created
+									// this can be modified in the furture
+									// to enable pure skeleton file without skin?
+									var skeleton = new THREE.Skeleton( bones, boneInverses );
+
+									if ( gl_avatar ) {
+										if (gl_avatar.type === "skeleton") {
+											if (node.skin in gl_avatar.skinId2SkeletonKey) {
+												gl_avatar.skeletons[gl_avatar.skinId2SkeletonKey[node.skin]] = skeleton;
+											}
+										}
+									}
+
+									child.bind( skeleton, child.matrixWorld );
 
 								}
 

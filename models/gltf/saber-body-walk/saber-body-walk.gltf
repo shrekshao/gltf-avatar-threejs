@@ -1,6 +1,10 @@
 {
+    "extensionsUsed": [
+        "gl_avatar"
+    ],
     "extensions": {
         "gl_avatar": {
+            "type": "skeleton",
             "skins": {
                 "main": 0
             }
