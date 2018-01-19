@@ -208,6 +208,8 @@ module.exports = function( THREE ) {
 		GL_AVATAR: 'gl_avatar'
 	};
 
+	// var isUsingGlAvatar = false;
+
 	/**
 	 * gl_avatar
 	 */
@@ -235,7 +237,7 @@ module.exports = function( THREE ) {
 		} else {
 			// must be skin (clothes)
 
-			this.visibility = extensions.visibility;
+			this.visibility = extension.visibility;
 		}
 	}
 
@@ -1811,6 +1813,7 @@ module.exports = function( THREE ) {
 
 		var scope = this;
 		var json = this.json;
+		var gl_avatar = this.extensions[EXTENSIONS.GL_AVATAR];
 
 		return this._withDependencies( [
 
@@ -1827,6 +1830,20 @@ module.exports = function( THREE ) {
 				if ( meshDef.extras ) group.userData = meshDef.extras;
 
 				var primitives = meshDef.primitives || [];
+
+				if (gl_avatar) {
+					// gl_avatar for clothes
+					// move attributes from extension field to actual primitive attribute field
+					for (var i = 0, len = primitives.length; i < len; i++) {
+						if (primitives[i].extensions && primitives[i].extensions.gl_avatar) {
+							var att = primitives[i].extensions.gl_avatar.attributes;
+							for (var a in att) {
+								primitives[i].attributes[a] = att[a];
+							}
+						}
+					}
+				}
+				
 
 				return scope.loadGeometries( primitives ).then( function ( geometries ) {
 
@@ -2338,6 +2355,16 @@ module.exports = function( THREE ) {
 
 									child.bind( skeleton, child.matrixWorld );
 
+								} else {
+									if (gl_avatar) {
+										if (gl_avatar.type === "skin") {
+											if (node.extensions && node.extensions.gl_avatar) {
+												// skinEntry
+												// TODO: bind skeleton from main skeleton file
+
+											}
+										}
+									}
 								}
 
 								clonedgroup.add( child );
