@@ -519,10 +519,7 @@
             ],
             "extensions": {
                 "gl_avatar": {
-                    "skin": {
-                        "name": "main",
-                        "inverseBindMatrices": 9
-                    }
+                    "skin": 0
                 }
             }
         }
@@ -544,6 +541,15 @@
         {
             "sampler": 0,
             "source": 0
+        }
+    ],
+    "skins": [
+        {
+            "gl_avatar": 1,
+            "comment": "this is temp, should be extract from extensions",
+            "link": "main",
+            "joints": [],
+            "inverseBindMatrices": 9
         }
     ],
     "extensionsUsed": [

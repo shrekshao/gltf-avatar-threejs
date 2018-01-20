@@ -467,6 +467,7 @@ onload();
 document.getElementById('maid_clothes_btn').onclick = function() {
     // test
     // load maid dress
+    loader.setGlAvatarSkeltonMap(gltf.gl_avatar.skeletons);
     loader.load( 'models/gltf/saber-maid-dress/saber-maid-dress.gltf', function(data) {
         gltf = data;
         var object = gltf.scene;

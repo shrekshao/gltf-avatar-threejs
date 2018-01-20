@@ -14,11 +14,17 @@ module.exports = function( THREE ) {
 
 	}
 
+	var gl_avatar_skeletons = {};
+
 	GLTFLoader.prototype = {
 
 		constructor: GLTFLoader,
 
 		crossOrigin: 'Anonymous',
+
+		setGlAvatarSkeltonMap : function (g) {
+			gl_avatar_skeletons = g;
+		},
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
@@ -2003,6 +2009,15 @@ module.exports = function( THREE ) {
 
 			return _each( json.skins, function ( skin ) {
 
+				// temp
+				if (skin.gl_avatar) {
+					var _skinlink = {
+						link: skin.link,
+						inverseBindMatrices: dependencies.accessors[ skin.inverseBindMatrices ]
+					};
+					return _skinlink;
+				}
+
 				var _skin = {
 					joints: skin.joints,
 					inverseBindMatrices: dependencies.accessors[ skin.inverseBindMatrices ]
@@ -2303,6 +2318,22 @@ module.exports = function( THREE ) {
 
 								}
 
+								var linkSkeleton = null;
+								if (gl_avatar) {
+									if (gl_avatar.type === "skin") {
+										if (node.extensions && node.extensions.gl_avatar) {
+											// skinEntry
+											// bind skeleton from main skeleton file
+											var s = node.extensions.gl_avatar.skin;
+											skinEntry = dependencies.skins[ s ];
+
+											var link = skinEntry.link;
+
+											linkSkeleton = gl_avatar_skeletons[link];
+										}
+									}
+								}
+
 								// Replace Mesh with SkinnedMesh in library
 								if ( skinEntry ) {
 
@@ -2315,35 +2346,49 @@ module.exports = function( THREE ) {
 									child.userData = originalUserData;
 									child.name = originalName;
 
-									var bones = [];
-									var boneInverses = [];
-
-									for ( var i = 0, l = skinEntry.joints.length; i < l; i ++ ) {
-
-										var jointId = skinEntry.joints[ i ];
-										var jointNode = __nodes[ jointId ];
-
-										if ( jointNode ) {
-
-											bones.push( jointNode );
-
-											var m = skinEntry.inverseBindMatrices.array;
+									var skeleton;
+									if (linkSkeleton) {
+										var boneInverses = [];
+										var m = skinEntry.inverseBindMatrices.array;
+										for ( var i = 0, l = linkSkeleton.bones.length; i < l; i ++ ) {
 											var mat = new THREE.Matrix4().fromArray( m, i * 16 );
 											boneInverses.push( mat );
-
-										} else {
-
-											console.warn( 'THREE.GLTFLoader: Joint "%s" could not be found.', jointId );
-
 										}
 
-									}
-									
+										skeleton = new THREE.Skeleton(linkSkeleton.bones, boneInverses);
+									} else {
+										var bones = [];
+										var boneInverses = [];
 
-									// gl_avatar: only referenced skeleton will be created
-									// this can be modified in the furture
-									// to enable pure skeleton file without skin?
-									var skeleton = new THREE.Skeleton( bones, boneInverses );
+										for ( var i = 0, l = skinEntry.joints.length; i < l; i ++ ) {
+
+											var jointId = skinEntry.joints[ i ];
+											var jointNode = __nodes[ jointId ];
+
+											if ( jointNode ) {
+
+												bones.push( jointNode );
+
+												var m = skinEntry.inverseBindMatrices.array;
+												var mat = new THREE.Matrix4().fromArray( m, i * 16 );
+												boneInverses.push( mat );
+
+											} else {
+
+												console.warn( 'THREE.GLTFLoader: Joint "%s" could not be found.', jointId );
+
+											}
+
+										}
+										
+
+										// gl_avatar: only referenced skeleton will be created
+										// this can be modified in the furture
+										// to enable pure skeleton file without skin?
+										skeleton = new THREE.Skeleton( bones, boneInverses );
+									}
+
+									
 
 									if ( gl_avatar ) {
 										if (gl_avatar.type === "skeleton") {
@@ -2355,16 +2400,6 @@ module.exports = function( THREE ) {
 
 									child.bind( skeleton, child.matrixWorld );
 
-								} else {
-									if (gl_avatar) {
-										if (gl_avatar.type === "skin") {
-											if (node.extensions && node.extensions.gl_avatar) {
-												// skinEntry
-												// TODO: bind skeleton from main skeleton file
-
-											}
-										}
-									}
 								}
 
 								clonedgroup.add( child );
