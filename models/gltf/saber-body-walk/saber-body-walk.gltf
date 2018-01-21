@@ -6857,6 +6857,11 @@
                     "index" : 0
                 }, 
                 "metallicFactor" : 0.0
+            },
+            "extensions": {
+                "gl_avatar": {
+                    "bodyIdLUT": 1
+                }
             }
         },
         {

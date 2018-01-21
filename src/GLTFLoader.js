@@ -1585,6 +1585,10 @@ module.exports = function( THREE ) {
 
 			var pending = [];
 
+			if ( materialExtensions[ EXTENSIONS.GL_AVATAR ] ) {
+				pending.push( parser.assignTexture( materialParams, 'bodyIdLUT', materialExtensions[ EXTENSIONS.GL_AVATAR ].bodyIdLUT ) );
+			}
+
 			if ( materialExtensions[ EXTENSIONS.KHR_MATERIALS_COMMON ] ) {
 
 				var khcExtension = extensions[ EXTENSIONS.KHR_MATERIALS_COMMON ];
@@ -1699,6 +1703,8 @@ module.exports = function( THREE ) {
 
 			}
 
+			
+
 			return Promise.all( pending ).then( function () {
 
 				var _material;
@@ -1711,6 +1717,51 @@ module.exports = function( THREE ) {
 
 					_material = new materialType( materialParams );
 
+				}
+
+
+				if ( materialExtensions[ EXTENSIONS.GL_AVATAR ] ) {
+					var bodyIdLUT = materialExtensions[ EXTENSIONS.GL_AVATAR ].bodyIdLUT;
+					if (bodyIdLUT !== undefined) {
+						_material.onBeforeCompile = function (shader) {
+							shader.uniforms.bodyIdLUT = {
+								type: "t",
+								value: materialParams.bodyIdLUT
+							};
+
+							// TODO: uniform buffer of visibility array
+
+							// console.log(shader.fragmentShader);
+							shader.fragmentShader.replace(
+								'void main()',
+								[
+									'#define GLAVATAR_HAS_BODY_ID_LUT',
+
+									'#ifdef GLAVATAR_HAS_BODY_ID_LUT',
+									'uniform usampler2D u_bodyIdLUT;',
+									'uniform bool visibility[60];	//wait for webgl2 to use uniform buffer',
+									'#endif',
+
+									'void main()',
+									'{',
+									'#ifdef GLAVATAR_HAS_BODY_ID_LUT',
+									'	uint bodyId = texture(u_bodyIdLUT, v_uv).r;',
+									'	if (bodyId < GLAVATAR_BODY_VISIBILITY_LENGTH)',
+									'	{',
+									'		if (!visibility[bodyId])',
+									'		if (0u == visibility[bodyId])',
+									'		{',
+									'			discard;',
+									'		}',
+									'	}',
+									'#endif'
+								].join('\n')
+							);
+
+							
+						};
+					}
+					
 				}
 
 				if ( material.name !== undefined ) _material.name = material.name;
