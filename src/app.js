@@ -56,6 +56,8 @@ THREE.GLTFLoader = require('./GLTFLoader.js')(THREE);
 // });
 
 
+var gltf_skeleton = null;
+
 
 
 var orbitControls = null;
@@ -148,6 +150,7 @@ function initScene(index) {
     status.innerHTML = "Loading...";
     loader.load( url, function(data) {
         gltf = data;
+        gltf_skeleton = gltf;
 
         console.log(gltf.gl_avatar);
 
@@ -467,11 +470,14 @@ onload();
 document.getElementById('maid_clothes_btn').onclick = function() {
     // test
     // load maid dress
-    loader.setGlAvatarSkeltonMap(gltf.gl_avatar.skeletons);
+    loader.setGlAvatarOfLinkingSkeleton(gltf.gl_avatar);
     loader.load( 'models/gltf/saber-maid-dress/saber-maid-dress.gltf', function(data) {
         gltf = data;
         var object = gltf.scene;
         // status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";
+
+        // temp
+        console.log(gltf_skeleton);
 
 
         object.traverse( function ( node ) {

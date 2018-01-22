@@ -14,7 +14,12 @@ module.exports = function( THREE ) {
 
 	}
 
-	var gl_avatar_skeletons = {};
+	// used by clothes file
+	// set by the skeleton file before loading 
+	var gl_avatar_skeletons = null;
+
+	// gl_avatar extension of the skeleton file
+	var gl_avatar_linked_skeleton = null;
 
 	GLTFLoader.prototype = {
 
@@ -22,9 +27,14 @@ module.exports = function( THREE ) {
 
 		crossOrigin: 'Anonymous',
 
-		setGlAvatarSkeltonMap : function (g) {
-			gl_avatar_skeletons = g;
+		setGlAvatarOfLinkingSkeleton: function(g) {
+			gl_avatar_linked_skeleton = g;
+			gl_avatar_skeletons = g.skeletons;
 		},
+
+		// setGlAvatarSkeltonMap : function (g) {
+		// 	gl_avatar_skeletons = g;
+		// },
 
 		load: function ( url, onLoad, onProgress, onError ) {
 
@@ -216,6 +226,19 @@ module.exports = function( THREE ) {
 
 	// var isUsingGlAvatar = false;
 
+	var GL_AVATAR_VISIBILITY_LENGTH = 60;
+
+	function updateVisibilityArray(v, v1) {
+		if (v.length > v1.length) {
+			console.error('visibility length of clothes file is smaller than that of skeleton file');
+		}
+
+		for (var i, len = v.length; i < len; i++) {
+			v[i] = v[i] && v1[i];
+		}
+	}
+
+
 	/**
 	 * gl_avatar
 	 */
@@ -232,6 +255,7 @@ module.exports = function( THREE ) {
 
 			this.skeletons = {};
 			this.skinId2SkeletonKey = {};
+			this.visibility = new Array(GL_AVATAR_VISIBILITY_LENGTH).fill(1);
 			var skins = extension.skins || {};
 
 			// store id first, will get replaced with skeleton object in parser
@@ -242,8 +266,12 @@ module.exports = function( THREE ) {
 
 		} else {
 			// must be skin (clothes)
-
+			if (!gl_avatar_skeletons) {
+				console.error('gl avatar linking skeletons not set!');
+			}
 			this.visibility = extension.visibility;
+			updateVisibilityArray(gl_avatar_linked_skeleton.visibility, this.visibility);
+
 		}
 	}
 
@@ -1576,6 +1604,7 @@ module.exports = function( THREE ) {
 		var parser = this;
 		var json = this.json;
 		var extensions = this.extensions;
+		var gl_avatar = this.extensions[ EXTENSIONS.GL_AVATAR ];
 
 		return _each( json.materials, function ( material ) {
 
@@ -1725,31 +1754,40 @@ module.exports = function( THREE ) {
 					if (bodyIdLUT !== undefined) {
 						_material.onBeforeCompile = function (shader) {
 							shader.uniforms.bodyIdLUT = {
-								type: "t",
+								type: 't',
 								value: materialParams.bodyIdLUT
+							};
+
+							shader.uniforms.visibility = {
+								type: '1iv',
+								value: gl_avatar.visibility
 							};
 
 							// TODO: uniform buffer of visibility array
 
 							// console.log(shader.fragmentShader);
-							shader.fragmentShader.replace(
-								'void main()',
+							shader.fragmentShader = shader.fragmentShader.replace(
+								'void main() {',
 								[
 									'#define GLAVATAR_HAS_BODY_ID_LUT',
 
 									'#ifdef GLAVATAR_HAS_BODY_ID_LUT',
-									'uniform usampler2D u_bodyIdLUT;',
-									'uniform bool visibility[60];	//wait for webgl2 to use uniform buffer',
+									'#define GLAVATAR_BODY_VISIBILITY_LENGTH 60',
+									// 'uniform usampler2D bodyIdLUT;',
+									'uniform sampler2D bodyIdLUT;',
+									'uniform bool visibility[GLAVATAR_BODY_VISIBILITY_LENGTH];	//wait for webgl2 to use uniform buffer',
 									'#endif',
 
 									'void main()',
 									'{',
 									'#ifdef GLAVATAR_HAS_BODY_ID_LUT',
-									'	uint bodyId = texture(u_bodyIdLUT, v_uv).r;',
+									// '	uint bodyId = texture(bodyIdLUT, v_uv).r;',
+									'	int bodyId = int(texture2D(bodyIdLUT, vUv).r * 255.0);',
 									'	if (bodyId < GLAVATAR_BODY_VISIBILITY_LENGTH)',
-									'	{',
+									// '	{',
 									'		if (!visibility[bodyId])',
-									'		if (0u == visibility[bodyId])',
+									// '		if (1)',
+									// '		if (0u == visibility[bodyId])',
 									'		{',
 									'			discard;',
 									'		}',
