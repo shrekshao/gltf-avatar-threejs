@@ -280,7 +280,22 @@ module.exports = function( THREE ) {
 				console.error('gl avatar linking skeletons not set!');
 			}
 			this.visibility = extension.visibility;
-			//updateVisibilityArray(gl_avatar_linked_skeleton.visibility, this.visibility);
+			
+			
+			// put linkedSkeletons to skins
+			json.skins = json.skins || [];
+
+			var ls;
+			for (var i = 0, len = extension.linkedSkeletons.length; i < len; i++) {
+				ls = extension.linkedSkeletons[i];
+				json.skins.push({
+					'gl_avatar': json.skins.length,
+					'skeleton': ls.skeleton,
+					'inverseBindMatrices': ls.inverseBindMatrices,
+					'joints': []
+				});
+			}
+			
 
 		}
 	}
@@ -2145,10 +2160,10 @@ module.exports = function( THREE ) {
 
 			return _each( json.skins, function ( skin ) {
 
-				// temp
-				if (skin.gl_avatar) {
+				// here gl_avatar also indicates id in newly created skins array
+				if (skin.gl_avatar !== undefined) {
 					var _skinlink = {
-						link: skin.link,
+						link: skin.skeleton,
 						inverseBindMatrices: dependencies.accessors[ skin.inverseBindMatrices ]
 					};
 					return _skinlink;

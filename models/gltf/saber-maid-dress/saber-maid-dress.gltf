@@ -543,15 +543,6 @@
             "source": 0
         }
     ],
-    "skins": [
-        {
-            "gl_avatar": 1,
-            "comment": "this is temp, should be extract from extensions",
-            "link": "main",
-            "joints": [],
-            "inverseBindMatrices": 9
-        }
-    ],
     "extensionsUsed": [
         "gl_avatar"
     ],
@@ -572,7 +563,13 @@
                 0, 0, 0, 0, 0,
                 0, 0, 0, 0
             ],
-            "type": "skin"
+            "type": "skin",
+            "linkedSkeletons": [
+                {
+                    "skeleton": "main",
+                    "inverseBindMatrices": 9
+                }
+            ]
         }
     }
 }
