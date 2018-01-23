@@ -289,7 +289,8 @@ module.exports = function( THREE ) {
 			for (var i = 0, len = extension.linkedSkeletons.length; i < len; i++) {
 				ls = extension.linkedSkeletons[i];
 				json.skins.push({
-					'gl_avatar': json.skins.length,
+					// 'gl_avatar': json.skins.length,
+					'gl_avatar': 1,
 					'skeleton': ls.skeleton,
 					'inverseBindMatrices': ls.inverseBindMatrices,
 					'joints': []

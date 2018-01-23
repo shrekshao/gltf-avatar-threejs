@@ -470,7 +470,7 @@ onload();
 document.getElementById('maid_clothes_btn').onclick = function() {
     // test
     // load maid dress
-    loader.setGlAvatarOfLinkingSkeleton(gltf.gl_avatar);
+    loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
     loader.load( 'models/gltf/saber-maid-dress/saber-maid-dress.gltf', function(data) {
         gltf = data;
         var object = gltf.scene;
@@ -496,7 +496,34 @@ document.getElementById('maid_clothes_btn').onclick = function() {
     } );
 };
 
+document.getElementById('maid_hair_btn').onclick = function() {
+    // test
+    // load maid dress
+    loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
+    loader.load( 'models/gltf/saber-maid-hair/saber-maid-hair.gltf', function(data) {
+        gltf = data;
+        var object = gltf.scene;
+        // status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";
 
+        // temp
+        console.log(gltf_skeleton);
+
+
+        object.traverse( function ( node ) {
+            if ( node.isMesh ) node.castShadow = true;
+        } );
+
+
+        // console.log(gltf.extensions.gl_avatar);
+        // console.log(gltf.gl_avatar_skeleton);
+        // create skinned mesh and .bind(skeleotn)
+
+        scene.add( object );
+        onWindowResize();
+    }, undefined, function ( error ) {
+        console.error( error );
+    } );
+};
 
 
 // function createBones ( object, jsonBones ) {
