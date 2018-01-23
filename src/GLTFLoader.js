@@ -155,6 +155,11 @@ module.exports = function( THREE ) {
 					gl_avatar: parser.extensions && parser.extensions['gl_avatar']
 				};
 
+				if (glTF.gl_avatar && glTF.gl_avatar.type === 'skin' && glTF.gl_avatar.visibility) {
+					updateVisibilityArray(gl_avatar_linked_skeleton.visibility, glTF.gl_avatar.visibility);
+				}
+				
+
 				onLoad( glTF );
 
 			}, onError );
@@ -260,9 +265,7 @@ module.exports = function( THREE ) {
 
 			this.skeletons = {};
 			this.skinId2SkeletonKey = {};
-			// this.visibility = new Array(GL_AVATAR_VISIBILITY_LENGTH).fill(1);
-			// this.visibility = new Uint8Array(GL_AVATAR_VISIBILITY_LENGTH).fill(1);
-			this.visibility = new Uint8Array(256).fill(1);
+			this.visibility = new Uint8Array(256).fill(255);
 			var skins = extension.skins || {};
 
 			// store id first, will get replaced with skeleton object in parser
@@ -277,7 +280,7 @@ module.exports = function( THREE ) {
 				console.error('gl avatar linking skeletons not set!');
 			}
 			this.visibility = extension.visibility;
-			updateVisibilityArray(gl_avatar_linked_skeleton.visibility, this.visibility);
+			//updateVisibilityArray(gl_avatar_linked_skeleton.visibility, this.visibility);
 
 		}
 	}
@@ -1630,26 +1633,13 @@ module.exports = function( THREE ) {
 				// var visibilityLUTArray = new Uint8Array( 60 );
 
 				var visibilityLUTArray = gl_avatar.visibility;
-				// // var visibilityLUTArray = new Uint8Array( 256 ).fill(255);
-				// // var visibilityLUTArray = new Uint8Array( 256 * 3);
-				// for (var i = 0, len = gl_avatar.visibility.length; i < len; i++) {
-				// 	visibilityLUTArray[i] = gl_avatar.visibility[i] * 255;
+
+
+				// for (var i = 0, len = visibilityLUTArray.length; i < len; i++) {
+				// 	visibilityLUTArray[i] *= 255;
 				// 	// visibilityLUTArray[i] = 0;
 				// }
 
-
-				for (var i = 0, len = visibilityLUTArray.length; i < len; i++) {
-					visibilityLUTArray[i] *= 255;
-					// visibilityLUTArray[i] = 0;
-				}
-
-
-				// visibilityLUTArray[0] = 255;
-				// visibilityLUTArray[1] = 255;
-				// visibilityLUTArray[2] = 0;
-				// visibilityLUTArray[3] = 0;
-				// visibilityLUTArray[21] = 0;
-				// visibilityLUTArray[50] = 0;
  
 
 				// // TODO: change to 16x16 to save mem
