@@ -21,6 +21,9 @@ module.exports = function( THREE ) {
 	// gl_avatar extension of the skeleton file
 	var gl_avatar_linked_skeleton = null;
 
+	// use data texture as workaround for visibility array in webgl 1
+
+
 	GLTFLoader.prototype = {
 
 		constructor: GLTFLoader,
@@ -1616,6 +1619,51 @@ module.exports = function( THREE ) {
 
 			if ( materialExtensions[ EXTENSIONS.GL_AVATAR ] ) {
 				pending.push( parser.assignTexture( materialParams, 'bodyIdLUT', materialExtensions[ EXTENSIONS.GL_AVATAR ].bodyIdLUT ) );
+
+				
+
+				// var visibilityLUTArray = new Uint8Array( 16 * 16 );
+				// var visibilityLUTArray = new Uint8Array( 60 );
+				var visibilityLUTArray = new Uint8Array( 256 ).fill(0);
+				// var visibilityLUTArray = new Uint8Array( 256 * 3);
+				for (var i = 0, len = gl_avatar.visibility.length; i < len; i++) {
+					visibilityLUTArray[i] = gl_avatar.visibility[i] * 255;
+					// visibilityLUTArray[i] = 0;
+				}
+				visibilityLUTArray[0] = 255;
+				visibilityLUTArray[1] = 255;
+				visibilityLUTArray[2] = 0;
+				visibilityLUTArray[3] = 0;
+				visibilityLUTArray[21] = 0;
+				visibilityLUTArray[50] = 0;
+				// visibilityLUTArray[4] = 0;
+
+				// value: new THREE.DataTexture(visibilityLUTArray, 16, 16, THREE.UnsignedByteType)
+				// value: new THREE.DataTexture(visibilityLUTArray, 60, 1, THREE.UnsignedByteType)
+				// value: new THREE.DataTexture(visibilityLUTArray, 256, 1, THREE.UnsignedByteType)
+
+				// var visibilityLUTArray = new Uint8Array( 256 * 4 );
+				// for (var i = 0, len = gl_avatar.visibility.length; i < len; i++) {
+				// 	visibilityLUTArray[4*i] = gl_avatar.visibility[i] * 255;
+				// 	visibilityLUTArray[4*i+1] = gl_avatar.visibility[i] * 255;
+				// 	visibilityLUTArray[4*i+2] = gl_avatar.visibility[i] * 255;
+				// 	visibilityLUTArray[4*i+3] = gl_avatar.visibility[i] * 255;
+				// 	// visibilityLUTArray[i] = 0;
+				// }
+				// visibilityLUTArray[0] = 255;
+				// visibilityLUTArray[1] = 255;
+				// visibilityLUTArray[2] = 255;
+				// visibilityLUTArray[3] = 255;
+
+				// var texture = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 256, 1, THREE.LuminanceFormat, THREE.UnsignedByteType); 
+				// var texture = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 16, 16, THREE.LuminanceFormat, THREE.UnsignedByteType); 
+				var texture = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 256, 1, THREE.AlphaFormat, THREE.UnsignedByteType); 
+				// var texture = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 16, 16, THREE.AlphaFormat, THREE.UnsignedByteType); 
+				texture.magFilter = THREE.NearestFilter;
+				texture.minFilter = THREE.NearestFilter;
+				texture.wrapS = THREE.ClampToEdgeWrapping;
+				texture.wrapT = THREE.ClampToEdgeWrapping;
+				texture.needsUpdate = true;
 			}
 
 			if ( materialExtensions[ EXTENSIONS.KHR_MATERIALS_COMMON ] ) {
@@ -1758,9 +1806,9 @@ module.exports = function( THREE ) {
 								value: materialParams.bodyIdLUT
 							};
 
-							shader.uniforms.visibility = {
-								type: '1iv',
-								value: gl_avatar.visibility
+							shader.uniforms.visibilityLUT = {
+								type: 't',
+								value: materialParams.visibilityLUT
 							};
 
 							// TODO: uniform buffer of visibility array
@@ -1775,23 +1823,35 @@ module.exports = function( THREE ) {
 									'#define GLAVATAR_BODY_VISIBILITY_LENGTH 60',
 									// 'uniform usampler2D bodyIdLUT;',
 									'uniform sampler2D bodyIdLUT;',
-									'uniform bool visibility[GLAVATAR_BODY_VISIBILITY_LENGTH];	//wait for webgl2 to use uniform buffer',
+									// 'uniform bool visibility[GLAVATAR_BODY_VISIBILITY_LENGTH];	//wait for webgl2 to use uniform buffer',
+									'uniform sampler2D visibilityLUT;',
 									'#endif',
 
 									'void main()',
 									'{',
 									'#ifdef GLAVATAR_HAS_BODY_ID_LUT',
 									// '	uint bodyId = texture(bodyIdLUT, v_uv).r;',
-									'	int bodyId = int(texture2D(bodyIdLUT, vUv).r * 255.0);',
-									'	if (bodyId < GLAVATAR_BODY_VISIBILITY_LENGTH)',
+									// '	int bodyId = int(texture2D(bodyIdLUT, vUv).r * 255.0);',
+									// '	int bodyId = int(texture2D(bodyIdLUT, vUv).r * 255.0);',
+									'	vec2 bodyId = vec2(texture2D(bodyIdLUT, vUv).r, 0.5);',
+									// '	gl_FragColor = vec4(bodyId.r, bodyId.r, bodyId.r, 1.0);',
+									// '	float t = texture2D(visibilityLUT, vec2(vUv.x, 0.5)).a;',
+									// '	float t = texture2D(visibilityLUT, vec2(0.0, 0.0)).a;',
+
+									// '	float t = texture2D(visibilityLUT, bodyId).a;',
+									// '	gl_FragColor = vec4(t,t,t, 1.0);',
+									// '	return;',
+									
+									// '	if (bodyId < GLAVATAR_BODY_VISIBILITY_LENGTH)',
 									// '	{',
-									'		if (!visibility[bodyId])',
+									// '		if (!visibility[bodyId])',
 									// '		if (1)',
 									// '		if (0u == visibility[bodyId])',
+									'		if (texture2D(visibilityLUT, bodyId).a < 0.5)',
 									'		{',
 									'			discard;',
 									'		}',
-									'	}',
+									// '	}',
 									'#endif'
 								].join('\n')
 							);
