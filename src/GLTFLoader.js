@@ -232,13 +232,15 @@ module.exports = function( THREE ) {
 	var GL_AVATAR_VISIBILITY_LENGTH = 60;
 
 	function updateVisibilityArray(v, v1) {
-		if (v.length > v1.length) {
-			console.error('visibility length of clothes file is smaller than that of skeleton file');
+		for (var i = 0, len = v1.length; i < len; i++) {
+			v[i] = v1[i] ? v[i] : 0;
 		}
 
-		for (var i, len = v.length; i < len; i++) {
-			v[i] = v[i] && v1[i];
-		}
+		// // gl_avatar_linked_skeleton.visibilityLUT.data = gl_avatar_linked_skeleton.visibility;
+		// for (var i, len = v.length; i < len; i++) {
+		// 	gl_avatar_linked_skeleton.visibilityLUT.image.data[i] = v[i] * 255;
+		// }
+		gl_avatar_linked_skeleton.visibilityLUT.needsUpdate = true;
 	}
 
 
@@ -258,7 +260,9 @@ module.exports = function( THREE ) {
 
 			this.skeletons = {};
 			this.skinId2SkeletonKey = {};
-			this.visibility = new Array(GL_AVATAR_VISIBILITY_LENGTH).fill(1);
+			// this.visibility = new Array(GL_AVATAR_VISIBILITY_LENGTH).fill(1);
+			// this.visibility = new Uint8Array(GL_AVATAR_VISIBILITY_LENGTH).fill(1);
+			this.visibility = new Uint8Array(256).fill(1);
 			var skins = extension.skins || {};
 
 			// store id first, will get replaced with skeleton object in parser
@@ -1624,40 +1628,33 @@ module.exports = function( THREE ) {
 
 				// var visibilityLUTArray = new Uint8Array( 16 * 16 );
 				// var visibilityLUTArray = new Uint8Array( 60 );
-				var visibilityLUTArray = new Uint8Array( 256 ).fill(0);
-				// var visibilityLUTArray = new Uint8Array( 256 * 3);
-				for (var i = 0, len = gl_avatar.visibility.length; i < len; i++) {
-					visibilityLUTArray[i] = gl_avatar.visibility[i] * 255;
-					// visibilityLUTArray[i] = 0;
-				}
-				visibilityLUTArray[0] = 255;
-				visibilityLUTArray[1] = 255;
-				visibilityLUTArray[2] = 0;
-				visibilityLUTArray[3] = 0;
-				visibilityLUTArray[21] = 0;
-				visibilityLUTArray[50] = 0;
-				// visibilityLUTArray[4] = 0;
 
-				// value: new THREE.DataTexture(visibilityLUTArray, 16, 16, THREE.UnsignedByteType)
-				// value: new THREE.DataTexture(visibilityLUTArray, 60, 1, THREE.UnsignedByteType)
-				// value: new THREE.DataTexture(visibilityLUTArray, 256, 1, THREE.UnsignedByteType)
-
-				// var visibilityLUTArray = new Uint8Array( 256 * 4 );
+				var visibilityLUTArray = gl_avatar.visibility;
+				// // var visibilityLUTArray = new Uint8Array( 256 ).fill(255);
+				// // var visibilityLUTArray = new Uint8Array( 256 * 3);
 				// for (var i = 0, len = gl_avatar.visibility.length; i < len; i++) {
-				// 	visibilityLUTArray[4*i] = gl_avatar.visibility[i] * 255;
-				// 	visibilityLUTArray[4*i+1] = gl_avatar.visibility[i] * 255;
-				// 	visibilityLUTArray[4*i+2] = gl_avatar.visibility[i] * 255;
-				// 	visibilityLUTArray[4*i+3] = gl_avatar.visibility[i] * 255;
+				// 	visibilityLUTArray[i] = gl_avatar.visibility[i] * 255;
 				// 	// visibilityLUTArray[i] = 0;
 				// }
+
+
+				for (var i = 0, len = visibilityLUTArray.length; i < len; i++) {
+					visibilityLUTArray[i] *= 255;
+					// visibilityLUTArray[i] = 0;
+				}
+
+
 				// visibilityLUTArray[0] = 255;
 				// visibilityLUTArray[1] = 255;
-				// visibilityLUTArray[2] = 255;
-				// visibilityLUTArray[3] = 255;
+				// visibilityLUTArray[2] = 0;
+				// visibilityLUTArray[3] = 0;
+				// visibilityLUTArray[21] = 0;
+				// visibilityLUTArray[50] = 0;
+ 
 
-				// var texture = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 256, 1, THREE.LuminanceFormat, THREE.UnsignedByteType); 
-				// var texture = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 16, 16, THREE.LuminanceFormat, THREE.UnsignedByteType); 
-				var texture = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 256, 1, THREE.AlphaFormat, THREE.UnsignedByteType); 
+				// // TODO: change to 16x16 to save mem
+				var texture = gl_avatar.visibilityLUT = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 256, 1, THREE.AlphaFormat, THREE.UnsignedByteType); 
+				// var texture = gl_avatar.visibilityLUT = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, GL_AVATAR_VISIBILITY_LENGTH, 1, THREE.AlphaFormat, THREE.UnsignedByteType); 
 				// var texture = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 16, 16, THREE.AlphaFormat, THREE.UnsignedByteType); 
 				texture.magFilter = THREE.NearestFilter;
 				texture.minFilter = THREE.NearestFilter;
