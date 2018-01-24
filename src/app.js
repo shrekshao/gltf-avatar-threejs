@@ -283,7 +283,15 @@ var sceneList = [
         cameraPos: new THREE.Vector3(3, 2, 3),
         objectRotation: new THREE.Euler(0, 0, 0),
         addLights: true,
-        extensions: ['glTF'],
+        extensions: ['glTF', 'gl_avatar'],
+        addEnvMap: true
+    },
+    {
+        name : 'Saber-body-mixamo', url : './models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
+        cameraPos: new THREE.Vector3(3, 2, 3),
+        objectRotation: new THREE.Euler(0, 0, 0),
+        addLights: true,
+        extensions: ['glTF', 'gl_avatar'],
         addEnvMap: true
     },
     {

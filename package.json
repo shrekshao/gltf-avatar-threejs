@@ -27,6 +27,9 @@
     "three-orbit-controls": "^82.1.0"
   },
   "devDependencies": {
+    "command-line-args": "^5.0.1",
+    "command-line-usage": "^4.1.0",
+    "fs": "0.0.1-security",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3"
   }
