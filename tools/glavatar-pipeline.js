@@ -67,15 +67,30 @@ if (options.help) {
 
     if (options.skeleton) {
         
-        console.log('skeleton');
+        // console.log('skeleton');
+
+        gltf.extensionsUsed = gltf.extensionsUsed || {};
+        gltf.extensionsUsed.push('gl_avatar');
+
+        gltf.extensions = gltf.extensions || {};
+        // sort of hard coded
+        gltf.extensions.gl_avatar =  {
+            type: 'skeleton',
+            skins: {
+                main: 0
+            }
+        };
+
+        // add bodyidlut
 
     } else if (options.skin) {
         // console.log('skin');
 
+        gltf.extensionsUsed = gltf.extensionsUsed || {};
+        gltf.extensionsUsed.push('gl_avatar');
+
         // root extensions
-        if (!gltf.extensions) {
-            gltf.extensions = {};
-        }
+        gltf.extensions = gltf.extensions || {};
         gltf.extensions.gl_avatar = {
             visibility: [
                 0, 
@@ -135,25 +150,35 @@ if (options.help) {
                     node.extensions = {};
                 }
                 node.extensions.gl_avatar = {
-                    'skin': {
-                        'name': 'main',  //temp
-                        'inverseBindMatrices': gltf.skins[node.skin].inverseBindMatrices
-                    }
+                    // 'skin': {
+                    //     'name': 'main',  //temp
+                    //     'inverseBindMatrices': gltf.skins[node.skin].inverseBindMatrices
+                    // }
+                    'skin': 0   //temp
                 }
 
                 delete node.skin;
             }
         }
 
+
+        // put skin info in root extensions
+        var ls = gltf.extensions.gl_avatar.linkedSkeletons = gltf.skins;
+        // for (let i = 0, leni = ls.length; i < leni; i++) {
+        var i = 0;
+        ls[i].skeleton = 'main';
+        // }
+
         // TODO: remove skin related nodes
 
 
-        // TODO: delete skin
+
+        // delete ls.joints;
 
 
         fs.writeFileSync(outputFilename, JSON.stringify(gltf));
     } else {
-        console.error('A glTF file must either a skeleton file or skin file.');
+        console.error('A glTF file must either be a skeleton file or skin file.');
     }
 }
 
