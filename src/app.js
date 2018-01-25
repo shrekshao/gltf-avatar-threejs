@@ -177,7 +177,7 @@ function initScene(index) {
         gltf = data;
         gltf_skeleton = gltf;
 
-        console.log(gltf.gl_avatar);
+        console.log(gltf);
 
         var object = gltf.scene;
         status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";

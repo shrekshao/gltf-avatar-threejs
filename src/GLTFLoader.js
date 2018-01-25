@@ -2483,7 +2483,7 @@ module.exports = function( THREE ) {
 
 											linkSkeleton = gl_avatar_skeletons[link];
 										}
-									}
+									} 
 								}
 
 								// Replace Mesh with SkinnedMesh in library
@@ -2547,6 +2547,56 @@ module.exports = function( THREE ) {
 											if (node.skin in gl_avatar.skinId2SkeletonKey) {
 												gl_avatar.skeletons[gl_avatar.skinId2SkeletonKey[node.skin]] = skeleton;
 											}
+
+
+
+											
+
+											// if there's manually created full joint list skin
+											// enter this branch
+											if (node.extensions && node.extensions.gl_avatar) {
+												var s = node.extensions.gl_avatar.skin;
+												// assert( skeleton === null )
+
+												if (s !== undefined) {
+													console.log('manually added joint list skin: ' + s);
+													
+													skinEntry = dependencies.skins[ s ];
+
+													var bones = [];
+													// assert( no boneinverses )
+
+													for ( var i = 0, l = skinEntry.joints.length; i < l; i ++ ) {
+
+														var jointId = skinEntry.joints[ i ];
+														var jointNode = __nodes[ jointId ];
+			
+														if ( jointNode ) {
+			
+															bones.push( jointNode );
+			
+															// var m = skinEntry.inverseBindMatrices.array;
+															// var mat = new THREE.Matrix4().fromArray( m, i * 16 );
+															// boneInverses.push( mat );
+			
+														} else {
+			
+															console.warn( 'THREE.GLTFLoader: Joint "%s" could not be found.', jointId );
+			
+														}
+			
+													}
+
+
+													if (s in gl_avatar.skinId2SkeletonKey) {
+														gl_avatar.skeletons[gl_avatar.skinId2SkeletonKey[s]] = new THREE.Skeleton(bones);
+													}
+												}
+											}
+
+											
+
+											
 										}
 									}
 
