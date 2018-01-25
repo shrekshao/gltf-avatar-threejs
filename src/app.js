@@ -73,7 +73,8 @@ function onload() {
     window.addEventListener( 'resize', onWindowResize, false );
     document.addEventListener( 'keydown', function(e) { onKeyDown(e); }, false );
     buildSceneList();
-    switchScene(0);
+    // switchScene(0);
+    switchScene(1);
     animate();
 }
 function initScene(index) {
@@ -475,60 +476,66 @@ document.getElementById('animation_toggle').onclick = toggleAnimations;
 onload();
 
 
-document.getElementById('maid_clothes_btn').onclick = function() {
+function skinOnload(data) {
+    gltf = data;
+    var object = gltf.scene;
+    // status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";
+
+    // temp
+    console.log(gltf_skeleton);
+
+
+    object.traverse( function ( node ) {
+        if ( node.isMesh ) node.castShadow = true;
+    } );
+
+
+    // console.log(gltf.extensions.gl_avatar);
+    // console.log(gltf.gl_avatar_skeleton);
+    // create skinned mesh and .bind(skeleotn)
+
+    scene.add( object );
+    onWindowResize();
+}
+
+
+
+
+
+var cb = document.getElementById('clothes-btns');
+
+var button;
+
+
+button = cb.appendChild(document.createElement('button'));
+button.innerHTML = 'mixamo-dress';
+button.onclick = function() {
     // test
     // load maid dress
     loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
-    loader.load( 'models/gltf/saber-maid-dress/saber-maid-dress.gltf', function(data) {
-        gltf = data;
-        var object = gltf.scene;
-        // status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";
-
-        // temp
-        console.log(gltf_skeleton);
-
-
-        object.traverse( function ( node ) {
-            if ( node.isMesh ) node.castShadow = true;
-        } );
-
-
-        // console.log(gltf.extensions.gl_avatar);
-        // console.log(gltf.gl_avatar_skeleton);
-        // create skinned mesh and .bind(skeleotn)
-
-        scene.add( object );
-        onWindowResize();
-    }, undefined, function ( error ) {
+    loader.load( 'models/gltf/saber-dress-mixamo/saber-dress.gltf', skinOnload, undefined, function ( error ) {
         console.error( error );
     } );
 };
 
-document.getElementById('maid_hair_btn').onclick = function() {
+button = cb.appendChild(document.createElement('button'));
+button.innerHTML = 'maid-dress';
+button.onclick = function() {
     // test
     // load maid dress
     loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
-    loader.load( 'models/gltf/saber-maid-hair/saber-maid-hair.gltf', function(data) {
-        gltf = data;
-        var object = gltf.scene;
-        // status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";
+    loader.load( 'models/gltf/saber-maid-dress/saber-maid-dress.gltf', skinOnload, undefined, function ( error ) {
+        console.error( error );
+    } );
+};
 
-        // temp
-        console.log(gltf_skeleton);
-
-
-        object.traverse( function ( node ) {
-            if ( node.isMesh ) node.castShadow = true;
-        } );
-
-
-        // console.log(gltf.extensions.gl_avatar);
-        // console.log(gltf.gl_avatar_skeleton);
-        // create skinned mesh and .bind(skeleotn)
-
-        scene.add( object );
-        onWindowResize();
-    }, undefined, function ( error ) {
+button = cb.appendChild(document.createElement('button'));
+button.innerHTML = 'maid-hair';
+button.onclick = function() {
+    // test
+    // load maid dress
+    loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
+    loader.load( 'models/gltf/saber-maid-hair/saber-maid-hair.gltf', skinOnload, undefined, function ( error ) {
         console.error( error );
     } );
 };

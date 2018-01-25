@@ -86,8 +86,8 @@ if (options.help) {
     } else if (options.skin) {
         // console.log('skin');
 
-        gltf.extensionsUsed = gltf.extensionsUsed || {};
-        gltf.extensionsUsed.push('gl_avatar');
+        // gltf.extensionsUsed = gltf.extensionsUsed || {};
+        // gltf.extensionsUsed.push('gl_avatar');
 
         // root extensions
         gltf.extensions = gltf.extensions || {};
@@ -170,7 +170,7 @@ if (options.help) {
         // }
 
         // TODO: remove skin related nodes
-
+        delete gltf.skins;
 
 
         // delete ls.joints;
