@@ -69,6 +69,30 @@ var defaultCamera = null;
 var gltf = null;
 var mixer = null;
 var clock = new THREE.Clock();
+
+
+var animationSelector = document.getElementById('animations_list');
+animationSelector.onchange = function() {
+    playAnimation(animationSelector.selectedIndex);
+}
+
+function playAnimation(index) {
+    // gltf_skeleton.animations[index].play();
+    mixer.stopAllAction();
+    mixer.clipAction( gltf_skeleton.animations[index] ).play();
+}
+
+function removeOptions(selectbox)
+{
+    var i;
+    for(i = selectbox.options.length - 1 ; i >= 0 ; i--)
+    {
+        selectbox.remove(i);
+    }
+}
+
+
+
 function onload() {
     window.addEventListener( 'resize', onWindowResize, false );
     document.addEventListener( 'keydown', function(e) { onKeyDown(e); }, false );
@@ -211,15 +235,24 @@ function initScene(index) {
         }
         var animations = gltf.animations;
         if ( animations && animations.length ) {
+            // mixer = new THREE.AnimationMixer( object );
+            // for ( var i = 0; i < animations.length; i ++ ) {
+            //     var animation = animations[ i ];
+            //     // There's .3333 seconds junk at the tail of the Monster animation that
+            //     // keeps it from looping cleanly. Clip it at 3 seconds
+            //     if ( sceneInfo.animationTime )
+            //         animation.duration = sceneInfo.animationTime;
+            //     mixer.clipAction( animation ).play();
+            // }
+            removeOptions(animationSelector);
             mixer = new THREE.AnimationMixer( object );
             for ( var i = 0; i < animations.length; i ++ ) {
                 var animation = animations[ i ];
-                // There's .3333 seconds junk at the tail of the Monster animation that
-                // keeps it from looping cleanly. Clip it at 3 seconds
-                if ( sceneInfo.animationTime )
-                    animation.duration = sceneInfo.animationTime;
-                mixer.clipAction( animation ).play();
+                var o = document.createElement('option');
+                o.text = animation.name || i;
+                animationSelector.add(o);
             }
+            playAnimation(0);
         }
         scene.add( object );
         onWindowResize();
