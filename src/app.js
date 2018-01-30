@@ -323,7 +323,7 @@ var sceneList = [
     {
         name : 'Saber-body-mixamo', url : './models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
         cameraPos: new THREE.Vector3(3, 2, 3),
-        objectRotation: new THREE.Euler(0, 0, 0),
+        objectRotation: new THREE.Euler(0, 180, 0),
         addLights: true,
         extensions: ['glTF', 'gl_avatar'],
         addEnvMap: true
@@ -547,6 +547,17 @@ button.onclick = function() {
     // load maid dress
     loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
     loader.load( 'models/gltf/saber-dress-mixamo/saber-dress.gltf', skinOnload, undefined, function ( error ) {
+        console.error( error );
+    } );
+};
+
+button = cb.appendChild(document.createElement('button'));
+button.innerHTML = 'mixamo-hair';
+button.onclick = function() {
+    // test
+    // load maid dress
+    loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
+    loader.load( 'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf', skinOnload, undefined, function ( error ) {
         console.error( error );
     } );
 };
