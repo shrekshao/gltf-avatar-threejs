@@ -30396,6 +30396,19 @@
                 },
                 "metallicFactor": 0.0,
                 "roughnessFactor": 1.0
+            },
+            "extensions": {
+                "gl_avatar": {
+                    "toon": {
+                        "color": [
+                            0.8, 0.8, 0.8, 0.8
+                        ],
+                        "map": {
+                            "index": 0,
+                            "texCoord": 0
+                        }
+                    }
+                }
             }
         },
         {
@@ -30416,7 +30429,16 @@
             },
             "extensions": {
                 "gl_avatar": {
-                    "bodyIdLUT": 2
+                    "bodyIdLUT": 2,
+                    "toon": {
+                        "color": [
+                            0.8, 0.8, 0.8, 0.8
+                        ],
+                        "map": {
+                            "index": 1,
+                            "texCoord": 0
+                        }
+                    }
                 }
             }
         }

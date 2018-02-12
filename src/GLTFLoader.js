@@ -4,6 +4,8 @@
  * @author Tony Parisi / http://www.tonyparisi.com/
  * @author Takahiro / https://github.com/takahirox
  * @author Don McCurdy / https://www.donmccurdy.com
+ * 
+ * modified by shrekshao for glavatar use
  */
 module.exports = function( THREE ) {
 	return ( function () {
@@ -1641,34 +1643,51 @@ module.exports = function( THREE ) {
 			var pending = [];
 
 			if ( materialExtensions[ EXTENSIONS.GL_AVATAR ] ) {
-				pending.push( parser.assignTexture( materialParams, 'bodyIdLUT', materialExtensions[ EXTENSIONS.GL_AVATAR ].bodyIdLUT ) );
 
+				// bodyIdLUT
+				if (materialExtensions[ EXTENSIONS.GL_AVATAR ].bodyIdLUT !== undefined) {
+					pending.push( parser.assignTexture( materialParams, 'bodyIdLUT', materialExtensions[ EXTENSIONS.GL_AVATAR ].bodyIdLUT ) );
+					var visibilityLUTArray = gl_avatar.visibility;
+					// // TODO: change to 16x16 to save mem
+					var texture = gl_avatar.visibilityLUT = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 256, 1, THREE.AlphaFormat, THREE.UnsignedByteType); 
+					// var texture = gl_avatar.visibilityLUT = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, GL_AVATAR_VISIBILITY_LENGTH, 1, THREE.AlphaFormat, THREE.UnsignedByteType); 
+					// var texture = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 16, 16, THREE.AlphaFormat, THREE.UnsignedByteType); 
+					texture.magFilter = THREE.NearestFilter;
+					texture.minFilter = THREE.NearestFilter;
+					texture.wrapS = THREE.ClampToEdgeWrapping;
+					texture.wrapT = THREE.ClampToEdgeWrapping;
+					texture.needsUpdate = true;
+				}
 				
-
-				// var visibilityLUTArray = new Uint8Array( 16 * 16 );
-				// var visibilityLUTArray = new Uint8Array( 60 );
-
-				var visibilityLUTArray = gl_avatar.visibility;
-
-
-				// for (var i = 0, len = visibilityLUTArray.length; i < len; i++) {
-				// 	visibilityLUTArray[i] *= 255;
-				// 	// visibilityLUTArray[i] = 0;
-				// }
-
- 
-
-				// // TODO: change to 16x16 to save mem
-				var texture = gl_avatar.visibilityLUT = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 256, 1, THREE.AlphaFormat, THREE.UnsignedByteType); 
-				// var texture = gl_avatar.visibilityLUT = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, GL_AVATAR_VISIBILITY_LENGTH, 1, THREE.AlphaFormat, THREE.UnsignedByteType); 
-				// var texture = materialParams['visibilityLUT'] = new THREE.DataTexture(visibilityLUTArray, 16, 16, THREE.AlphaFormat, THREE.UnsignedByteType); 
-				texture.magFilter = THREE.NearestFilter;
-				texture.minFilter = THREE.NearestFilter;
-				texture.wrapS = THREE.ClampToEdgeWrapping;
-				texture.wrapT = THREE.ClampToEdgeWrapping;
-				texture.needsUpdate = true;
 			}
 
+			// if ( materialExtensions[ EXTENSIONS.GL_AVATAR ] && materialExtensions[ EXTENSIONS.GL_AVATAR ].toon !== undefined) {
+			// 	// toon shading material test
+			// 	var toon = materialExtensions[ EXTENSIONS.GL_AVATAR ].toon;
+			// 	console.log(toon);
+			// 	// materialType = THREE.MeshPhongMaterial;
+			// 	materialType = THREE.MeshToonMaterial;
+
+			// 	materialParams.color = new THREE.Color( 1.0, 1.0, 1.0 );
+			// 	materialParams.opacity = 1.0;
+
+			// 	if ( Array.isArray( toon.color ) ) {
+
+			// 		var array = toon.color;
+
+			// 		materialParams.color.fromArray( array );
+			// 		materialParams.opacity = array[ 3 ];
+
+			// 	}
+
+			// 	if ( toon.map !== undefined ) {
+
+			// 		pending.push( parser.assignTexture( materialParams, 'map', toon.map.index ) );
+
+			// 	}
+				
+			// }
+			// else if ( materialExtensions[ EXTENSIONS.KHR_MATERIALS_COMMON ] ) {
 			if ( materialExtensions[ EXTENSIONS.KHR_MATERIALS_COMMON ] ) {
 
 				var khcExtension = extensions[ EXTENSIONS.KHR_MATERIALS_COMMON ];

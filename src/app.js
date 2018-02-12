@@ -335,76 +335,7 @@ var sceneList = [
         addLights:true,
         extensions: ['glTF', 'glTF-pbrSpecularGlossiness', 'glTF-Binary'],
         addEnvMap: true
-    },
-    {
-        name : 'MetalRoughSpheres (PBR)', url : './models/gltf/MetalRoughSpheres/%s/MetalRoughSpheres.gltf',
-        cameraPos: new THREE.Vector3(2, 1, 15),
-        objectRotation: new THREE.Euler(0, 0, 0),
-        addLights:true,
-        extensions: ['glTF', 'glTF-Embedded'],
-        addEnvMap: true
-    },
-    {
-        name : 'Duck', url : './models/gltf/Duck/%s/Duck.gltf',
-        cameraPos: new THREE.Vector3(0, 3, 5),
-        addLights:true,
-        addGround:true,
-        shadows:true,
-        extensions: ['glTF', 'glTF-Embedded', 'glTF-MaterialsCommon', 'glTF-pbrSpecularGlossiness', 'glTF-Binary']
-    },
-    {
-        name : "Monster", url : "./models/gltf/Monster/%s/Monster.gltf",
-        cameraPos: new THREE.Vector3(30, 10, 70),
-        objectScale: new THREE.Vector3(0.4, 0.4, 0.4),
-        objectPosition: new THREE.Vector3(2, 1, 0),
-        objectRotation: new THREE.Euler(0, - 3 * Math.PI / 4, 0),
-        animationTime: 3,
-        addLights:true,
-        shadows:true,
-        addGround:true,
-        // TODO: 'glTF-MaterialsCommon'
-        extensions: ['glTF', 'glTF-Embedded', 'glTF-pbrSpecularGlossiness', 'glTF-Binary']
-    },
-    {
-        name : "Cesium Man", url : "./models/gltf/CesiumMan/%s/CesiumMan.gltf",
-         cameraPos: new THREE.Vector3(0, 3, 10),
-         objectRotation: new THREE.Euler(0, 0, 0),
-         addLights:true,
-         addGround:true,
-         shadows:true,
-        // TODO: 'glTF-MaterialsCommon'
-        extensions: ['glTF', 'glTF-Embedded', 'glTF-pbrSpecularGlossiness', 'glTF-Binary']
-    },
-    {
-        name : "Cesium Milk Truck",
-        url : "./models/gltf/CesiumMilkTruck/%s/CesiumMilkTruck.gltf",
-        cameraPos: new THREE.Vector3(0, 3, 10),
-        addLights:true,
-        addGround:true,
-        shadows:true,
-        // TODO: 'glTF-MaterialsCommon'
-        extensions: ['glTF', 'glTF-Embedded', 'glTF-pbrSpecularGlossiness', 'glTF-Binary']
-    },
-    {
-        name : "Rigged Simple",
-        url : "./models/gltf/RiggedSimple/%s/RiggedSimple.gltf",
-        cameraPos: new THREE.Vector3(0, 5, 15),
-        objectRotation: new THREE.Euler(0, 90, 0),
-        addLights:true,
-        shadows:true,
-        // TODO: 'glTF-MaterialsCommon'
-        extensions: ['glTF', 'glTF-Embedded', 'glTF-pbrSpecularGlossiness', 'glTF-Binary']
-    },
-    {
-        name : 'Outlined Box',
-        url : './models/gltf/OutlinedBox/OutlinedBox.gltf',
-        cameraPos: new THREE.Vector3(0, 5, 15),
-        objectScale: new THREE.Vector3(0.01, 0.01, 0.01),
-        objectRotation: new THREE.Euler(0, 90, 0),
-        addLights:true,
-        shadows:true,
-        extensions: ['glTF']
-    },
+    }
 ];
 function buildSceneList() {
     var elt = document.getElementById('scenes_list');

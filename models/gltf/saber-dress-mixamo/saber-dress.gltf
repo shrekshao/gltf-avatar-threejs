@@ -7709,7 +7709,20 @@
                 "metallicFactor": 0,
                 "roughnessFactor": 1
             },
-            "doubleSided": true
+            "doubleSided": true,
+            "extensions": {
+                "gl_avatar": {
+                    "toon": {
+                        "color": [
+                            1, 1, 1, 1
+                        ],
+                        "map": {
+                            "index": 0,
+                            "texCoord": 0
+                        }
+                    }
+                }
+            }
         }
     ],
     "meshes": [
