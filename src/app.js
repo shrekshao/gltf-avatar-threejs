@@ -326,7 +326,8 @@ var sceneList = [
         objectRotation: new THREE.Euler(0, 180, 0),
         addLights: true,
         extensions: ['glTF', 'gl_avatar'],
-        addEnvMap: true
+        // addEnvMap: true
+        addEnvMap: false
     },
     {
         name : 'BoomBox (PBR)', url : './models/gltf/BoomBox/%s/BoomBox.gltf',
