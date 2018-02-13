@@ -117,8 +117,10 @@ function initScene(index) {
         var directionalLight = new THREE.DirectionalLight( 0xdddddd );
         directionalLight.position.set( 0, 0, 1 ).normalize();
         scene.add( directionalLight );
+
         spot1   = new THREE.SpotLight( 0xffffff, 1 );
-        spot1.position.set( 10, 20, 10 );
+        // spot1.position.set( 10, 20, 10 );
+        spot1.position.set( 10, 20, -30 );
         spot1.angle = 0.25;
         spot1.distance = 1024;
         spot1.penumbra = 0.75;
@@ -495,23 +497,12 @@ button.onclick = function() {
 };
 
 button = cb.appendChild(document.createElement('button'));
-button.innerHTML = 'maid-dress';
+button.innerHTML = 'mixamo-lily-hair';
 button.onclick = function() {
     // test
     // load maid dress
     loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
-    loader.load( 'models/gltf/saber-maid-dress/saber-maid-dress.gltf', skinOnload, undefined, function ( error ) {
-        console.error( error );
-    } );
-};
-
-button = cb.appendChild(document.createElement('button'));
-button.innerHTML = 'maid-hair';
-button.onclick = function() {
-    // test
-    // load maid dress
-    loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
-    loader.load( 'models/gltf/saber-maid-hair/saber-maid-hair.gltf', skinOnload, undefined, function ( error ) {
+    loader.load( 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf', skinOnload, undefined, function ( error ) {
         console.error( error );
     } );
 };

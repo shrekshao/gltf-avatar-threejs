@@ -287,17 +287,20 @@ module.exports = function( THREE ) {
 			// put linkedSkeletons to skins
 			json.skins = json.skins || [];
 
-			var ls;
-			for (var i = 0, len = extension.linkedSkeletons.length; i < len; i++) {
-				ls = extension.linkedSkeletons[i];
-				json.skins.push({
-					// 'gl_avatar': json.skins.length,
-					'gl_avatar': 1,
-					'skeleton': ls.skeleton,
-					'inverseBindMatrices': ls.inverseBindMatrices,
-					'joints': []
-				});
+			if (extension.linkedSkeletons) {
+				var ls;
+				for (var i = 0, len = extension.linkedSkeletons.length; i < len; i++) {
+					ls = extension.linkedSkeletons[i];
+					json.skins.push({
+						// 'gl_avatar': json.skins.length,
+						'gl_avatar': 1,
+						'skeleton': ls.skeleton,
+						'inverseBindMatrices': ls.inverseBindMatrices,
+						'joints': []
+					});
+				}
 			}
+			
 			
 
 		}

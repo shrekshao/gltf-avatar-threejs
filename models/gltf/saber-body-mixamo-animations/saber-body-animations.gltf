@@ -7,6 +7,10 @@
             "type": "skeleton",
             "skins": {
                 "main": 2
+            },
+            "nodes": {
+                "head": 8,
+                "head-end": 9
             }
         }
     },
