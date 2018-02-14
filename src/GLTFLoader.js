@@ -2591,10 +2591,20 @@ module.exports = function( THREE ) {
 											if (gl_avatar.type === "skin") {
 												if (skinEntry.root) {
 													console.log('set parent to node');
+
 													skinEntry.root.add(bones[0]);
 													// skinEntry.root.children.push(bones[0]);
 													skinEntry.root.updateMatrixWorld(true);
 													bones[0].updateMatrixWorld(true);
+
+
+													// var g = new THREE.Group();
+													// for (var i = 0, l = bones.Length; i < l; i++) {
+													// 	g.add(bones[i]);
+													// }
+													// skinEntry.root.add(g);
+
+
 													console.log(skinEntry.root);
 												}
 											}
@@ -2667,6 +2677,10 @@ module.exports = function( THREE ) {
 
 							}
 
+							if (gl_avatar_linked_skeleton) {
+								console.log( gl_avatar_linked_skeleton.nodes.head.children );
+							}
+							
 							_node.add( clonedgroup );
 
 						}

@@ -9,6 +9,48 @@ THREE.GLTFLoader = require('./GLTFLoader.js')(THREE);
 //     this.updateMatrixWorld( true );
 // };
 
+THREE.Skeleton.prototype.update = ( function () {
+
+    var offsetMatrix = new THREE.Matrix4();
+    var identityMatrix = new THREE.Matrix4();
+
+    return function update() {
+
+        var bones = this.bones;
+        var boneInverses = this.boneInverses;
+        var boneMatrices = this.boneMatrices;
+        var boneTexture = this.boneTexture;
+
+        // flatten bone matrices to array
+
+        for ( var i = 0, il = bones.length; i < il; i ++ ) {
+
+            // compute the offset between the current and the original transform
+
+            var matrix = bones[ i ] ? bones[ i ].matrixWorld : identityMatrix;
+
+            offsetMatrix.multiplyMatrices( matrix, boneInverses[ i ] );
+            offsetMatrix.toArray( boneMatrices, i * 16 );
+
+
+            // test
+            if (bones[i]) {
+                bones[i].updateMatrixWorld(true);
+            }
+            
+        }
+
+        if ( boneTexture !== undefined ) {
+
+            boneTexture.needsUpdate = true;
+
+        }
+
+    };
+
+} )();
+
+
 // import '../css/style.css';
 
 // var renderer	= new THREE.WebGLRenderer({
