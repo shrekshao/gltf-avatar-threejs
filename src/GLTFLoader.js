@@ -276,6 +276,18 @@ module.exports = function( THREE ) {
 				this.skinId2SkeletonKey[skins[s]] = s;
 			}
 
+
+			// reference to node
+			// may attach sub skeleton
+			var nodes = extension.nodes || {};
+			this.nodes = {};
+			this.nodeId2Name = {};
+			// store id first, will get replaced with real object in parser
+			for (var n in nodes) {
+				this.nodes[n] = nodes[n];
+				this.nodeId2Name[ nodes[n] ] = n;
+			}
+
 		} else {
 			// must be skin (clothes)
 			if (!gl_avatar_skeletons) {
@@ -2651,6 +2663,16 @@ module.exports = function( THREE ) {
 						var lights = extensions[ EXTENSIONS.KHR_LIGHTS ].lights;
 						_node.add( lights[ node.extensions[ EXTENSIONS.KHR_LIGHTS ].light ] );
 
+					}
+
+
+					// for skeleton, add special node to node map for future reference
+					if ( gl_avatar ) {
+						if (gl_avatar.type === "skeleton") {
+							if (nodeId in gl_avatar.nodeId2Name) {
+								gl_avatar.nodes[gl_avatar.nodeId2Name[nodeId]] = _node;
+							}
+						}
 					}
 
 					return _node;
