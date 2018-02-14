@@ -2195,6 +2195,9 @@ module.exports = function( THREE ) {
 
 			return _each( json.skins, function ( skin ) {
 
+				// console.log(skin);
+
+				// this is for linked skeleton 
 				// here gl_avatar also indicates id in newly created skins array
 				if (skin.gl_avatar !== undefined) {
 					var _skinlink = {
@@ -2208,6 +2211,17 @@ module.exports = function( THREE ) {
 					joints: skin.joints,
 					inverseBindMatrices: dependencies.accessors[ skin.inverseBindMatrices ]
 				};
+
+				// clothes file sub skeleton extensions
+				if (skin.extensions && skin.extensions.gl_avatar) {
+					var gla = skin.extensions.gl_avatar;
+					if (gla.root) {
+						// console.log(gl_avatar_linked_skeleton);
+						var root = gl_avatar_linked_skeleton.nodes[gla.root];
+						_skin.root = root;
+						// console.log(root);
+					}
+				}
 
 				return _skin;
 
@@ -2572,6 +2586,19 @@ module.exports = function( THREE ) {
 										// this can be modified in the furture
 										// to enable pure skeleton file without skin?
 										skeleton = new THREE.Skeleton( bones, boneInverses );
+
+										if (gl_avatar) {
+											if (gl_avatar.type === "skin") {
+												if (skinEntry.root) {
+													console.log('set parent to node');
+													skinEntry.root.add(bones[0]);
+													// skinEntry.root.children.push(bones[0]);
+													skinEntry.root.updateMatrixWorld(true);
+													bones[0].updateMatrixWorld(true);
+													console.log(skinEntry.root);
+												}
+											}
+										}
 									}
 
 									
@@ -2583,8 +2610,6 @@ module.exports = function( THREE ) {
 											}
 
 
-
-											
 
 											// if there's manually created full joint list skin
 											// enter this branch

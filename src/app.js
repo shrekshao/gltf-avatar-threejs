@@ -2,6 +2,13 @@ var THREE = require('three');
 THREE.OrbitControls = require('three-orbit-controls')(THREE);
 THREE.GLTFLoader = require('./GLTFLoader.js')(THREE);
 
+
+// var update = THREE.Bone.prototype.update;
+// THREE.Bone.prototype.update = function(parentSkinMatrix, forceUpdate) {
+//     update.call(this, parentSkinMatrix, forceUpdate);
+//     this.updateMatrixWorld( true );
+// };
+
 // import '../css/style.css';
 
 // var renderer	= new THREE.WebGLRenderer({
@@ -449,7 +456,7 @@ function skinOnload(data) {
     // status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";
 
     // temp
-    console.log(gltf_skeleton);
+    // console.log(gltf_skeleton);
 
 
     object.traverse( function ( node ) {

@@ -1,64 +1,40 @@
 {
     "accessors": [
         {
-            "bufferView": 23,
+            "bufferView": 21,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 62,
             "max": [
-                0.00596215296536684,
-                0,
-                0.31863799691200256,
-                0.9476339817047119
-            ],
-            "min": [
-                0.0059621259570121765,
-                -0.020595785230398178,
-                0.3186379373073578,
-                0.9476339817047119
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.007_TPose_1",
-            "type": "VEC4"
-        },
-        {
-            "bufferView": 2,
-            "byteOffset": 16,
-            "componentType": 5126,
-            "count": 1080,
-            "max": [
-                1.0089991092681885,
                 1.0,
-                0.4837481677532196,
-                0.2581891417503357
+                1.0000001192092896,
+                1.0000001192092896
             ],
             "min": [
-                0.709053635597229,
-                0.5017304420471191,
-                0.0,
-                0.0
+                1.0,
+                1.0000001192092896,
+                1.0000001192092896
             ],
-            "name": "accessor_buffer_F005_Saber_Lily.001_skin_1",
-            "type": "VEC4"
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.001_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
         },
         {
-            "bufferView": 26,
+            "bufferView": 36,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 62,
             "max": [
-                9.604185606804094e-07,
-                0.9149166941642761,
-                0,
-                0
+                1.0000001192092896,
+                1.0000001192092896,
+                1.000000238418579
             ],
             "min": [
-                9.283535860049597e-07,
-                0.9149166345596313,
-                -0.40364283323287964,
-                -2.158015149689163e-06
+                0.9999998211860657,
+                0.9999997615814209,
+                0.9999999403953552
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.003_TPose_1",
-            "type": "VEC4"
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.009_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
         },
         {
             "bufferView": 22,
@@ -66,35 +42,399 @@
             "componentType": 5126,
             "count": 62,
             "max": [
-                6.258487701416016e-06,
-                9.567152976989746,
-                1.17570161819458e-05
+                1.8596649169921875e-05,
+                10.180709838867188,
+                4.76837158203125e-06
             ],
             "min": [
-                -9.059906005859375e-06,
-                9.567107200622559,
-                -6.94766640663147e-06
+                -1.621246337890625e-05,
+                10.180678367614746,
+                -3.814697265625e-06
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.007_TPose_0",
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.005_end_Character|Character|HairWind|Character|HairWind_0",
             "type": "VEC3"
         },
         {
-            "bufferView": 31,
+            "bufferView": 52,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 11,
+            "max": [
+                1.0327227115631104,
+                0.6239191293716431,
+                0.07009133696556091,
+                0,
+                0.4582105278968811,
+                0.6303824186325073,
+                0.987378716468811,
+                0,
+                0.024118104949593544,
+                0.2575811445713043,
+                1.031016230583191,
+                0,
+                88.88380432128906,
+                154.89089965820312,
+                35.49950408935547,
+                1.0
+            ],
+            "min": [
+                -1.0327227115631104,
+                -0.4529816508293152,
+                -0.06907801330089569,
+                0.0,
+                -0.6249785423278809,
+                -1.0302014350891113,
+                -0.13357895612716675,
+                0.0,
+                -0.006990982219576836,
+                -0.9873788356781006,
+                -0.641240656375885,
+                0.0,
+                -65.19131469726562,
+                -101.52924346923828,
+                -151.9137725830078,
+                1.0
+            ],
+            "name": "accessor_buffer_IBM_F005_Saber_Lily_Hair_skin_0",
+            "type": "MAT4"
+        },
+        {
+            "bufferView": 23,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 62,
             "max": [
-                6.258487701416016e-06,
-                9.567152976989746,
-                1.17570161819458e-05
+                0,
+                1.1175870895385742e-08,
+                1.0305666364729404e-07,
+                1.0
             ],
             "min": [
-                -9.059906005859375e-06,
-                9.567107200622559,
-                -6.94766640663147e-06
+                -3.958120942115784e-08,
+                0.0,
+                3.4691765904426575e-08,
+                1.0
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.004_TPose_0",
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.005_end_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 13,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                5.602836608886719e-06,
+                9.995529174804688,
+                8.657574653625488e-06
+            ],
+            "min": [
+                -7.510185241699219e-06,
+                9.995469093322754,
+                -4.5746564865112305e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.005_Character|Character|HairWind|Character|HairWind_0",
             "type": "VEC3"
+        },
+        {
+            "bufferView": 12,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999998807907104,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.008_end_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.0728836059570312e-05,
+                8.844691276550293,
+                3.978610038757324e-06
+            ],
+            "min": [
+                -1.5974044799804688e-05,
+                8.844643592834473,
+                -2.8014183044433594e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.006_end_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1080,
+            "max": [
+                11.374273300170898,
+                158.2478485107422,
+                15.2084321975708
+            ],
+            "min": [
+                -13.54065227508545,
+                119.9798355102539,
+                -19.69013023376465
+            ],
+            "name": "accessor_buffer_F005_Saber_Lily.001_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 26,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0,
+                0.20759835839271545,
+                0.024650610983371735,
+                0.8324498534202576
+            ],
+            "min": [
+                -0.6156790852546692,
+                -1.3738021950506635e-13,
+                -1.3197442270962423e-12,
+                0.7879970073699951
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.002_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 40,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                6.079673767089844e-06,
+                9.995529174804688,
+                8.64267349243164e-06
+            ],
+            "min": [
+                -7.510185241699219e-06,
+                9.995469093322754,
+                -4.589557647705078e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.006_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 29,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "min": [
+                0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "name": "accessor_buffer_Character_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 9,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999998211860657,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.010_end_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 33,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.0,
+                1.000000238418579,
+                1.000000238418579
+            ],
+            "min": [
+                0.9999997615814209,
+                0.9999999403953552,
+                1.0
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.004_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 43,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                2.002716064453125e-05,
+                11.638476371765137,
+                2.86102294921875e-06
+            ],
+            "min": [
+                -1.1920928955078125e-06,
+                11.638422012329102,
+                -1.1514872312545776e-05
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.010_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 47,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0,
+                7.087368913971659e-08,
+                0,
+                0.594531774520874
+            ],
+            "min": [
+                -0.8040720820426941,
+                7.087368913971659e-08,
+                -9.585283322621763e-08,
+                0.594531774520874
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 48,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.0,
+                0.9999999403953552,
+                0.9999998807907104
+            ],
+            "min": [
+                1.0,
+                0.9999999403953552,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5121,
+            "count": 1080,
+            "max": [
+                10,
+                10,
+                10,
+                9
+            ],
+            "min": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "name": "accessor_buffer_F005_Saber_Lily.001_skin_0",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 25,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0,
+                5.284303665161133,
+                3.814697265625e-06
+            ],
+            "min": [
+                -1.9590834510196942e-10,
+                5.284303665161133,
+                3.814697265625e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.002_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 24,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999998211860657,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.005_end_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 35,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0,
+                0.022547733038663864,
+                0,
+                0.9914775490760803
+            ],
+            "min": [
+                -0.018711822107434273,
+                -0.0052304682321846485,
+                -0.19755667448043823,
+                0.9800057411193848
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.009_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 17,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                9.441317843084107e-07,
+                0.9149165749549866,
+                0,
+                0
+            ],
+            "min": [
+                9.15693192382605e-07,
+                0.9149165749549866,
+                -0.4036429822444916,
+                -2.1982234557071934e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.003_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
         },
         {
             "bufferView": 0,
@@ -113,215 +453,39 @@
             "type": "VEC2"
         },
         {
-            "bufferView": 18,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "min": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.001_TPose_2",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 40,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 11,
-            "max": [
-                1.0327228307724,
-                0.6239194273948669,
-                0.07009228318929672,
-                0,
-                0.45821139216423035,
-                0.6303823590278625,
-                0.9873788952827454,
-                0,
-                0.024118319153785706,
-                0.25758105516433716,
-                1.031016230583191,
-                0,
-                88.88390350341797,
-                154.89097595214844,
-                35.49942398071289,
-                1.0
-            ],
-            "min": [
-                -1.0327228307724,
-                -0.45298177003860474,
-                -0.06908084452152252,
-                0.0,
-                -0.6249793171882629,
-                -1.0302022695541382,
-                -0.13357846438884735,
-                0.0,
-                -0.006984924431890249,
-                -0.9873788952827454,
-                -0.6412415504455566,
-                0.0,
-                -65.19147491455078,
-                -101.52922058105469,
-                -151.9137725830078,
-                1.0
-            ],
-            "name": "accessor_buffer_IBM_F005_Saber_Lily_Hair_skin_0",
-            "type": "MAT4"
-        },
-        {
-            "bufferView": 9,
+            "bufferView": 45,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 62,
             "max": [
                 1.000000238418579,
-                1.0000001192092896,
-                1.0000001192092896
+                1.0,
+                1.000000238418579
             ],
             "min": [
-                0.9999998807907104,
-                0.9999998211860657,
-                0.9999998807907104
+                0.9999997615814209,
+                0.9999996423721313,
+                0.9999997615814209
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.010_TPose_2",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 10,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                6.258487701416016e-06,
-                9.567152976989746,
-                1.17570161819458e-05
-            ],
-            "min": [
-                -9.059906005859375e-06,
-                9.567107200622559,
-                -6.94766640663147e-06
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.009_TPose_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 4,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0.007442474365234375,
-                158.2762451171875,
-                0
-            ],
-            "min": [
-                0.007442474365234375,
-                158.2762451171875,
-                -2.002939224243164
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot_TPose_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 38,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0.061574794352054596,
-                0.10702257603406906,
-                0.07948087155818939,
-                0.9976732730865479
-            ],
-            "min": [
-                0.054283544421195984,
-                0.0024963712785393,
-                -0.18669065833091736,
-                0.9750621914863586
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.006_TPose_1",
-            "type": "VEC4"
-        },
-        {
-            "bufferView": 20,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0.08966919034719467,
-                0,
-                0,
-                0.9779457449913025
-            ],
-            "min": [
-                0.028938794508576393,
-                -0.028004247695207596,
-                -0.340877503156662,
-                0.9393647909164429
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.005_TPose_1",
-            "type": "VEC4"
-        },
-        {
-            "bufferView": 8,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0.1777481883764267,
-                0.08338163793087006,
-                0.11977347731590271,
-                0.9835643768310547
-            ],
-            "min": [
-                0.1705721914768219,
-                0.004591171629726887,
-                -0.18070201575756073,
-                0.965038537979126
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.010_TPose_1",
-            "type": "VEC4"
-        },
-        {
-            "bufferView": 16,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0,
-                5.756406307220459,
-                0
-            ],
-            "min": [
-                -3.878426468872931e-10,
-                5.756406307220459,
-                -5.4818528951727785e-06
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.001_TPose_0",
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.010_Character|Character|HairWind|Character|HairWind_2",
             "type": "VEC3"
         },
         {
             "bufferView": 0,
-            "byteOffset": 0,
+            "byteOffset": 12,
             "componentType": 5126,
             "count": 1080,
             "max": [
-                11.374273300170898,
-                158.24786376953125,
-                15.2084321975708
+                0.9985730648040771,
+                0.9978241920471191,
+                0.999619722366333
             ],
             "min": [
-                -13.540653228759766,
-                119.97993469238281,
-                -19.69013214111328
+                -0.9999706745147705,
+                -0.9921464920043945,
+                -0.9973178505897522
             ],
-            "name": "accessor_buffer_F005_Saber_Lily.001_0",
+            "name": "accessor_buffer_F005_Saber_Lily.001_1",
             "type": "VEC3"
         },
         {
@@ -331,33 +495,239 @@
             "count": 62,
             "max": [
                 0,
-                5.284308433532715,
-                7.62939453125e-06
+                0,
+                0
             ],
             "min": [
-                -5.776276124080937e-10,
-                5.284308433532715,
-                7.62939453125e-06
+                0.0,
+                0.0,
+                0.0
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.002_TPose_0",
+            "name": "accessor_buffer_Character_Character|Character|HairWind|Character|HairWind_0",
             "type": "VEC3"
         },
         {
-            "bufferView": 36,
+            "bufferView": 5,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 62,
             "max": [
-                0.009999999776482582,
-                0.009999999776482582,
-                0.009999999776482582
+                0,
+                3.026798367500305e-08,
+                0,
+                1.0
             ],
             "min": [
-                0.009999999776482582,
-                0.009999999776482582,
-                0.009999999776482582
+                -5.5995776904183003e-08,
+                2.1886076950750066e-08,
+                -1.9051367416977882e-07,
+                1.0
             ],
-            "name": "accessor_buffer_Character_TPose_2",
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.006_end_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999998807907104,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.006_end_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 38,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0.005962503142654896,
+                0,
+                0.3186379373073578,
+                0.9476341009140015
+            ],
+            "min": [
+                0.005962476134300232,
+                -0.020594973117113113,
+                0.3186378479003906,
+                0.9476340413093567
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.007_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 8,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                8.626376768461341e-08,
+                0,
+                6.830669718738136e-08,
+                1.0
+            ],
+            "min": [
+                6.426125764846802e-08,
+                -1.1497177183628082e-06,
+                1.312582664780848e-08,
+                1.0
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.010_end_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 19,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0,
+                5.756405830383301,
+                6.9159132181084715e-06
+            ],
+            "min": [
+                -8.526512829121202e-10,
+                5.756405830383301,
+                6.9159132181084715e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.001_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 15,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.0000001192092896,
+                0.9999998807907104,
+                1.0
+            ],
+            "min": [
+                0.9999997019767761,
+                0.9999995231628418,
+                0.9999996423721313
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.005_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 37,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                7.62939453125e-06,
+                9.567142486572266,
+                7.271766662597656e-06
+            ],
+            "min": [
+                -9.775161743164062e-06,
+                9.567079544067383,
+                -4.082918167114258e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.007_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 18,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.0000001192092896,
+                1.0000003576278687,
+                1.0
+            ],
+            "min": [
+                0.9999998211860657,
+                1.0,
+                0.9999997019767761
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.003_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 11,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0,
+                7.003545761108398e-07,
+                0,
+                1.0
+            ],
+            "min": [
+                -4.9418311220961186e-08,
+                6.975606083869934e-07,
+                -3.786990703247284e-07,
+                1.0
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.008_end_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 16,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                5.841255187988281e-06,
+                5.5141401290893555,
+                2.5529414415359497e-05
+            ],
+            "min": [
+                -7.987022399902344e-06,
+                5.514109134674072,
+                -2.9742717742919922e-05
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.003_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 46,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0.007442473899573088,
+                158.2762451171875,
+                0
+            ],
+            "min": [
+                0.007442473899573088,
+                158.2762451171875,
+                -2.0029349327087402
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 51,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.0000001192092896,
+                1.0,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999997615814209,
+                0.9999996423721313,
+                0.9999997615814209
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.008_Character|Character|HairWind|Character|HairWind_2",
             "type": "VEC3"
         },
         {
@@ -375,242 +745,18 @@
             "type": "SCALAR"
         },
         {
-            "bufferView": 17,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0.45911869406700134,
-                0,
-                5.4730715959294685e-08,
-                0.8883749842643738
-            ],
-            "min": [
-                0.45911869406700134,
-                -1.059022949334576e-07,
-                5.4730715959294685e-08,
-                0.8883749842643738
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.001_TPose_1",
-            "type": "VEC4"
-        },
-        {
-            "bufferView": 21,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                1.0000001192092896,
-                1.0000001192092896,
-                1.0000001192092896
-            ],
-            "min": [
-                0.9999998807907104,
-                0.9999998211860657,
-                0.9999998807907104
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.005_TPose_2",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 7,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                1.4066696166992188e-05,
-                11.638484954833984,
-                5.159527063369751e-06
-            ],
-            "min": [
-                -1.52587890625e-05,
-                11.638419151306152,
-                -8.940696716308594e-06
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.010_TPose_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 37,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                7.748603820800781e-06,
-                9.995513916015625,
-                5.97536563873291e-06
-            ],
-            "min": [
-                -4.887580871582031e-06,
-                9.995463371276855,
-                -8.121132850646973e-06
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.006_TPose_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 29,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0,
-                0.20761263370513916,
-                0.024529442191123962,
-                0.8325013518333435
-            ],
-            "min": [
-                -0.6156793236732483,
-                -4.1018433766769336e-13,
-                3.2048604221845967e-13,
-                0.7879968285560608
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.002_TPose_1",
-            "type": "VEC4"
-        },
-        {
-            "bufferView": 5,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0,
-                7.087368203428923e-08,
-                0,
-                0.5945316553115845
-            ],
-            "min": [
-                -0.8040722012519836,
-                7.087368203428923e-08,
-                -9.58528545424997e-08,
-                0.5945316553115845
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot_TPose_1",
-            "type": "VEC4"
-        },
-        {
-            "bufferView": 27,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                1.0000001192092896,
-                0.9999998211860657,
-                1.0000001192092896
-            ],
-            "min": [
-                0.9999998807907104,
-                0.9999995231628418,
-                0.9999998807907104
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.003_TPose_2",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 11,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0,
-                0.022548183798789978,
-                0,
-                0.9914775490760803
-            ],
-            "min": [
-                -0.018712101504206657,
-                -0.005229122471064329,
-                -0.19772383570671082,
-                0.9799718260765076
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.009_TPose_1",
-            "type": "VEC4"
-        },
-        {
             "bufferView": 3,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 62,
             "max": [
-                2.033333333333336
+                2.541666666666666
             ],
             "min": [
                 0
             ],
-            "name": "accessor_buffer_TPose_time_0",
+            "name": "accessor_buffer_Character|Character|HairWind|Character|HairWind_time_0",
             "type": "SCALAR"
-        },
-        {
-            "bufferView": 15,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                1.0,
-                1.0000001192092896,
-                1.0000001192092896
-            ],
-            "min": [
-                0.9999997615814209,
-                0.9999998211860657,
-                0.9999998211860657
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.008_TPose_2",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 34,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0,
-                0,
-                0
-            ],
-            "min": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "name": "accessor_buffer_Character_TPose_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 19,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                7.748603820800781e-06,
-                9.995513916015625,
-                5.97536563873291e-06
-            ],
-            "min": [
-                -4.887580871582031e-06,
-                9.995463371276855,
-                -8.121132850646973e-06
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.005_TPose_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 25,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                5.4836273193359375e-06,
-                5.514136791229248,
-                1.7937272787094116e-05
-            ],
-            "min": [
-                -9.179115295410156e-06,
-                5.514100074768066,
-                -2.485513687133789e-05
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.003_TPose_0",
-            "type": "VEC3"
         },
         {
             "bufferView": 39,
@@ -618,53 +764,57 @@
             "componentType": 5126,
             "count": 62,
             "max": [
-                1.0,
-                1.000000238418579,
-                1.000000238418579
-            ],
-            "min": [
-                0.9999998211860657,
-                0.9999998211860657,
-                0.9999998211860657
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.006_TPose_2",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 24,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                1.0,
                 1.0000001192092896,
-                1.0000001192092896
+                1.0000001192092896,
+                1.0
             ],
             "min": [
                 0.9999998211860657,
                 0.9999999403953552,
-                0.9999998807907104
+                0.9999998211860657
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.007_TPose_2",
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.007_Character|Character|HairWind|Character|HairWind_2",
             "type": "VEC3"
         },
         {
-            "bufferView": 33,
+            "bufferView": 20,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 62,
             "max": [
-                1.0,
-                1.0,
-                1.0000001192092896
+                0.4591187536716461,
+                0,
+                5.47319203292318e-08,
+                0.888374924659729
             ],
             "min": [
-                0.9999998807907104,
-                0.9999997615814209,
-                0.9999999403953552
+                0.4591187536716461,
+                -1.0590319732273201e-07,
+                5.47319203292318e-08,
+                0.888374924659729
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.004_TPose_2",
-            "type": "VEC3"
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.001_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 50,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0.07771865278482437,
+                0,
+                0,
+                0.9631495475769043
+            ],
+            "min": [
+                0.07771861553192139,
+                -0.0021692458540201187,
+                -0.2574845254421234,
+                0.9631494283676147
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.008_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
         },
         {
             "bufferView": 14,
@@ -672,130 +822,36 @@
             "componentType": 5126,
             "count": 62,
             "max": [
-                0.07771791517734528,
+                0.08967003226280212,
                 0,
                 0,
-                0.96314936876297
+                0.9779517650604248
             ],
             "min": [
-                0.07771788537502289,
-                -0.00217115948908031,
-                -0.25748521089553833,
-                0.9631493091583252
+                0.02894958294928074,
+                -0.028009315952658653,
+                -0.34051457047462463,
+                0.9394921660423279
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.008_TPose_1",
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.005_Character|Character|HairWind|Character|HairWind_1",
             "type": "VEC4"
         },
         {
-            "bufferView": 12,
+            "bufferView": 10,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 62,
             "max": [
-                1.0000001192092896,
-                1.0000001192092896,
-                1.0000001192092896
+                7.62939453125e-06,
+                6.656620979309082,
+                3.9711594581604e-06
             ],
             "min": [
-                0.9999998211860657,
-                0.9999997615814209,
-                0.9999997615814209
+                -4.231929779052734e-06,
+                6.656558990478516,
+                -3.3676624298095703e-06
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.009_TPose_2",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 35,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                0.7071068286895752,
-                0,
-                0,
-                0.7071067094802856
-            ],
-            "min": [
-                0.7071068286895752,
-                0.0,
-                0.0,
-                0.7071067094802856
-            ],
-            "name": "accessor_buffer_Character_TPose_1",
-            "type": "VEC4"
-        },
-        {
-            "bufferView": 13,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                1.9147992134094238e-05,
-                10.731939315795898,
-                4.455447196960449e-06
-            ],
-            "min": [
-                -1.1613592505455017e-05,
-                10.73188304901123,
-                -8.203089237213135e-06
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.008_TPose_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 30,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 62,
-            "max": [
-                1.0,
-                1.0000001192092896,
-                1.0000001192092896
-            ],
-            "min": [
-                0.9999999403953552,
-                1.0,
-                0.9999999403953552
-            ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.002_TPose_2",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 2,
-            "byteOffset": 0,
-            "componentType": 5121,
-            "count": 1080,
-            "max": [
-                49,
-                51,
-                51,
-                51
-            ],
-            "min": [
-                18,
-                18,
-                0,
-                0
-            ],
-            "name": "accessor_buffer_F005_Saber_Lily.001_skin_0",
-            "type": "VEC4"
-        },
-        {
-            "bufferView": 0,
-            "byteOffset": 12,
-            "componentType": 5126,
-            "count": 1080,
-            "max": [
-                0.9985656142234802,
-                0.9978026747703552,
-                0.999603271484375
-            ],
-            "min": [
-                -0.999969482421875,
-                -0.9921262264251709,
-                -0.9973143935203552
-            ],
-            "name": "accessor_buffer_F005_Saber_Lily.001_1",
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.008_end_Character|Character|HairWind|Character|HairWind_0",
             "type": "VEC3"
         },
         {
@@ -804,37 +860,205 @@
             "componentType": 5126,
             "count": 62,
             "max": [
-                0.06845228374004364,
+                0.06845266371965408,
                 0,
-                0.059765804558992386,
+                0.059766195714473724,
                 0.9958541393280029
             ],
             "min": [
-                0.06845225393772125,
-                -0.004112198483198881,
-                0.0597657710313797,
+                0.0684526264667511,
+                -0.004106619860976934,
+                0.05976615101099014,
                 0.9958541393280029
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot.004_TPose_1",
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.004_Character|Character|HairWind|Character|HairWind_1",
             "type": "VEC4"
         },
         {
-            "bufferView": 6,
+            "bufferView": 42,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.000000238418579,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999998211860657,
+                0.9999998211860657,
+                0.9999997615814209
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.006_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 41,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0.0615803487598896,
+                0.10701712220907211,
+                0.07948122918605804,
+                0.9976734519004822
+            ],
+            "min": [
+                0.054284241050481796,
+                0.002490919316187501,
+                -0.1866903156042099,
+                0.9750627279281616
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.006_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 27,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 62,
             "max": [
                 1.0,
-                0.9999999403953552,
-                0.9999999403953552
+                1.000000238418579,
+                1.0
             ],
             "min": [
-                1.0,
                 0.9999999403953552,
-                0.9999999403953552
+                1.0,
+                0.9999998807907104
             ],
-            "name": "accessor_buffer_mixamorig:PonyTailRoot_TPose_2",
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.002_Character|Character|HairWind|Character|HairWind_2",
             "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 16,
+            "componentType": 5126,
+            "count": 1080,
+            "max": [
+                1.0,
+                0.4837481677532196,
+                0.18697375059127808,
+                0.04054027423262596
+            ],
+            "min": [
+                0.5017304420471191,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "accessor_buffer_F005_Saber_Lily.001_skin_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                2.158433198928833e-05,
+                7.795601844787598,
+                5.364418029785156e-06
+            ],
+            "min": [
+                -1.9758939743041992e-05,
+                7.795560836791992,
+                -4.872679710388184e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.010_end_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 30,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "min": [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "name": "accessor_buffer_Character_Character|Character|HairWind|Character|HairWind_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 31,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                7.62939453125e-06,
+                9.567142486572266,
+                7.271766662597656e-06
+            ],
+            "min": [
+                -9.775161743164062e-06,
+                9.567079544067383,
+                -4.082918167114258e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.004_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 34,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                7.62939453125e-06,
+                9.567142486572266,
+                7.271766662597656e-06
+            ],
+            "min": [
+                -9.775161743164062e-06,
+                9.567079544067383,
+                -4.082918167114258e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.009_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 49,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                1.7647864297032356e-05,
+                10.731948852539062,
+                5.9194862842559814e-06
+            ],
+            "min": [
+                -1.5690922737121582e-05,
+                10.73189926147461,
+                -7.1302056312561035e-06
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.008_Character|Character|HairWind|Character|HairWind_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 44,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 62,
+            "max": [
+                0.17788612842559814,
+                0.0833565890789032,
+                0.11977327615022659,
+                0.9835643172264099
+            ],
+            "min": [
+                0.17060880362987518,
+                0.004593174904584885,
+                -0.1807146817445755,
+                0.9650131464004517
+            ],
+            "name": "accessor_buffer_mixamorig:PonyTailRoot.010_Character|Character|HairWind|Character|HairWind_1",
+            "type": "VEC4"
         }
     ],
     "animations": [
@@ -843,189 +1067,189 @@
                 {
                     "sampler": 0,
                     "target": {
-                        "node": 2,
+                        "node": 10,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 1,
                     "target": {
-                        "node": 2,
+                        "node": 10,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 2,
                     "target": {
-                        "node": 2,
+                        "node": 10,
                         "path": "scale"
                     }
                 },
                 {
                     "sampler": 3,
                     "target": {
-                        "node": 12,
+                        "node": 16,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 4,
                     "target": {
-                        "node": 12,
+                        "node": 16,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 5,
                     "target": {
-                        "node": 12,
+                        "node": 16,
                         "path": "scale"
                     }
                 },
                 {
                     "sampler": 6,
                     "target": {
-                        "node": 11,
+                        "node": 13,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 7,
                     "target": {
-                        "node": 11,
+                        "node": 13,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 8,
                     "target": {
-                        "node": 11,
+                        "node": 13,
                         "path": "scale"
                     }
                 },
                 {
                     "sampler": 9,
                     "target": {
-                        "node": 10,
+                        "node": 7,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 10,
                     "target": {
-                        "node": 10,
+                        "node": 7,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 11,
                     "target": {
-                        "node": 10,
+                        "node": 7,
                         "path": "scale"
                     }
                 },
                 {
                     "sampler": 12,
                     "target": {
-                        "node": 3,
+                        "node": 5,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 13,
                     "target": {
-                        "node": 3,
+                        "node": 5,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 14,
                     "target": {
-                        "node": 3,
+                        "node": 5,
                         "path": "scale"
                     }
                 },
                 {
                     "sampler": 15,
                     "target": {
-                        "node": 7,
+                        "node": 3,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 16,
                     "target": {
-                        "node": 7,
+                        "node": 3,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 17,
                     "target": {
-                        "node": 7,
+                        "node": 3,
                         "path": "scale"
                     }
                 },
                 {
                     "sampler": 18,
                     "target": {
-                        "node": 9,
+                        "node": 8,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 19,
                     "target": {
-                        "node": 9,
+                        "node": 8,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 20,
                     "target": {
-                        "node": 9,
+                        "node": 8,
                         "path": "scale"
                     }
                 },
                 {
                     "sampler": 21,
                     "target": {
-                        "node": 5,
+                        "node": 4,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 22,
                     "target": {
-                        "node": 5,
+                        "node": 4,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 23,
                     "target": {
-                        "node": 5,
+                        "node": 4,
                         "path": "scale"
                     }
                 },
                 {
                     "sampler": 24,
                     "target": {
-                        "node": 4,
+                        "node": 0,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 25,
                     "target": {
-                        "node": 4,
+                        "node": 0,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 26,
                     "target": {
-                        "node": 4,
+                        "node": 0,
                         "path": "scale"
                     }
                 },
@@ -1053,227 +1277,371 @@
                 {
                     "sampler": 30,
                     "target": {
-                        "node": 0,
+                        "node": 14,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 31,
                     "target": {
-                        "node": 0,
+                        "node": 14,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 32,
                     "target": {
-                        "node": 0,
+                        "node": 14,
                         "path": "scale"
                     }
                 },
                 {
                     "sampler": 33,
                     "target": {
-                        "node": 8,
+                        "node": 11,
                         "path": "translation"
                     }
                 },
                 {
                     "sampler": 34,
                     "target": {
-                        "node": 8,
+                        "node": 11,
                         "path": "rotation"
                     }
                 },
                 {
                     "sampler": 35,
                     "target": {
-                        "node": 8,
+                        "node": 11,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 36,
+                    "target": {
+                        "node": 9,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 37,
+                    "target": {
+                        "node": 9,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 38,
+                    "target": {
+                        "node": 9,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 39,
+                    "target": {
+                        "node": 15,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 40,
+                    "target": {
+                        "node": 15,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 41,
+                    "target": {
+                        "node": 15,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 42,
+                    "target": {
+                        "node": 2,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 43,
+                    "target": {
+                        "node": 2,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 44,
+                    "target": {
+                        "node": 2,
+                        "path": "scale"
+                    }
+                },
+                {
+                    "sampler": 45,
+                    "target": {
+                        "node": 12,
+                        "path": "translation"
+                    }
+                },
+                {
+                    "sampler": 46,
+                    "target": {
+                        "node": 12,
+                        "path": "rotation"
+                    }
+                },
+                {
+                    "sampler": 47,
+                    "target": {
+                        "node": 12,
                         "path": "scale"
                     }
                 }
             ],
-            "name": "TPose",
+            "name": "Character|Character|HairWind|Character|HairWind",
             "samplers": [
                 {
-                    "input": 27,
+                    "input": 39,
                     "interpolation": "LINEAR",
-                    "output": 10
+                    "output": 7
                 },
                 {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 24
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 43
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 21
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 13
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 8
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 9
-                },
-                {
-                    "input": 27,
+                    "input": 39,
                     "interpolation": "LINEAR",
                     "output": 26
                 },
                 {
-                    "input": 27,
+                    "input": 39,
                     "interpolation": "LINEAR",
-                    "output": 36
+                    "output": 27
                 },
                 {
-                    "input": 27,
+                    "input": 39,
                     "interpolation": "LINEAR",
-                    "output": 38
+                    "output": 50
                 },
                 {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 35
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 28
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 14
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 19
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 6
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 30
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 12
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 20
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 3
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 0
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 33
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 31
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 2
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 25
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 16
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 23
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 39
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 4
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 42
-                },
-                {
-                    "input": 27,
-                    "interpolation": "LINEAR",
-                    "output": 34
-                },
-                {
-                    "input": 27,
+                    "input": 39,
                     "interpolation": "LINEAR",
                     "output": 29
                 },
                 {
-                    "input": 27,
+                    "input": 39,
                     "interpolation": "LINEAR",
-                    "output": 37
+                    "output": 12
                 },
                 {
-                    "input": 27,
+                    "input": 39,
                     "interpolation": "LINEAR",
-                    "output": 17
+                    "output": 44
                 },
                 {
-                    "input": 27,
+                    "input": 39,
                     "interpolation": "LINEAR",
-                    "output": 22
+                    "output": 34
                 },
                 {
-                    "input": 27,
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 6
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 5
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 43
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 31
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 35
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 21
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 33
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 30
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 41
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 0
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 2
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 4
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 19
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 18
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 9
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 48
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 25
+                },
+                {
+                    "input": 39,
                     "interpolation": "LINEAR",
                     "output": 11
                 },
                 {
-                    "input": 27,
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 51
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 52
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 45
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 13
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 53
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 20
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 1
+                },
+                {
+                    "input": 39,
                     "interpolation": "LINEAR",
                     "output": 32
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 28
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 40
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 10
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 47
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 46
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 14
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 55
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 23
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 36
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 15
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 16
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 54
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 42
+                },
+                {
+                    "input": 39,
+                    "interpolation": "LINEAR",
+                    "output": 37
                 }
             ]
         }
@@ -1310,271 +1678,355 @@
             "byteLength": 248,
             "byteOffset": 78600,
             "byteStride": 4,
-            "name": "bufferView_buffer_TPose_time_0"
+            "name": "bufferView_buffer_Character|Character|HairWind|Character|HairWind_time_0"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 78848,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.006_end_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 79592,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.006_end_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 80584,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.006_end_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 81328,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.010_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.010_end_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 82072,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.010_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.010_end_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 83064,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.010_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.010_end_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 83808,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.009_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.008_end_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 84552,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.009_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.008_end_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 85544,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.009_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.008_end_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 86288,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.008_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.005_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 87032,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.008_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.005_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 88024,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.008_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.005_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 88768,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.001_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.003_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 89512,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.001_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.003_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 90504,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.001_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.003_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 91248,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.005_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.001_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 91992,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.005_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.001_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 92984,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.005_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.001_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 93728,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.007_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.005_end_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 94472,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.007_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.005_end_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 95464,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.007_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.005_end_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 96208,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.003_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.002_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 96952,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.003_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.002_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 97944,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.003_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.002_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 98688,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.002_TPose_0"
+            "name": "bufferView_buffer_Character_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 99432,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.002_TPose_1"
+            "name": "bufferView_buffer_Character_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 100424,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.002_TPose_2"
+            "name": "bufferView_buffer_Character_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 101168,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.004_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.004_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 101912,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.004_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.004_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 102904,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.004_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.004_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 103648,
             "byteStride": 12,
-            "name": "bufferView_buffer_Character_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.009_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 104392,
             "byteStride": 16,
-            "name": "bufferView_buffer_Character_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.009_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 105384,
             "byteStride": 12,
-            "name": "bufferView_buffer_Character_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.009_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 106128,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.006_TPose_0"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.007_Character|Character|HairWind|Character|HairWind_0"
         },
         {
             "buffer": 0,
             "byteLength": 992,
             "byteOffset": 106872,
             "byteStride": 16,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.006_TPose_1"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.007_Character|Character|HairWind|Character|HairWind_1"
         },
         {
             "buffer": 0,
             "byteLength": 744,
             "byteOffset": 107864,
             "byteStride": 12,
-            "name": "bufferView_buffer_mixamorig:PonyTailRoot.006_TPose_2"
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.007_Character|Character|HairWind|Character|HairWind_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 744,
+            "byteOffset": 108608,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.006_Character|Character|HairWind|Character|HairWind_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 992,
+            "byteOffset": 109352,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.006_Character|Character|HairWind|Character|HairWind_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 744,
+            "byteOffset": 110344,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.006_Character|Character|HairWind|Character|HairWind_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 744,
+            "byteOffset": 111088,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.010_Character|Character|HairWind|Character|HairWind_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 992,
+            "byteOffset": 111832,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.010_Character|Character|HairWind|Character|HairWind_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 744,
+            "byteOffset": 112824,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.010_Character|Character|HairWind|Character|HairWind_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 744,
+            "byteOffset": 113568,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot_Character|Character|HairWind|Character|HairWind_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 992,
+            "byteOffset": 114312,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot_Character|Character|HairWind|Character|HairWind_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 744,
+            "byteOffset": 115304,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot_Character|Character|HairWind|Character|HairWind_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 744,
+            "byteOffset": 116048,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.008_Character|Character|HairWind|Character|HairWind_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 992,
+            "byteOffset": 116792,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.008_Character|Character|HairWind|Character|HairWind_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 744,
+            "byteOffset": 117784,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:PonyTailRoot.008_Character|Character|HairWind|Character|HairWind_2"
         },
         {
             "buffer": 0,
             "byteLength": 704,
-            "byteOffset": 108608,
+            "byteOffset": 118528,
             "byteStride": 64,
             "name": "bufferView_buffer_IBM_F005_Saber_Lily_Hair_skin_0"
         }
     ],
     "buffers": [
         {
-            "byteLength": 109312,
+            "byteLength": 119232,
             "name": "buffer_combined",
             "uri": "buffer_combined.bin"
         }
@@ -1598,7 +2050,7 @@
                     0.64000004529953,
                     0.64000004529953,
                     0.64000004529953,
-                    1.0
+                    0.0
                 ],
                 "baseColorTexture": {
                     "index": 0,
@@ -1606,7 +2058,8 @@
                 },
                 "metallicFactor": 0.0,
                 "roughnessFactor": 1.0
-            }
+            },
+            "doubleSided": true
         }
     ],
     "meshes": [
@@ -1615,13 +2068,13 @@
             "primitives": [
                 {
                     "attributes": {
-                        "JOINTS_0": 40,
-                        "NORMAL": 41,
-                        "POSITION": 15,
-                        "TEXCOORD_0": 5,
-                        "WEIGHTS_0": 1
+                        "JOINTS_0": 17,
+                        "NORMAL": 24,
+                        "POSITION": 8,
+                        "TEXCOORD_0": 22,
+                        "WEIGHTS_0": 49
                     },
-                    "indices": 18,
+                    "indices": 38,
                     "material": 0,
                     "mode": 4
                 }
@@ -1656,42 +2109,42 @@
             "mesh": 0,
             "name": "F005_Saber_Lily_Hair",
             "rotation": [
-                6.8802851531878616e-15,
-                0.0,
-                0.0,
+                3.310074436768673e-09,
+                -9.180956233971471e-16,
+                -7.524711207590722e-15,
                 1.0
             ],
             "scale": [
-                1.0327228307724,
-                1.0327228307724,
-                1.0327228307724
+                1.0327227115631104,
+                1.0327227115631104,
+                1.0327225923538208
             ],
             "skin": 0,
             "translation": [
-                0.0,
-                0.0,
-                0.0
+                3.5029959488674933e-10,
+                9.777553714229725e-06,
+                1.8731819864115096e-06
             ]
         },
         {
             "children": [
                 3
             ],
-            "name": "Armature_mixamorig:PonyTailRoot",
+            "name": "Character_mixamorig:PonyTailRoot",
             "rotation": [
-                -0.8040722012519836,
-                7.087368203428923e-08,
-                -9.58528545424997e-08,
-                0.5945316553115845
+                -0.8040720820426941,
+                7.087368913971659e-08,
+                -9.585284033164498e-08,
+                0.594531774520874
             ],
             "scale": [
                 1.0,
                 0.9999999403953552,
-                0.9999999403953552
+                0.9999998807907104
             ],
             "translation": [
                 0.007442474365234375,
-                158.2762451171875,
+                158.27622985839844,
                 -2.002939224243164
             ]
         },
@@ -1699,12 +2152,12 @@
             "children": [
                 4
             ],
-            "name": "Armature_mixamorig:PonyTailRoot.001",
+            "name": "Character_mixamorig:PonyTailRoot.001",
             "rotation": [
-                0.45911869406700134,
-                -1.059022949334576e-07,
-                5.4730715959294685e-08,
-                0.8883749842643738
+                0.4591187536716461,
+                -1.0590319021730465e-07,
+                5.473191677651812e-08,
+                0.888374924659729
             ],
             "scale": [
                 1.0,
@@ -1712,128 +2165,131 @@
                 1.0
             ],
             "translation": [
-                -3.878426468872931e-10,
-                5.756406307220459,
-                -5.4818528951727785e-06
+                -1.3110934560245369e-09,
+                5.756401538848877,
+                -2.384008257649839e-05
             ]
         },
         {
             "children": [
                 5
             ],
-            "name": "Armature_mixamorig:PonyTailRoot.002",
+            "name": "Character_mixamorig:PonyTailRoot.002",
             "rotation": [
-                -0.6156793236732483,
-                -4.1018433766769336e-13,
-                3.2048604221845967e-13,
-                0.7879968285560608
+                -0.6156789660453796,
+                -1.4015798612855568e-13,
+                -1.3238103105037147e-12,
+                0.7879971265792847
             ],
             "scale": [
                 1.0,
-                1.0000001192092896,
+                1.0,
                 1.0
             ],
             "translation": [
-                -5.776276124080937e-10,
-                5.284308433532715,
-                7.62939453125e-06
+                2.6468943703505943e-10,
+                5.284313201904297,
+                3.4332275390625e-05
             ]
         },
         {
             "children": [
                 6,
-                9,
-                11
+                11,
+                14
             ],
-            "name": "Armature_mixamorig:PonyTailRoot.003",
+            "name": "Character_mixamorig:PonyTailRoot.003",
             "rotation": [
-                9.447156230635301e-07,
-                0.9149166345596313,
-                -0.40364283323287964,
+                9.447426805309078e-07,
+                0.9149165749549866,
+                -0.4036429822444916,
                 -2.14133888221113e-06
             ],
             "scale": [
                 1.0,
-                0.9999996423721313,
+                1.000000238418579,
                 1.0
             ],
             "translation": [
-                2.4420077071596324e-11,
-                5.514111518859863,
-                5.7220458984375e-06
+                -1.970337226708807e-10,
+                5.514124870300293,
+                1.621246337890625e-05
             ]
         },
         {
             "children": [
                 7,
-                8
+                9
             ],
-            "name": "Armature_mixamorig:PonyTailRoot.004",
+            "name": "Character_mixamorig:PonyTailRoot.004",
             "rotation": [
-                0.06845226883888245,
-                -0.004112194292247295,
-                0.059765785932540894,
+                0.06845264136791229,
+                -0.004106616601347923,
+                0.05976616218686104,
                 0.9958541393280029
-            ],
-            "scale": [
-                1.0,
-                0.9999998807907104,
-                1.0
-            ],
-            "translation": [
-                1.2005330063402653e-10,
-                9.567121505737305,
-                -3.4837839280044136e-08
-            ]
-        },
-        {
-            "name": "Armature_mixamorig:PonyTailRoot.005",
-            "rotation": [
-                0.08966919034719467,
-                -0.028004247695207596,
-                -0.18654102087020874,
-                0.9779457449913025
-            ],
-            "scale": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "translation": [
-                2.8312206268310547e-07,
-                9.99549388885498,
-                8.049196367210243e-07
-            ]
-        },
-        {
-            "name": "Armature_mixamorig:PonyTailRoot.006",
-            "rotation": [
-                0.061574794352054596,
-                0.0024963712785393,
-                0.07948087155818939,
-                0.9949297308921814
             ],
             "scale": [
                 0.9999999403953552,
                 1.0,
-                0.9999999403953552
+                1.0
             ],
             "translation": [
-                2.8312206268310547e-07,
-                9.99549388885498,
-                8.049196367210243e-07
+                4.656612873077393e-10,
+                9.567120552062988,
+                -3.48380133630144e-08
+            ]
+        },
+        {
+            "children": [
+                8
+            ],
+            "name": "Character_mixamorig:PonyTailRoot.005",
+            "rotation": [
+                0.08967003226280212,
+                -0.028009314090013504,
+                -0.18654046952724457,
+                0.9779455065727234
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999998807907104,
+                1.0
+            ],
+            "translation": [
+                3.7550926208496094e-06,
+                9.995545387268066,
+                -4.092289600521326e-06
+            ]
+        },
+        {
+            "name": "Character_mixamorig:PonyTailRoot.005_end",
+            "rotation": [
+                -2.8870999813079834e-08,
+                4.3655745685100555e-09,
+                5.133915692567825e-08,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                -3.330409526824951e-06,
+                10.18071174621582,
+                -1.9297003746032715e-06
             ]
         },
         {
             "children": [
                 10
             ],
-            "name": "Armature_mixamorig:PonyTailRoot.007",
+            "name": "Character_mixamorig:PonyTailRoot.006",
             "rotation": [
-                0.005962139926850796,
-                -0.02059578150510788,
-                0.31863799691200256,
-                0.9476339817047119
+                0.061574019491672516,
+                0.002490919316187501,
+                0.07948122918605804,
+                0.994929850101471
             ],
             "scale": [
                 1.0,
@@ -1841,59 +2297,81 @@
                 1.0
             ],
             "translation": [
-                1.2005330063402653e-10,
-                9.567121505737305,
-                -3.4837839280044136e-08
+                3.7550926208496094e-06,
+                9.995545387268066,
+                -4.092289600521326e-06
             ]
         },
         {
-            "name": "Armature_mixamorig:PonyTailRoot.008",
+            "name": "Character_mixamorig:PonyTailRoot.006_end",
             "rotation": [
-                0.07771791517734528,
-                -0.0021711564622819424,
-                -0.25748518109321594,
-                0.96314936876297
+                -4.4703490686970326e-08,
+                2.421439049271612e-08,
+                -1.6903506150356407e-07,
+                1.0
             ],
             "scale": [
                 0.9999999403953552,
-                1.0,
+                0.9999999403953552,
                 0.9999999403953552
             ],
             "translation": [
-                -1.1613592505455017e-05,
-                10.731904029846191,
-                9.238719940185547e-07
+                -7.152557373046875e-07,
+                8.844663619995117,
+                2.428889274597168e-06
             ]
         },
         {
             "children": [
                 12
             ],
-            "name": "Armature_mixamorig:PonyTailRoot.009",
+            "name": "Character_mixamorig:PonyTailRoot.007",
             "rotation": [
-                -0.03680828586220741,
-                0.025807883590459824,
-                -0.22637613117694855,
-                0.9730020761489868
+                0.005962477531284094,
+                -0.02059495821595192,
+                0.318637877702713,
+                0.9476340413093567
             ],
             "scale": [
-                0.9999999403953552,
+                1.0,
                 1.0,
                 1.0
             ],
             "translation": [
-                1.2005330063402653e-10,
-                9.567121505737305,
-                -3.4837839280044136e-08
+                4.656612873077393e-10,
+                9.567120552062988,
+                -3.48380133630144e-08
             ]
         },
         {
-            "name": "Armature_mixamorig:PonyTailRoot.010",
+            "children": [
+                13
+            ],
+            "name": "Character_mixamorig:PonyTailRoot.008",
             "rotation": [
-                0.17768298089504242,
-                0.004591173958033323,
-                0.11977347731590271,
-                0.976760983467102
+                0.07771863043308258,
+                -0.0021692474838346243,
+                -0.257484495639801,
+                0.9631494879722595
+            ],
+            "scale": [
+                0.9999998807907104,
+                0.9999999403953552,
+                0.9999998807907104
+            ],
+            "translation": [
+                -3.417953848838806e-07,
+                10.731927871704102,
+                2.0116567611694336e-06
+            ]
+        },
+        {
+            "name": "Character_mixamorig:PonyTailRoot.008_end",
+            "rotation": [
+                -4.6333298087120056e-08,
+                6.984919309616089e-07,
+                -3.7356221582740545e-07,
+                1.0
             ],
             "scale": [
                 1.0,
@@ -1901,9 +2379,72 @@
                 1.0
             ],
             "translation": [
-                -1.6033649444580078e-05,
-                11.638468742370605,
-                3.993511199951172e-06
+                -7.972121238708496e-07,
+                6.6565961837768555,
+                -2.5331974029541016e-07
+            ]
+        },
+        {
+            "children": [
+                15
+            ],
+            "name": "Character_mixamorig:PonyTailRoot.009",
+            "rotation": [
+                -0.036807890981435776,
+                0.025806572288274765,
+                -0.226376011967659,
+                0.9730021357536316
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0000001192092896
+            ],
+            "translation": [
+                4.656612873077393e-10,
+                9.567120552062988,
+                -3.48380133630144e-08
+            ]
+        },
+        {
+            "children": [
+                16
+            ],
+            "name": "Character_mixamorig:PonyTailRoot.010",
+            "rotation": [
+                0.17768266797065735,
+                0.004593169782310724,
+                0.119773268699646,
+                0.9767611026763916
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                -2.4944543838500977e-05,
+                11.63850212097168,
+                1.3113021850585938e-06
+            ]
+        },
+        {
+            "name": "Character_mixamorig:PonyTailRoot.010_end",
+            "rotation": [
+                6.891787052154541e-08,
+                -1.1484953574836254e-06,
+                2.4767359718680382e-08,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                0.9999999403953552,
+                1.0000001192092896
+            ],
+            "translation": [
+                1.8775463104248047e-06,
+                7.795577526092529,
+                -1.1324882507324219e-06
             ]
         },
         {
@@ -1946,17 +2487,17 @@
                     0.05087608844041824,
                     0.05087608844041824
                 ],
-                "frames_per_second": 30
+                "frames_per_second": 24
             },
             "name": "Scene",
             "nodes": [
-                13
+                17
             ]
         }
     ],
     "skins": [
         {
-            "inverseBindMatrices": 7,
+            "inverseBindMatrices": 3,
             "joints": [
                 2,
                 3,
@@ -1964,22 +2505,24 @@
                 5,
                 6,
                 7,
-                8,
                 9,
-                10,
                 11,
-                12
+                12,
+                14,
+                15
             ],
             "name": "F005_Saber_Lily_Hair",
             "skeleton": 2,
             "extensions": {
-                "root": "head"
+                "gl_avatar": {
+                    "root": "head"
+                }
             }
         }
     ],
     "textures": [
         {
-            "name": "Texture.004",
+            "name": "saber-lily-hair.png",
             "sampler": 0,
             "source": 0
         }
