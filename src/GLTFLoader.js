@@ -8,6 +8,7 @@
  * modified by shrekshao for glavatar use
  */
 module.exports = function( THREE ) {
+	
 	return ( function () {
 
 	function GLTFLoader( manager ) {
@@ -2582,20 +2583,29 @@ module.exports = function( THREE ) {
 										}
 										
 
-										// gl_avatar: only referenced skeleton will be created
-										// this can be modified in the furture
-										// to enable pure skeleton file without skin?
-										skeleton = new THREE.Skeleton( bones, boneInverses );
+										
 
 										if (gl_avatar) {
 											if (gl_avatar.type === "skin") {
 												if (skinEntry.root) {
 													console.log('set parent to node');
 
-													skinEntry.root.add(bones[0]);
-													// skinEntry.root.children.push(bones[0]);
-													skinEntry.root.updateMatrixWorld(true);
-													bones[0].updateMatrixWorld(true);
+													// assume bones[0] is root(skeleton) of this skeleton (joint list)
+													bones[0].gl_avatar_base_root = skinEntry.root;
+
+
+													// skinEntry.root.add(bones[0]);
+													// // skinEntry.root.children.push(bones[0]);
+													// skinEntry.root.updateMatrixWorld(true);
+													// bones[0].updateMatrixWorld(true);
+
+
+													// skinEntry.root.children = new Proxy(skinEntry.root.children, {
+													// 	deleteProperty: function(target, property) {
+													// 	  console.log("Deleted %s", property);
+													// 	  return true;
+													// 	}
+													//   });
 
 
 													// var g = new THREE.Group();
@@ -2605,10 +2615,18 @@ module.exports = function( THREE ) {
 													// skinEntry.root.add(g);
 
 
-													console.log(skinEntry.root);
+													// console.log(skinEntry.root);
 												}
 											}
 										}
+
+
+										// gl_avatar: only referenced skeleton will be created
+										// this can be modified in the furture
+										// to enable pure skeleton file without skin?
+										skeleton = new THREE.Skeleton( bones, boneInverses );
+
+
 									}
 
 									
@@ -2729,6 +2747,8 @@ module.exports = function( THREE ) {
 		var json = this.json;
 		var extensions = this.extensions;
 
+		var gl_avatar = this.extensions[EXTENSIONS.GL_AVATAR];
+
 		// scene node hierachy builder
 
 		function buildNodeHierachy( nodeId, parentObject, allNodes ) {
@@ -2785,6 +2805,26 @@ module.exports = function( THREE ) {
 					}
 
 				} );
+
+
+				// gl avatar sub skeleton link test
+				
+				if (gl_avatar && gl_avatar.type === "skin") {
+					for ( var i = 0, l = dependencies.nodes.length; i < l; i ++ ) {
+
+						var node = dependencies.nodes[ i ];
+						if (node.gl_avatar_base_root) {
+							node.gl_avatar_base_root.add(node);
+							console.log(node.gl_avatar_base_root.children);
+						}
+	
+					}
+				}
+				
+
+
+
+
 
 				// Ambient lighting, if present, is always attached to the scene root.
 				if ( scene.extensions

@@ -107,8 +107,6 @@ THREE.Skeleton.prototype.update = ( function () {
 
 var gltf_skeleton = null;
 
-
-
 var orbitControls = null;
 var container, camera, scene, renderer, loader;
 var cameraIndex = 0;
@@ -227,6 +225,7 @@ function initScene(index) {
     loader.load( url, function(data) {
         gltf = data;
         gltf_skeleton = gltf;
+
 
         console.log(gltf);
 
@@ -504,6 +503,26 @@ function skinOnload(data) {
     object.traverse( function ( node ) {
         if ( node.isMesh ) node.castShadow = true;
     } );
+
+
+    var animations = gltf.animations;
+    if ( animations && animations.length ) {
+        var mixer = new THREE.AnimationMixer( object );
+        for ( var i = 0; i < animations.length; i ++ ) {
+            var animation = animations[ i ];
+
+            mixer.clipAction( animation ).play();
+        }
+        // removeOptions(animationSelector);
+        // mixer = new THREE.AnimationMixer( object );
+        // for ( var i = 0; i < animations.length; i ++ ) {
+        //     var animation = animations[ i ];
+        //     var o = document.createElement('option');
+        //     o.text = animation.name || i;
+        //     animationSelector.add(o);
+        // }
+        // playAnimation(0);
+    }
 
 
     // console.log(gltf.extensions.gl_avatar);
