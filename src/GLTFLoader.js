@@ -2585,38 +2585,12 @@ module.exports = function( THREE ) {
 
 										
 
-										if (gl_avatar) {
-											if (gl_avatar.type === "skin") {
-												if (skinEntry.root) {
-													console.log('set parent to node');
+										if (gl_avatar && gl_avatar.type === "skin") {
+											if (skinEntry.root) {
+												// sub_skeleton module
 
-													// assume bones[0] is root(skeleton) of this skeleton (joint list)
-													bones[0].gl_avatar_base_root = skinEntry.root;
-
-
-													// skinEntry.root.add(bones[0]);
-													// // skinEntry.root.children.push(bones[0]);
-													// skinEntry.root.updateMatrixWorld(true);
-													// bones[0].updateMatrixWorld(true);
-
-
-													// skinEntry.root.children = new Proxy(skinEntry.root.children, {
-													// 	deleteProperty: function(target, property) {
-													// 	  console.log("Deleted %s", property);
-													// 	  return true;
-													// 	}
-													//   });
-
-
-													// var g = new THREE.Group();
-													// for (var i = 0, l = bones.Length; i < l; i++) {
-													// 	g.add(bones[i]);
-													// }
-													// skinEntry.root.add(g);
-
-
-													// console.log(skinEntry.root);
-												}
+												// assume bones[0] is root(skeleton) of this skeleton (joint list)
+												bones[0].gl_avatar_base_root = skinEntry.root;
 											}
 										}
 
@@ -2815,7 +2789,7 @@ module.exports = function( THREE ) {
 						var node = dependencies.nodes[ i ];
 						if (node.gl_avatar_base_root) {
 							node.gl_avatar_base_root.add(node);
-							console.log(node.gl_avatar_base_root.children);
+							// console.log(node.gl_avatar_base_root.children);
 						}
 	
 					}

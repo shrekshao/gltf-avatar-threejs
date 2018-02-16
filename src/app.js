@@ -117,6 +117,7 @@ var gltf = null;
 var mixer = null;
 var clock = new THREE.Clock();
 
+var skinMixers = [];
 
 var animationSelector = document.getElementById('animations_list');
 animationSelector.onchange = function() {
@@ -127,6 +128,8 @@ function playAnimation(index) {
     // gltf_skeleton.animations[index].play();
     mixer.stopAllAction();
     mixer.clipAction( gltf_skeleton.animations[index] ).play();
+
+    
 }
 
 function removeOptions(selectbox)
@@ -324,6 +327,11 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame( animate );
     if (mixer) mixer.update(clock.getDelta());
+
+    for (var i = 0, len = skinMixers.length; i < len; i++) {
+        // skinMixers[i].update(clock.getDelta());
+    }
+
     if (cameraIndex == 0)
         orbitControls.update();
     render();
@@ -476,6 +484,8 @@ function cleanup() {
     if (!loader || !mixer)
         return;
     mixer.stopAllAction();
+
+    // TODO: clean skinMixers
 }
 
 document.getElementById('scenes_list').onchange = selectScene;
@@ -513,6 +523,8 @@ function skinOnload(data) {
 
             mixer.clipAction( animation ).play();
         }
+
+        skinMixers.push(mixer);
         // removeOptions(animationSelector);
         // mixer = new THREE.AnimationMixer( object );
         // for ( var i = 0; i < animations.length; i ++ ) {
