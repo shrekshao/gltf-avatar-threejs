@@ -326,14 +326,24 @@ function onWindowResize() {
 }
 function animate() {
     requestAnimationFrame( animate );
-    if (mixer) mixer.update(clock.getDelta());
+
+    var delta = clock.getDelta();
+
+    if (mixer) mixer.update(delta);
 
     for (var i = 0, len = skinMixers.length; i < len; i++) {
-        // skinMixers[i].update(clock.getDelta());
+        skinMixers[i].update(delta);
     }
+
+    // sub_skeleton_scene.
+    if (gltf_skeleton) {
+        gltf_skeleton.gl_avatar.nodes['head-end'].updateMatrixWorld(true);
+    }
+    
 
     if (cameraIndex == 0)
         orbitControls.update();
+
     render();
 }
 function render() {
@@ -501,6 +511,8 @@ document.getElementById('animation_toggle').onclick = toggleAnimations;
 onload();
 
 
+var sub_skeleton_scene;
+
 function skinOnload(data) {
     gltf = data;
     var object = gltf.scene;
@@ -508,6 +520,13 @@ function skinOnload(data) {
 
     // temp
     // console.log(gltf_skeleton);
+
+
+    // // temp test
+    // gltf_skeleton.gl_avatar.nodes['head-end'].add(object);
+    // gltf_skeleton.gl_avatar.nodes['head-end'].add(object.children[0]);
+    sub_skeleton_scene = object;
+
 
 
     object.traverse( function ( node ) {
@@ -542,6 +561,7 @@ function skinOnload(data) {
     // create skinned mesh and .bind(skeleotn)
 
     scene.add( object );
+
     onWindowResize();
 }
 
