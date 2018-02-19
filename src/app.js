@@ -526,30 +526,22 @@ function skinOnload(data) {
         if ( node.isMesh ) node.castShadow = true;
     } );
 
-    var optionalSceneRoot = gltf_skeleton.gl_avatar.nodes['head-end'].children[0];  // point to lily hair root try
+    // var optionalSceneRoot = gltf_skeleton.gl_avatar.nodes['head-end'].children[0];  // point to lily hair root try
 
 
     var animations = gltf.animations;
     if ( animations && animations.length ) {
         // var mixer = new THREE.AnimationMixer( object );
-        var mixer = new THREE.AnimationMixer( optionalSceneRoot );
+        // var mixer = new THREE.AnimationMixer( optionalSceneRoot );
+        var mixer = new THREE.AnimationMixer( object.attach_child || object );
+
         for ( var i = 0; i < animations.length; i ++ ) {
             var animation = animations[ i ];
-
             // mixer.clipAction( animation, optionalSceneRoot ).play();
             mixer.clipAction( animation ).play();
         }
 
         skinMixers.push(mixer);
-        // removeOptions(animationSelector);
-        // mixer = new THREE.AnimationMixer( object );
-        // for ( var i = 0; i < animations.length; i ++ ) {
-        //     var animation = animations[ i ];
-        //     var o = document.createElement('option');
-        //     o.text = animation.name || i;
-        //     animationSelector.add(o);
-        // }
-        // playAnimation(0);
     }
 
     scene.add(object);

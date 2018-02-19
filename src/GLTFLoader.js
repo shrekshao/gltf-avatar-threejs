@@ -2803,24 +2803,16 @@ module.exports = function( THREE ) {
 
 						var node = dependencies.nodes[ i ];
 						if (node.gl_avatar_base_root) {
-							// temp_base_root = node.gl_avatar_base_root;
 							node.gl_avatar_base_root.add(node);
-							// console.log(node.gl_avatar_base_root.children);
+
+							// !!: assume there's only one attach (rigid bind) node
+							_scene.attach_child = node;
 						}
 	
 					}
-
-					// temp test
-					// temp_base_root.add(dependencies.nodes[1]);
-
-
-					// temp test
-					// put skinned mesh to skeleton scene
 					
 					console.log(_scene);
 					// console.log(gl_avatar_linked_skeleton);
-					
-
 				}
 
 				return _scene;
