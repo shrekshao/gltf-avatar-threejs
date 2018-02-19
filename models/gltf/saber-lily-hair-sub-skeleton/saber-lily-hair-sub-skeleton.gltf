@@ -1065,31 +1065,10 @@
         {
             "channels": [
                 {
-                    "sampler": 0,
-                    "target": {
-                        "node": 10,
-                        "path": "translation"
-                    }
-                },
-                {
                     "sampler": 1,
                     "target": {
                         "node": 10,
                         "path": "rotation"
-                    }
-                },
-                {
-                    "sampler": 2,
-                    "target": {
-                        "node": 10,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 3,
-                    "target": {
-                        "node": 16,
-                        "path": "translation"
                     }
                 },
                 {
@@ -1100,38 +1079,10 @@
                     }
                 },
                 {
-                    "sampler": 5,
-                    "target": {
-                        "node": 16,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 6,
-                    "target": {
-                        "node": 13,
-                        "path": "translation"
-                    }
-                },
-                {
                     "sampler": 7,
                     "target": {
                         "node": 13,
                         "path": "rotation"
-                    }
-                },
-                {
-                    "sampler": 8,
-                    "target": {
-                        "node": 13,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 9,
-                    "target": {
-                        "node": 7,
-                        "path": "translation"
                     }
                 },
                 {
@@ -1142,38 +1093,10 @@
                     }
                 },
                 {
-                    "sampler": 11,
-                    "target": {
-                        "node": 7,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 12,
-                    "target": {
-                        "node": 5,
-                        "path": "translation"
-                    }
-                },
-                {
                     "sampler": 13,
                     "target": {
                         "node": 5,
                         "path": "rotation"
-                    }
-                },
-                {
-                    "sampler": 14,
-                    "target": {
-                        "node": 5,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 15,
-                    "target": {
-                        "node": 3,
-                        "path": "translation"
                     }
                 },
                 {
@@ -1184,38 +1107,10 @@
                     }
                 },
                 {
-                    "sampler": 17,
-                    "target": {
-                        "node": 3,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 18,
-                    "target": {
-                        "node": 8,
-                        "path": "translation"
-                    }
-                },
-                {
                     "sampler": 19,
                     "target": {
                         "node": 8,
                         "path": "rotation"
-                    }
-                },
-                {
-                    "sampler": 20,
-                    "target": {
-                        "node": 8,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 21,
-                    "target": {
-                        "node": 4,
-                        "path": "translation"
                     }
                 },
                 {
@@ -1226,38 +1121,10 @@
                     }
                 },
                 {
-                    "sampler": 23,
-                    "target": {
-                        "node": 4,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 24,
-                    "target": {
-                        "node": 0,
-                        "path": "translation"
-                    }
-                },
-                {
                     "sampler": 25,
                     "target": {
                         "node": 0,
                         "path": "rotation"
-                    }
-                },
-                {
-                    "sampler": 26,
-                    "target": {
-                        "node": 0,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 27,
-                    "target": {
-                        "node": 6,
-                        "path": "translation"
                     }
                 },
                 {
@@ -1268,38 +1135,10 @@
                     }
                 },
                 {
-                    "sampler": 29,
-                    "target": {
-                        "node": 6,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 30,
-                    "target": {
-                        "node": 14,
-                        "path": "translation"
-                    }
-                },
-                {
                     "sampler": 31,
                     "target": {
                         "node": 14,
                         "path": "rotation"
-                    }
-                },
-                {
-                    "sampler": 32,
-                    "target": {
-                        "node": 14,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 33,
-                    "target": {
-                        "node": 11,
-                        "path": "translation"
                     }
                 },
                 {
@@ -1310,38 +1149,10 @@
                     }
                 },
                 {
-                    "sampler": 35,
-                    "target": {
-                        "node": 11,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 36,
-                    "target": {
-                        "node": 9,
-                        "path": "translation"
-                    }
-                },
-                {
                     "sampler": 37,
                     "target": {
                         "node": 9,
                         "path": "rotation"
-                    }
-                },
-                {
-                    "sampler": 38,
-                    "target": {
-                        "node": 9,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 39,
-                    "target": {
-                        "node": 15,
-                        "path": "translation"
                     }
                 },
                 {
@@ -1352,20 +1163,6 @@
                     }
                 },
                 {
-                    "sampler": 41,
-                    "target": {
-                        "node": 15,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 42,
-                    "target": {
-                        "node": 2,
-                        "path": "translation"
-                    }
-                },
-                {
                     "sampler": 43,
                     "target": {
                         "node": 2,
@@ -1373,31 +1170,10 @@
                     }
                 },
                 {
-                    "sampler": 44,
-                    "target": {
-                        "node": 2,
-                        "path": "scale"
-                    }
-                },
-                {
-                    "sampler": 45,
-                    "target": {
-                        "node": 12,
-                        "path": "translation"
-                    }
-                },
-                {
                     "sampler": 46,
                     "target": {
                         "node": 12,
                         "path": "rotation"
-                    }
-                },
-                {
-                    "sampler": 47,
-                    "target": {
-                        "node": 12,
-                        "path": "scale"
                     }
                 }
             ],

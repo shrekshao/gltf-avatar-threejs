@@ -522,24 +522,21 @@ function skinOnload(data) {
     // console.log(gltf_skeleton);
 
 
-    // // temp test
-    // gltf_skeleton.gl_avatar.nodes['head-end'].add(object);
-    // gltf_skeleton.gl_avatar.nodes['head-end'].add(object.children[0]);
-    sub_skeleton_scene = object;
-
-
-
     object.traverse( function ( node ) {
         if ( node.isMesh ) node.castShadow = true;
     } );
 
+    var optionalSceneRoot = gltf_skeleton.gl_avatar.nodes['head-end'].children[0];  // point to lily hair root try
+
 
     var animations = gltf.animations;
     if ( animations && animations.length ) {
-        var mixer = new THREE.AnimationMixer( object );
+        // var mixer = new THREE.AnimationMixer( object );
+        var mixer = new THREE.AnimationMixer( optionalSceneRoot );
         for ( var i = 0; i < animations.length; i ++ ) {
             var animation = animations[ i ];
 
+            // mixer.clipAction( animation, optionalSceneRoot ).play();
             mixer.clipAction( animation ).play();
         }
 
@@ -555,12 +552,7 @@ function skinOnload(data) {
         // playAnimation(0);
     }
 
-
-    // console.log(gltf.extensions.gl_avatar);
-    // console.log(gltf.gl_avatar_skeleton);
-    // create skinned mesh and .bind(skeleotn)
-
-    scene.add( object );
+    scene.add(object);
 
     onWindowResize();
 }

@@ -2781,6 +2781,20 @@ module.exports = function( THREE ) {
 				} );
 
 
+				// Ambient lighting, if present, is always attached to the scene root.
+				if ( scene.extensions
+							 && scene.extensions[ EXTENSIONS.KHR_LIGHTS ]
+							 && scene.extensions[ EXTENSIONS.KHR_LIGHTS ].light !== undefined ) {
+
+					var lights = extensions[ EXTENSIONS.KHR_LIGHTS ].lights;
+					_scene.add( lights[ scene.extensions[ EXTENSIONS.KHR_LIGHTS ].light ] );
+
+				}
+
+
+
+
+
 				// gl avatar sub skeleton link test
 				
 				if (gl_avatar && gl_avatar.type === "skin") {
@@ -2790,7 +2804,7 @@ module.exports = function( THREE ) {
 						var node = dependencies.nodes[ i ];
 						if (node.gl_avatar_base_root) {
 							// temp_base_root = node.gl_avatar_base_root;
-							// node.gl_avatar_base_root.add(node);
+							node.gl_avatar_base_root.add(node);
 							// console.log(node.gl_avatar_base_root.children);
 						}
 	
@@ -2799,20 +2813,13 @@ module.exports = function( THREE ) {
 					// temp test
 					// temp_base_root.add(dependencies.nodes[1]);
 
-				}
-				
 
-
-
-
-
-				// Ambient lighting, if present, is always attached to the scene root.
-				if ( scene.extensions
-							 && scene.extensions[ EXTENSIONS.KHR_LIGHTS ]
-							 && scene.extensions[ EXTENSIONS.KHR_LIGHTS ].light !== undefined ) {
-
-					var lights = extensions[ EXTENSIONS.KHR_LIGHTS ].lights;
-					_scene.add( lights[ scene.extensions[ EXTENSIONS.KHR_LIGHTS ].light ] );
+					// temp test
+					// put skinned mesh to skeleton scene
+					
+					console.log(_scene);
+					// console.log(gl_avatar_linked_skeleton);
+					
 
 				}
 
