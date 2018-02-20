@@ -2805,6 +2805,8 @@ module.exports = function( THREE ) {
 						if (node.gl_avatar_base_root) {
 							node.gl_avatar_base_root.add(node);
 
+
+							// TODO: might use .userData. field
 							// !!: assume there's only one attach (rigid bind) node
 							_scene.attach_child = node;
 						}
@@ -2815,6 +2817,7 @@ module.exports = function( THREE ) {
 					// console.log(gl_avatar_linked_skeleton);
 				}
 
+				
 				return _scene;
 
 			} );
