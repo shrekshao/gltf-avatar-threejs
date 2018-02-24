@@ -4,6 +4,8 @@ const commandLineUsage = require('command-line-usage');
 const fs = require('fs-extra');
 const path = require('path');
 
+const PNG = require('pngjs').PNG;
+
 // node .\tools\gltf-avatar-merge.js -s .\models\gltf\saber-body-walk\saber-body-walk.gltf -a .\models\gltf\saber-maid-hair\saber-maid-hair.gltf .\models\gltf\saber-maid-dress\saber-maid-dress.gltf -f models/merge
 // node .\tools\gltf-avatar-merge.js -s .\models\gltf\saber-body-mixamo-animations\saber-body-animations.gltf -a .\models\gltf\saber-maid-hair-mixamo\saber-maid-hair.gltf .\models\gltf\saber-dress-mixamo\saber-dress.gltf -f models/merge
 
@@ -81,8 +83,6 @@ if (options.help) {
 var skeletonGltfDir = path.dirname(options.skeletonFilePath);
 var accessoryFilepaths = options.accessoriesFilePath;
 
-
-
 console.log('skeleton filename: ', options.skeletonFilePath);
 console.log('skin filenames: ');
 for (var i = 0, len = accessoryFilepaths.length; i < len; i++) {
@@ -103,6 +103,13 @@ if (!skeleton.extensions.gl_avatar) {
 if (!skeleton.extensions.gl_avatar.visibility) {
     skeleton.extensions.gl_avatar.visibility = [];
 }
+
+
+var textureWithVisibility = null;
+var bodyIdLUTTexture = null;
+
+var visiblityMaterial = null;
+
 
 // TODO: visibility issue should have an option for output pure gltf without extension
 // 1. modify body texture, let it alpha = 0
@@ -185,6 +192,19 @@ function merge(skeleton, skin) {
 
     // materials
     var materialBaseId = skeleton.materials.length;
+
+    // find texture with bodyIdLUT
+    for (i = 0, len = skeleton.materials.length; i < len; i++) {
+        var m = skeleton.materials[i];
+        if (m.extensions && m.extensions.gl_avatar && m.extensions.gl_avatar.bodyIdLUT !== undefined) {
+            // m has pbr related texture
+            visiblityMaterial = m;
+            bodyIdLUTTexture = skeleton.textures[m.extensions.gl_avatar.bodyIdLUT];
+            textureWithVisibility = skeleton.textures[m.pbrMetallicRoughness.baseColorTexture.index];
+        }
+    }
+
+
     for (i = 0, len = skin.materials.length; i < len; i++) {
         skeleton.materials.push(skin.materials[i]);
         var m = skeleton.materials[i + materialBaseId];
@@ -197,6 +217,8 @@ function merge(skeleton, skin) {
             }
         }
     }
+
+
 
     // meshes
     var meshBaseId = skeleton.meshes.length;
@@ -311,13 +333,54 @@ function copyAssets(inputFolder, outputFolder) {
     var assets = fs.readdirSync(inputFolder);
     for (var i = 0, len = assets.length; i < len; i++) {
         if (path.extname(assets[i]) !== '.gltf') {
-            fs.copy( path.join(inputFolder, assets[i]), path.join(outputFolder, assets[i]) );
+            fs.copySync( path.join(inputFolder, assets[i]), path.join(outputFolder, assets[i]) );
         }
     }
 }
 
 
 
+function bakeVisibility(texPath, bodyIdLUTPath, visibilty) {
+    console.log('Texture with visibility path: ', texPath);
+    console.log('body Id LUT texture path: ', bodyIdLUTPath);
+
+    visiblityMaterial.alphaMode = "MASK";
+    visiblityMaterial.alphaCutOff = 0.5;
+
+    fs.createReadStream(texPath)
+    .pipe(new PNG({filterType: 4}))
+    .on('parsed', function() {
+
+        var tex = this;
+
+        fs.createReadStream(bodyIdLUTPath)
+        .pipe(new PNG({filterType: 0}))
+        .on('parsed', function() {
+            var lut = this;
+
+            // temp assume same size
+            for (var y = 0; y < this.height; y++) {
+                for (var x = 0; x < this.width; x++) {
+                    var idx = (this.width * y + x) << 2;
+                    
+                    var bodyId = lut.data[idx];
+
+                    if (visibilty[bodyId] === 0) {
+                        tex.data[idx + 3] = 0;
+                    }
+                }
+            }
+
+
+
+            tex.pack().pipe(fs.createWriteStream(texPath));
+
+        });
+
+
+
+    });
+}
 
 
 
@@ -335,7 +398,11 @@ for (var i = 0, len = accessoryFilepaths.length; i < len; i++) {
 }
 
 
-
-
+// modify body texture to reflect visibility
+if (textureWithVisibility && bodyIdLUTTexture){
+    var textureWithVisibilityPath = path.join(options.outputFolder, skeleton.images[textureWithVisibility.source].uri);
+    var textureBodyIdLUTPath = path.join(options.outputFolder, skeleton.images[bodyIdLUTTexture.source].uri);
+    bakeVisibility(textureWithVisibilityPath, textureBodyIdLUTPath, skeleton.extensions.gl_avatar.visibility);
+}
 
 fs.writeFileSync(outputFilename, JSON.stringify(skeleton));
