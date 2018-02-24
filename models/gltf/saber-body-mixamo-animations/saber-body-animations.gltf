@@ -30366,8 +30366,8 @@
     "buffers": [
         {
             "byteLength": 2458392,
-            "name": "buffer_combined",
-            "uri": "buffer_combined.bin"
+            "name": "buffer_combined_saber_body",
+            "uri": "buffer_combined_saber_body.bin"
         }
     ],
     "images": [
@@ -30400,19 +30400,6 @@
                 },
                 "metallicFactor": 0.0,
                 "roughnessFactor": 1.0
-            },
-            "extensions": {
-                "gl_avatar": {
-                    "toon": {
-                        "color": [
-                            0.8, 0.8, 0.8, 0.8
-                        ],
-                        "map": {
-                            "index": 0,
-                            "texCoord": 0
-                        }
-                    }
-                }
             }
         },
         {
@@ -30433,16 +30420,7 @@
             },
             "extensions": {
                 "gl_avatar": {
-                    "bodyIdLUT": 2,
-                    "toon": {
-                        "color": [
-                            0.8, 0.8, 0.8, 0.8
-                        ],
-                        "map": {
-                            "index": 1,
-                            "texCoord": 0
-                        }
-                    }
+                    "bodyIdLUT": 2
                 }
             }
         }
@@ -30462,12 +30440,7 @@
                     },
                     "indices": 541,
                     "material": 1,
-                    "mode": 4,
-                    "extensions": {
-                        "gl_avatar": {
-                            "bodyIdTexture": 1
-                        }
-                    }
+                    "mode": 4
                 }
             ]
         },

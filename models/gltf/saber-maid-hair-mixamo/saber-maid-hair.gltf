@@ -5310,14 +5310,14 @@
     "buffers": [
         {
             "byteLength": 101808,
-            "name": "buffer_combined",
-            "uri": "buffer_combined.bin"
+            "name": "buffer_combined_maid_hair",
+            "uri": "buffer_combined_maid_hair.bin"
         }
     ],
     "images": [
         {
-            "name": "saber.png.000",
-            "uri": "saber.png"
+            "name": "saber-hair-texture.png",
+            "uri": "saber-hair-texture.png"
         }
     ],
     "materials": [
@@ -5330,9 +5330,9 @@
             "name": "F010_SaberSG",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    0.64000004529953,
-                    0.64000004529953,
-                    0.64000004529953,
+                    1,
+                    1,
+                    1,
                     1
                 ],
                 "baseColorTexture": {

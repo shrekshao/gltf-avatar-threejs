@@ -7677,14 +7677,14 @@
     "buffers": [
         {
             "byteLength": 228304,
-            "name": "buffer_combined",
-            "uri": "buffer_combined.bin"
+            "name": "buffer_combined_dress",
+            "uri": "buffer_combined_dress.bin"
         }
     ],
     "images": [
         {
-            "name": "saber.png",
-            "uri": "saber.png"
+            "name": "saber-dress-texture.png",
+            "uri": "saber-dress-texture.png"
         }
     ],
     "materials": [
@@ -7697,10 +7697,10 @@
             "name": "F010_SaberSG.001",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    0.64000004529953,
-                    0.64000004529953,
-                    0.64000004529953,
-                    0
+                    1,
+                    1,
+                    1,
+                    1
                 ],
                 "baseColorTexture": {
                     "index": 0,
@@ -7709,20 +7709,7 @@
                 "metallicFactor": 0,
                 "roughnessFactor": 1
             },
-            "doubleSided": true,
-            "extensions": {
-                "gl_avatar": {
-                    "toon": {
-                        "color": [
-                            1, 1, 1, 1
-                        ],
-                        "map": {
-                            "index": 0,
-                            "texCoord": 0
-                        }
-                    }
-                }
-            }
+            "doubleSided": true
         }
     ],
     "meshes": [
@@ -9252,7 +9239,7 @@
     ],
     "textures": [
         {
-            "name": "saber.png",
+            "name": "saber-dress-texture.png",
             "sampler": 0,
             "source": 0
         }

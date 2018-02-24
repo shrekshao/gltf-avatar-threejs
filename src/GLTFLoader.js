@@ -29,6 +29,9 @@ module.exports = function( THREE ) {
 
 	GLTFLoader.prototype = {
 
+		enableGLTFAvatar: true,
+		enableGLTFAvatarPhysics: true,
+
 		constructor: GLTFLoader,
 
 		crossOrigin: 'Anonymous',
