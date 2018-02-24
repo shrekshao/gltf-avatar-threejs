@@ -8,6 +8,7 @@ const PNG = require('pngjs').PNG;
 
 // node .\tools\gltf-avatar-merge.js -s .\models\gltf\saber-body-walk\saber-body-walk.gltf -a .\models\gltf\saber-maid-hair\saber-maid-hair.gltf .\models\gltf\saber-maid-dress\saber-maid-dress.gltf -f models/merge
 // node .\tools\gltf-avatar-merge.js -s .\models\gltf\saber-body-mixamo-animations\saber-body-animations.gltf -a .\models\gltf\saber-maid-hair-mixamo\saber-maid-hair.gltf .\models\gltf\saber-dress-mixamo\saber-dress.gltf -f models/merge
+// node .\tools\gltf-avatar-merge.js -s .\models\gltf\saber-stand-pose\saber-stand-pose.gltf -a .\models\gltf\saber-maid-hair-mixamo\saber-maid-hair.gltf .\models\gltf\saber-dress-mixamo\saber-dress.gltf -f models/merge
 
 
 const optionDefinitions = [
@@ -405,4 +406,5 @@ if (textureWithVisibility && bodyIdLUTTexture){
     bakeVisibility(textureWithVisibilityPath, textureBodyIdLUTPath, skeleton.extensions.gl_avatar.visibility);
 }
 
+// TODO: delete gltf extensions
 fs.writeFileSync(outputFilename, JSON.stringify(skeleton));
