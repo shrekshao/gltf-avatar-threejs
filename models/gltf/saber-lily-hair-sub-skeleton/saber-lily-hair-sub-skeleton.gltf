@@ -1823,10 +1823,10 @@
             "name": "lambert2.001",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    0.64000004529953,
-                    0.64000004529953,
-                    0.64000004529953,
-                    0.0
+                    1,
+                    1,
+                    1,
+                    1
                 ],
                 "baseColorTexture": {
                     "index": 0,

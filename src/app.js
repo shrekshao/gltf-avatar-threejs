@@ -369,7 +369,8 @@ function getEnvMap() {
     if ( envMap ) {
         return envMap;
     }
-    var path = 'textures/cube/Park2/';
+    // var path = 'textures/cube/Park2/';
+    var path = 'textures/cube/sky/';
     var format = '.jpg';
     var urls = [
         path + 'posx' + format, path + 'negx' + format,
@@ -560,7 +561,12 @@ function skinOnload(data) {
 }
 
 
-
+function selectGLTFAvatarSkin(type, uri) {
+    loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
+    loader.load( uri, skinOnload, undefined, function ( error ) {
+        console.error( error );
+    } );
+}
 
 
 var cb = document.getElementById('clothes-btns');
@@ -571,34 +577,19 @@ var button;
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'mixamo-dress';
 button.onclick = function() {
-    // test
-    // load maid dress
-    loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
-    loader.load( 'models/gltf/saber-dress-mixamo/saber-dress.gltf', skinOnload, undefined, function ( error ) {
-        console.error( error );
-    } );
+    selectGLTFAvatarSkin('suit', 'models/gltf/saber-dress-mixamo/saber-dress.gltf');
 };
 
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'mixamo-hair';
 button.onclick = function() {
-    // test
-    // load maid dress
-    loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
-    loader.load( 'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf', skinOnload, undefined, function ( error ) {
-        console.error( error );
-    } );
+    selectGLTFAvatarSkin('hair', 'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf');
 };
 
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'mixamo-lily-hair';
 button.onclick = function() {
-    // test
-    // load maid dress
-    loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
-    loader.load( 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf', skinOnload, undefined, function ( error ) {
-        console.error( error );
-    } );
+    selectGLTFAvatarSkin('hair', 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf');
 };
 
 
