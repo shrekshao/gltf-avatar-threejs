@@ -149,6 +149,7 @@ function onload() {
     buildSceneList();
     // switchScene(0);
     switchScene(1);
+    // switchScene(2);
     animate();
 }
 function initScene(index) {
@@ -390,6 +391,15 @@ var sceneList = [
     },
     {
         name : 'Saber-body-mixamo', url : './models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
+        cameraPos: new THREE.Vector3(3, 2, 3),
+        objectRotation: new THREE.Euler(0, 180, 0),
+        addLights: true,
+        extensions: ['glTF', 'gl_avatar'],
+        // addEnvMap: true
+        addEnvMap: false
+    },
+    {
+        name : 'Saber-body-mixamo-standpose', url : './models/gltf/saber-stand-pose/saber-stand-pose.gltf',
         cameraPos: new THREE.Vector3(3, 2, 3),
         objectRotation: new THREE.Euler(0, 180, 0),
         addLights: true,
