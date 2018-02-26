@@ -535,12 +535,31 @@ function skinOnload(type, key, data) {
         return;
     }
 
+
+    // remove current replaced accessory
     if (c.scene) {
         // delete previous component
         c.scene.parent.remove(c.scene);
+        if (c.scene.attach_child) {
+            console.log('has attach child (sub skeleton or rigid bind)');
+            c.scene.attach_child.parent.remove(c.scene.attach_child);
+
+            
+        }
+
+        if (c.scene.skinMixer) {
+            // c.scene.skinMixer.stopAllAction();
+
+            for ( var i = 0, len = skinMixers.length; i < len; i ++ ) {
+                if (skinMixers[i] == c.scene.skinMixer) {
+                    skinMixers.splice(i, 1);
+                    break;
+                }
+            }
+        }
     }
 
-
+    // --------------------------
 
     gltf = data;
     var object = gltf.scene;
@@ -558,25 +577,50 @@ function skinOnload(type, key, data) {
         if ( node.isMesh ) node.castShadow = true;
     } );
 
-    // var optionalSceneRoot = gltf_skeleton.gl_avatar.nodes['head-end'].children[0];  // point to lily hair root try
 
-
-    var animations = gltf.animations;
-    if ( animations && animations.length ) {
-        // var mixer = new THREE.AnimationMixer( object );
-        // var mixer = new THREE.AnimationMixer( optionalSceneRoot );
-        var mixer = new THREE.AnimationMixer( object.attach_child || object );
-
-        for ( var i = 0; i < animations.length; i ++ ) {
-            var animation = animations[ i ];
-            // mixer.clipAction( animation, optionalSceneRoot ).play();
-            mixer.clipAction( animation ).play();
-        }
-
-        skinMixers.push(mixer);
+    if (object.attach_child) {
+        // assume attach_child has gl_avatar_base_root
+        object.attach_child.gl_avatar_base_root.add(object.attach_child);
+        object.attach_child.updateMatrixWorld();
+        // object.attach_child.updateMatrix();
     }
 
+
+
+    // var optionalSceneRoot = gltf_skeleton.gl_avatar.nodes['head-end'].children[0];  // point to lily hair root try
+
+    if (!object.skinMixer) {
+        var animations = gltf.animations;
+        if ( animations && animations.length ) {
+            // var mixer = new THREE.AnimationMixer( object );
+            // var mixer = new THREE.AnimationMixer( optionalSceneRoot );
+            var mixer = new THREE.AnimationMixer( object.attach_child || object );
+
+            for ( var i = 0, len = animations.length; i < len; i ++ ) {
+                var animation = animations[ i ];
+                // mixer.clipAction( animation, optionalSceneRoot ).play();
+                mixer.clipAction( animation ).play();
+            }
+
+            // temp: assuming only one mixer
+            skinMixers.push(mixer);
+            object.skinMixer = mixer;
+        }
+    } 
+    else {
+        var m = object.skinMixer;
+    //     for ( var i = 0, len = m._actions.length; i < len; i ++ ) {
+    //         m._actions[i].play();
+    //     }
+        skinMixers.push(m);
+    //     // console.log(m);
+    }
+    
+
     scene.add(object);
+    object.updateMatrixWorld();
+    // object.updateMatrix();
+    // object.children[0].updateMatrix();
 
     onWindowResize();
 }

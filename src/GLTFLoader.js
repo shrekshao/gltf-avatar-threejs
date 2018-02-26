@@ -2806,7 +2806,7 @@ module.exports = function( THREE ) {
 
 						var node = dependencies.nodes[ i ];
 						if (node.gl_avatar_base_root) {
-							node.gl_avatar_base_root.add(node);
+							// node.gl_avatar_base_root.add(node);	// move to outsider logic to handle
 
 
 							// TODO: might use .userData. field
