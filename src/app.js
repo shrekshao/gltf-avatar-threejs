@@ -2,6 +2,8 @@ var THREE = require('three');
 THREE.OrbitControls = require('three-orbit-controls')(THREE);
 THREE.GLTFLoader = require('./GLTFLoader.js')(THREE);
 
+import {glAvatarSystem} from './GLTFAvatarSystem.js';
+
 
 // var update = THREE.Bone.prototype.update;
 // THREE.Bone.prototype.update = function(parentSkinMatrix, forceUpdate) {
@@ -524,9 +526,28 @@ onload();
 
 var sub_skeleton_scene;
 
-function skinOnload(data) {
+function skinOnload(type, key, data) {
+
+    var c = glAvatarSystem.curAccessories[type];
+
+    if (key === c.name) {
+        console.log('same ' + type);
+        return;
+    }
+
+    if (c.scene) {
+        // delete previous component
+        c.scene.parent.remove(c.scene);
+    }
+
+
+
     gltf = data;
     var object = gltf.scene;
+
+    c.name = key;
+    c.scene = object;
+
     // status.innerHTML = "Load time: " + ( performance.now() - loadStartTime ).toFixed( 2 ) + " ms.";
 
     // temp
@@ -561,11 +582,26 @@ function skinOnload(data) {
 }
 
 
-function selectGLTFAvatarSkin(type, uri) {
-    loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
-    loader.load( uri, skinOnload, undefined, function ( error ) {
-        console.error( error );
-    } );
+
+
+
+
+
+function selectGLTFAvatarSkin(type, key, uri) {
+
+    // console.log(glAvatarSystem);
+    if (glAvatarSystem.isLoaded(type, key)) {
+        skinOnload(type, key, glAvatarSystem.accessories[type][key]);
+    } else {
+        loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
+        loader.load( uri, function(data) {
+            glAvatarSystem.accessories[type][key] = data;
+            skinOnload(type, key, data);
+        }, undefined, function ( error ) {
+            console.error( error );
+        } );
+    }
+
 }
 
 
@@ -577,19 +613,19 @@ var button;
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'mixamo-dress';
 button.onclick = function() {
-    selectGLTFAvatarSkin('suit', 'models/gltf/saber-dress-mixamo/saber-dress.gltf');
+    selectGLTFAvatarSkin('clothes', 'maid-dress', 'models/gltf/saber-dress-mixamo/saber-dress.gltf');
 };
 
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'mixamo-hair';
 button.onclick = function() {
-    selectGLTFAvatarSkin('hair', 'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf');
+    selectGLTFAvatarSkin('hair', 'maid', 'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf');
 };
 
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'mixamo-lily-hair';
 button.onclick = function() {
-    selectGLTFAvatarSkin('hair', 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf');
+    selectGLTFAvatarSkin('hair', 'lily', 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf');
 };
 
 

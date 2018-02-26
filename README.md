@@ -9,7 +9,7 @@ An dynamic avatar system based on glTF which supports:
 - [x] merge and output as valid standard glTF (without need for extension support loader)
 - [ ] TODO: hair, clothes physics
 
-## Spec v0.2
+## glTF Avatar Spec v0.2
 
 ### Skeleton (Base / Main / Character) file
 
