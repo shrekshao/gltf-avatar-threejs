@@ -168,7 +168,7 @@ function initScene(index) {
         var ambient = new THREE.AmbientLight( 0x222222 );
         scene.add( ambient );
         var directionalLight = new THREE.DirectionalLight( 0xdddddd );
-        directionalLight.position.set( 0, 0, 1 ).normalize();
+        directionalLight.position.set( 1, 1, 1 ).normalize();
         scene.add( directionalLight );
 
         spot1   = new THREE.SpotLight( 0xffffff, 1 );
