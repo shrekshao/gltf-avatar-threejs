@@ -165,8 +165,8 @@ module.exports = function( THREE ) {
 					updateVisibilityArray(gl_avatar_linked_skeleton.visibility, glTF.gl_avatar.visibility);
 				}
 				
-
-				onLoad( glTF );
+				// !note: modified
+				onLoad( glTF, parser.json );
 
 			}, onError );
 

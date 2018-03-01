@@ -112,12 +112,11 @@ var bodyIdLUTTexture = null;
 var visiblityMaterial = null;
 
 
-// TODO: visibility issue should have an option for output pure gltf without extension
-// 1. modify body texture, let it alpha = 0
+// bake visibility 
+// modify body texture, let its alpha = 0
 // look at alphaMode: Mask, alphaCutOff
 // https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md#alpha-coverage
-// 2. modify actual geometry
-// 3. any glsl extension that are useful?
+
 function visibilityAndOperation(vi) {
     if (skeleton.extensions.gl_avatar.visibility.length === 0) {
         skeleton.extensions.gl_avatar.visibility = vi.slice(0);

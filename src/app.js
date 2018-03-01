@@ -3,7 +3,7 @@ THREE.OrbitControls = require('three-orbit-controls')(THREE);
 THREE.GLTFLoader = require('./GLTFLoader.js')(THREE);
 
 import {glAvatarSystem} from './GLTFAvatarSystem.js';
-
+import {mergeGLTFAvatar} from './GLTFAvatarMerge.js';
 
 // var update = THREE.Bone.prototype.update;
 // THREE.Bone.prototype.update = function(parentSkinMatrix, forceUpdate) {
@@ -228,9 +228,20 @@ function initScene(index) {
     var loadStartTime = performance.now();
     var status = document.getElementById("status");
     status.innerHTML = "Loading...";
-    loader.load( url, function(data) {
+    loader.load( url, function(data, json) {
         gltf = data;
         gltf_skeleton = gltf;
+
+
+        // tmp add to gl avatar system
+        glAvatarSystem.skeletons[sceneInfo.name] = {
+            gltf: data,
+
+            json: json,
+            bins: {},
+            imgs: {}   //TODO
+        };
+        glAvatarSystem.curSkeleton.name = sceneInfo.name;
 
 
         console.log(gltf);
@@ -635,11 +646,19 @@ function selectGLTFAvatarSkin(type, key, uri) {
 
     // console.log(glAvatarSystem);
     if (glAvatarSystem.isLoaded(type, key)) {
-        skinOnload(type, key, glAvatarSystem.accessories[type][key]);
+        skinOnload(type, key, glAvatarSystem.accessories[type][key].gltf);
     } else {
         loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
-        loader.load( uri, function(data) {
-            glAvatarSystem.accessories[type][key] = data;
+        loader.load( uri, function(data, json) {
+            // glAvatarSystem.accessories[type][key] = data;
+            glAvatarSystem.accessories[type][key] = {
+                gltf: data,
+
+                json: json,
+                bins: {},
+                imgs: {}
+            };
+            // TODO
             skinOnload(type, key, data);
         }, undefined, function ( error ) {
             console.error( error );
@@ -673,24 +692,20 @@ button.onclick = function() {
 };
 
 
-// function createBones ( object, jsonBones ) {
-// 	/* adapted from the THREE.SkinnedMesh constructor */
-// 	// create bone instances from json bone data
-//   const bones = jsonBones.map( gbone => {
-// 		bone = new THREE.Bone()
-// 		bone.name = gbone.name
-// 		bone.position.fromArray( gbone.pos )
-// 		bone.quaternion.fromArray( gbone.rotq )
-// 		if ( gbone.scl !== undefined ) bone.scale.fromArray( gbone.scl )
-// 		return bone
-//   } )
-//   // add bone instances to the root object
-// 	jsonBones.forEach( ( gbone, index ) => {
-//       if ( gbone.parent !== -1 && gbone.parent !== null && bones[ gbone.parent ] !== undefined ) {
-//         bones[ gbone.parent ].add( bones[ index ] )
-//       } else {
-//         object.add( bones[ index ] )
-//       }
-//   } )
-// 	return bones
-// }
+
+document.getElementById('export-btn').onclick = function() {
+
+    var skinArray = [];
+
+    for (var cat in glAvatarSystem.curAccessories) {
+        var c = glAvatarSystem.curAccessories[cat];
+        if (c.name) {
+            skinArray.push(glAvatarSystem.accessories[cat][c.name]);
+        }
+    }
+
+    var merged = mergeGLTFAvatar(
+        glAvatarSystem.skeletons[glAvatarSystem.curSkeleton.name],
+        skinArray
+    );
+};

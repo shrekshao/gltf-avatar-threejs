@@ -2,8 +2,9 @@ var glAvatarSystem = {
 
     curSkeleton: {
         name: null,
-        scene: null,
-        sceneID: null
+        scene: null
+        // sceneID: null
+        // asset: null
     },
 
     curVisibilityArray: null,
@@ -11,13 +12,15 @@ var glAvatarSystem = {
     curAccessories: {
         clothes: {
             name: null,
-            scene: null,
-            sceneID: null
+            scene: null
+            // sceneID: null
+            // asset: null
         },
         hair: {
             name: null,
             scene: null,
-            sceneID: null
+            // sceneID: null
+            // asset: null
         }
     },
 
