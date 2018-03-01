@@ -185,11 +185,20 @@ function fileSave(gltf, bins, imgs){
     // getdata from image data is not correct for output with encoding here!
 
     // append images as bufferview
+    // now images are all image/png in datauri
     var bufferIndex = gltf.buffers.length;
     for (var i = 0, len = gltf.images.length; i < len; i++) {
         
         var image = gltf.images[i];
-        var data = imgs[image.uri].data.buffer;
+        // var data = imgs[image.uri].data.buffer;
+        if (!(image.uri in imgs)) {
+            continue;
+            delete image['uri'];
+        }
+
+        // var data = decodeBase64(imgs[image.uri]);
+        // var data = atob(imgs[image.uri]);
+        var data = dataURItoArraybuffer(imgs[image.uri], 'image/png');
 
         var bufferView = {
             buffer: 0,
@@ -204,7 +213,8 @@ function fileSave(gltf, bins, imgs){
         gltf.bufferViews.push(bufferView);
         outputBuffers.push(data);
         image['bufferView'] = bufferViewIndex;
-        image['mimeType'] = getMimeType(image.uri);
+        // image['mimeType'] = getMimeType(image.uri);
+        image['mimeType'] =  'image/png';
 
         delete image['uri'];
     }
@@ -291,6 +301,46 @@ function fileSave(gltf, bins, imgs){
     a.click();
 }
 
+
+
+
+function dataURItoArraybuffer(dataURI, type) {
+    // convert base64 to raw binary data held in a string
+    var byteString = atob(dataURI.split(',')[1]);
+
+    // separate out the mime component
+    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+    // write the bytes of the string to an ArrayBuffer
+    var ab = new ArrayBuffer(byteString.length);
+    var ia = new Uint8Array(ab);
+    for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+
+    return ia.buffer;
+}
+
+
+
+function dataURItoBlob(dataURI, type) {
+    // convert base64 to raw binary data held in a string
+    var byteString = atob(dataURI.split(',')[1]);
+
+    // separate out the mime component
+    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+    // write the bytes of the string to an ArrayBuffer
+    var ab = new ArrayBuffer(byteString.length);
+    var ia = new Uint8Array(ab);
+    for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+
+    // write the ArrayBuffer to a blob, and you're done
+    var bb = new Blob([ab], { type: type });
+    return bb;
+}
 
 function isBase64(uri) {
     return uri.length < 5 ? false : uri.substr(0, 5) === "data:";

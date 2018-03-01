@@ -22,6 +22,12 @@ function image2Data(img) {
     return context1.getImageData(0, 0, img.width, img.height);
 }
 
+function image2PNGDataURI(img) {
+    canvas1.width = img.width;
+    canvas1.height = img.height;
+    context1.drawImage(img, 0, 0);
+    return canvas1.toDataURL(); // default is png
+}
 
 function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
     // {
@@ -32,18 +38,50 @@ function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
 
     console.log(skeletonObject.json);
 
+    // TODO: change bins and imgs to array
     var merged = {
         json: Object.assign({}, skeletonObject.json),
         bins: Object.assign({}, skeletonObject.bins),
-        imgs: Object.assign({}, skeletonObject.imgs)
+        // imgs: Object.assign({}, skeletonObject.imgs)
+        imgs: {}
     };
 
-    for (var key in merged.imgs) {
-        merged.imgs[key] = image2Data(merged.imgs[key]);
+    var skeleton = merged.json;
+    // find texture with bodyIdLUT
+    for (var i = 0, len = skeleton.materials.length; i < len; i++) {
+        var m = skeleton.materials[i];
+        if (m.extensions && m.extensions.gl_avatar && m.extensions.gl_avatar.bodyIdLUT !== undefined) {
+            // m has pbr related texture
+            // assume there's only one such a thing
+
+            visiblityMaterial = m;
+            // bodyIdLUTTexture = skeleton.textures[m.extensions.gl_avatar.bodyIdLUT];
+            bodyIdLUTTexture = skeleton.images[skeleton.textures[m.extensions.gl_avatar.bodyIdLUT].source].uri;
+            // bodyIdLUTTextureKey = m.extensions.gl_avatar.bodyIdLUT;
+            // textureWithVisibility = skeleton.textures[m.pbrMetallicRoughness.baseColorTexture.index];
+            textureWithVisibility = skeleton.images[skeleton.textures[m.pbrMetallicRoughness.baseColorTexture.index].source].uri;
+            // textureWithVisibilityKey = m.pbrMetallicRoughness.baseColorTexture.index;
+
+            merged.imgs[textureWithVisibility] = image2Data(skeletonObject.imgs[textureWithVisibility]);
+            merged.imgs[bodyIdLUTTexture] = image2Data(skeletonObject.imgs[bodyIdLUTTexture]);
+
+            break;
+        }
     }
 
 
-    var skeleton = merged.json;
+
+    // for (var key in merged.imgs) {
+    //     merged.imgs[key] = image2Data(merged.imgs[key]);
+    // }
+    for (var key in skeletonObject.imgs) {
+        if (! (key in merged.imgs)) {
+            merged.imgs[key] = image2PNGDataURI(skeletonObject.imgs[key]);
+        }
+    }
+
+
+    
     // merged.bins = merged.bins.concat(skeletonObject.bins);
     // merged.imgs = merged.imgs.concat(skeletonObject.imgs);
 
@@ -68,7 +106,8 @@ function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
 
         // temp: this probably didn't support multiple export
         for (var key in skin.imgs) {
-            skin.imgs[key] = image2Data(skin.imgs[key]);
+            // skin.imgs[key] = image2Data(skin.imgs[key]);
+            skin.imgs[key] = image2PNGDataURI(skin.imgs[key]);
         }
 
         // TODO: solve duplicate key issue
@@ -77,6 +116,13 @@ function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
 
         bakeVisibility(merged, textureWithVisibility, bodyIdLUTTexture, skeleton.extensions.gl_avatar.visibility);
     }
+
+
+    // 
+    context1.putImageData(merged.imgs[textureWithVisibility], 0, 0);
+    merged.imgs[textureWithVisibility] = canvas1.toDataURL();
+
+    delete merged.imgs[bodyIdLUTTexture];
 
     // send merged gltf and buffers & image to makeglb
     return merged;
@@ -354,6 +400,7 @@ function bakeVisibility(skeleton, texURI, bodyIdLUTURI, visibilty) {
 
     // // write pixel back to image object
     // context1.putImageData(tex, 0, 0);
+    
 
 
     // fs.createReadStream(texPath)
