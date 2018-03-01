@@ -166,7 +166,18 @@ module.exports = function( THREE ) {
 				}
 				
 				// !note: modified
-				onLoad( glTF, parser.json );
+				
+				onLoad( glTF, parser.json, parser.buffers, parser.images );
+
+				// parser._withDependencies([
+				// 	'buffers',
+				// 	'textures',
+				// 	'nodes'
+				// ]).then(function(dependencies) {
+				// 	onLoad( glTF, parser.json, dependencies.buffers, dependencies.textures );
+				// });
+
+				
 
 			}, onError );
 
@@ -1378,6 +1389,10 @@ module.exports = function( THREE ) {
 		// Clear the loader cache
 		this.cache.removeAll();
 
+		// !! modified
+		this.buffers = {};
+		this.images = {};	//external sources
+
 		// Fire the callback on complete
 		this._withDependencies( [
 
@@ -1486,7 +1501,15 @@ module.exports = function( THREE ) {
 
 		var bufferViewDef = this.json.bufferViews[ bufferViewIndex ];
 
+		// temp: assume there is
+		var parser = this;
+		var bufferURI = this.json.buffers[bufferViewDef.buffer].uri || null;
+
 		return this.getDependency( 'buffer', bufferViewDef.buffer ).then( function ( buffer ) {
+
+			if (bufferURI && !parser.buffers[bufferURI]) {
+				parser.buffers[bufferURI] = buffer;
+			}
 
 			var byteLength = bufferViewDef.byteLength || 0;
 			var byteOffset = bufferViewDef.byteOffset || 0;
@@ -1634,7 +1657,14 @@ module.exports = function( THREE ) {
 	 */
 	GLTFParser.prototype.assignTexture = function ( materialParams, textureName, textureIndex ) {
 
+		var parser = this;
+		var imageURI = this.json.images[ this.json.textures[textureIndex].source ].uri || null;
+
 		return this.getDependency( 'texture', textureIndex ).then( function ( texture ) {
+
+			if (imageURI && !parser.images[imageURI]) {
+				parser.images[imageURI] = texture.image;
+			}
 
 			materialParams[ textureName ] = texture;
 

@@ -128,9 +128,11 @@ function merge(skeleton, skin) {
             // assume there's only one such a thing
 
             visiblityMaterial = m;
-            bodyIdLUTTexture = skeleton.textures[m.extensions.gl_avatar.bodyIdLUT];
+            // bodyIdLUTTexture = skeleton.textures[m.extensions.gl_avatar.bodyIdLUT];
+            bodyIdLUTTexture = skeleton.images[skeleton.textures[m.extensions.gl_avatar.bodyIdLUT].source].uri;
             // bodyIdLUTTextureKey = m.extensions.gl_avatar.bodyIdLUT;
-            textureWithVisibility = skeleton.textures[m.pbrMetallicRoughness.baseColorTexture.index];
+            // textureWithVisibility = skeleton.textures[m.pbrMetallicRoughness.baseColorTexture.index];
+            textureWithVisibility = skeleton.images[skeleton.textures[m.pbrMetallicRoughness.baseColorTexture.index].source].uri;
             // textureWithVisibilityKey = m.pbrMetallicRoughness.baseColorTexture.index;
 
             break;
@@ -272,15 +274,15 @@ function visibilityAndOperation(skeleton, vi) {
 
 
 
-function bakeVisibility(skeleton, texInfo, bodyIdLUTInfo, visibilty) {
-    if (texInfo == null || bodyIdLUTInfo == null) {
+function bakeVisibility(skeleton, texURI, bodyIdLUTURI, visibilty) {
+    if (texURI == null || bodyIdLUTURI == null) {
         console.log('No texture with visibility or body id lut in this model');
         return;
     }
 
 
-    console.log('texture with visibility: ', texInfo);
-    console.log('body Id LUT texture: ', bodyIdLUTInfo);
+    // console.log('texture with visibility: ', texInfo);
+    // console.log('body Id LUT texture: ', bodyIdLUTInfo);
 
     visiblityMaterial.alphaMode = "MASK";
     visiblityMaterial.alphaCutOff = 0.5;
@@ -291,7 +293,7 @@ function bakeVisibility(skeleton, texInfo, bodyIdLUTInfo, visibilty) {
     var canvas1 = document.createElement('canvas');
     var context1 = canvas1.getContext('2d');
     // img = texInfo.source;
-    img = skeleton.imgs[texInfo.source.uri];
+    img = skeleton.imgs[texURI];
 
     canvas1.width = img.width;
     canvas1.height = img.height;
@@ -301,7 +303,7 @@ function bakeVisibility(skeleton, texInfo, bodyIdLUTInfo, visibilty) {
     var canvas2 = document.createElement('canvas');
     var context2 = canvas2.getContext('2d');
     // img = bodyIdLUTInfo.source;
-    img = skeleton.imgs[bodyIdLUTInfo.source.uri];
+    img = skeleton.imgs[bodyIdLUTURI];
 
     canvas2.width = img.width;
     canvas2.height = img.height;

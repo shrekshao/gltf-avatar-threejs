@@ -228,7 +228,7 @@ function initScene(index) {
     var loadStartTime = performance.now();
     var status = document.getElementById("status");
     status.innerHTML = "Loading...";
-    loader.load( url, function(data, json) {
+    loader.load( url, function(data, json, bins, imgs) {
         gltf = data;
         gltf_skeleton = gltf;
 
@@ -238,8 +238,8 @@ function initScene(index) {
             gltf: data,
 
             json: json,
-            bins: {},
-            imgs: {}   //TODO
+            bins: bins,
+            imgs: imgs
         };
         glAvatarSystem.curSkeleton.name = sceneInfo.name;
 
@@ -649,14 +649,17 @@ function selectGLTFAvatarSkin(type, key, uri) {
         skinOnload(type, key, glAvatarSystem.accessories[type][key].gltf);
     } else {
         loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
-        loader.load( uri, function(data, json) {
+        loader.load( uri, function(data, json, bins, imgs) {
             // glAvatarSystem.accessories[type][key] = data;
+            // console.log(bins);
+            // console.log(imgs);
+
             glAvatarSystem.accessories[type][key] = {
                 gltf: data,
 
                 json: json,
-                bins: {},
-                imgs: {}
+                bins: bins,
+                imgs: imgs
             };
             // TODO
             skinOnload(type, key, data);
@@ -708,4 +711,6 @@ document.getElementById('export-btn').onclick = function() {
         glAvatarSystem.skeletons[glAvatarSystem.curSkeleton.name],
         skinArray
     );
+
+    console.log(merged);
 };
