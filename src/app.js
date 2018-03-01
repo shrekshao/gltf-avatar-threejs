@@ -4,6 +4,7 @@ THREE.GLTFLoader = require('./GLTFLoader.js')(THREE);
 
 import {glAvatarSystem} from './GLTFAvatarSystem.js';
 import {mergeGLTFAvatar} from './GLTFAvatarMerge.js';
+import {fileSave} from './lib/makeglb.js';
 
 // var update = THREE.Bone.prototype.update;
 // THREE.Bone.prototype.update = function(parentSkinMatrix, forceUpdate) {
@@ -712,5 +713,20 @@ document.getElementById('export-btn').onclick = function() {
         skinArray
     );
 
-    console.log(merged);
+    // console.log(merged);
+
+    // var i, len;
+    // for (i = 0, len = merged.json.buffers.length; i < len; i++) {
+    //     merged.json.buffers[i] = merged.bins[merged.json.buffers[i].uri];
+    // }
+
+    // for (i = 0, len = merged.json.images.length; i < len; i++) {
+    //     merged.json.images[i] = merged.imgs[merged.json.images[i].uri];
+    // }
+
+
+    // makeglb
+
+    fileSave(merged.json, merged.bins, merged.imgs);
+
 };

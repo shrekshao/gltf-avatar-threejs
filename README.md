@@ -163,3 +163,7 @@ An dynamic avatar system based on glTF which supports:
 ## Blender art asset tutorial
 
 TODO
+
+## Credit
+
+* [makeglb](https://github.com/sbtron/makeglb) by @sbtron

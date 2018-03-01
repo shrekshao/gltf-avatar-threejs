@@ -10,6 +10,19 @@ var bodyIdLUTTexture = null;
 
 var visiblityMaterial = null;
 
+
+var canvas1 = document.createElement('canvas');
+var context1 = canvas1.getContext('2d');
+
+function image2Data(img) {
+
+    canvas1.width = img.width;
+    canvas1.height = img.height;
+    context1.drawImage(img, 0, 0);
+    return context1.getImageData(0, 0, img.width, img.height);
+}
+
+
 function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
     // {
     //     json: gltf json object,
@@ -24,6 +37,10 @@ function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
         bins: Object.assign({}, skeletonObject.bins),
         imgs: Object.assign({}, skeletonObject.imgs)
     };
+
+    for (var key in merged.imgs) {
+        merged.imgs[key] = image2Data(merged.imgs[key]);
+    }
 
 
     var skeleton = merged.json;
@@ -48,6 +65,11 @@ function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
     for (var i = 0, len = skinObjectArray.length; i < len; i++) {
         var skin = skinObjectArray[i];
         merge(skeleton, skin.json);
+
+        // temp: this probably didn't support multiple export
+        for (var key in skin.imgs) {
+            skin.imgs[key] = image2Data(skin.imgs[key]);
+        }
 
         // TODO: solve duplicate key issue
         merged.bins = Object.assign( merged.bins, skin.bins );
@@ -288,32 +310,38 @@ function bakeVisibility(skeleton, texURI, bodyIdLUTURI, visibilty) {
     visiblityMaterial.alphaCutOff = 0.5;
 
 
-    // some canvas used to get pixels array data
-    var img;
-    var canvas1 = document.createElement('canvas');
-    var context1 = canvas1.getContext('2d');
-    // img = texInfo.source;
-    img = skeleton.imgs[texURI];
+    // // some canvas used to get pixels array data
+    // var img;
+    // var canvas1 = document.createElement('canvas');
+    // var context1 = canvas1.getContext('2d');
+    // // img = texInfo.source;
+    // img = skeleton.imgs[texURI];
 
-    canvas1.width = img.width;
-    canvas1.height = img.height;
-    context1.drawImage(img, 0, 0);
-    var tex = context1.getImageData(0, 0, img.width, img.height);
+    // canvas1.width = img.width;
+    // canvas1.height = img.height;
+    // context1.drawImage(img, 0, 0);
+    // var tex = context1.getImageData(0, 0, img.width, img.height);
 
-    var canvas2 = document.createElement('canvas');
-    var context2 = canvas2.getContext('2d');
-    // img = bodyIdLUTInfo.source;
-    img = skeleton.imgs[bodyIdLUTURI];
+    // var canvas2 = document.createElement('canvas');
+    // var context2 = canvas2.getContext('2d');
+    // // img = bodyIdLUTInfo.source;
+    // img = skeleton.imgs[bodyIdLUTURI];
 
-    canvas2.width = img.width;
-    canvas2.height = img.height;
-    context2.drawImage(img, 0, 0);
-    var lut = context2.getImageData(0, 0, img.width, img.height);
+    // canvas2.width = img.width;
+    // canvas2.height = img.height;
+    // context2.drawImage(img, 0, 0);
+    // var lut = context2.getImageData(0, 0, img.width, img.height);
+
+    var width = skeleton.imgs[texURI].width;
+    var height = skeleton.imgs[texURI].height;
+
+    var tex = skeleton.imgs[texURI].data;
+    var lut = skeleton.imgs[bodyIdLUTURI].data;
     
     // temp: assume img and lut are of the same size
-    for (var y = 0; y < img.height; y++) {
-        for (var x = 0; x < img.width; x++) {
-            var idx = (img.width * y + x) << 2;     // * 4
+    for (var y = 0; y < tex.height; y++) {
+        for (var x = 0; x < tex.width; x++) {
+            var idx = (tex.width * y + x) << 2;     // * 4
             
             var bodyId = lut[idx];
 
@@ -324,8 +352,8 @@ function bakeVisibility(skeleton, texURI, bodyIdLUTURI, visibilty) {
     }
 
 
-    // write pixel back to image object
-    context1.putImageData(tex, 0, 0);
+    // // write pixel back to image object
+    // context1.putImageData(tex, 0, 0);
 
 
     // fs.createReadStream(texPath)

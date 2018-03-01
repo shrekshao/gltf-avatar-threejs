@@ -16,9 +16,9 @@
   }
 
 
-  var dropZone = document.getElementById('drop_zone');
-  dropZone.addEventListener('dragover', handleDragOver, false);
-  dropZone.addEventListener('drop', handleFileSelect, false);
+//   var dropZone = document.getElementById('drop_zone');
+//   dropZone.addEventListener('dragover', handleDragOver, false);
+//   dropZone.addEventListener('drop', handleFileSelect, false);
 
 
   function addDownloadButton() {
@@ -153,7 +153,62 @@ function processBuffers(){
     });
 }
 
-function fileSave(){
+// function fileSave(){
+function fileSave(gltf, bins, imgs){
+
+
+    var bufferMap = new Map();
+    var outputBuffers = [];
+    var bufferOffset = 0;
+
+    // gltf.buffers.map(function (data, bufferIndex) {
+    //     if (data !== undefined) {
+    //         outputBuffers.push(data);
+    //     }
+    //     bufferMap.set(bufferIndex, bufferOffset);
+    //     bufferOffset += alignedLength(data.byteLength);
+    // });
+
+    gltf.buffers.map(function (buffer, bufferIndex) {
+        var data = bins[buffer.uri];
+        if (data !== undefined) {
+            outputBuffers.push(data);
+        }
+        delete buffer.uri;
+        buffer.byteLength = data.byteLength;
+        bufferMap.set(bufferIndex, bufferOffset);
+        bufferOffset += alignedLength(data.byteLength);
+    });
+
+
+    // TODO: warning: !! the image data has to be raw array buffer received to make the following work
+    // getdata from image data is not correct for output with encoding here!
+
+    // append images as bufferview
+    var bufferIndex = gltf.buffers.length;
+    for (var i = 0, len = gltf.images.length; i < len; i++) {
+        
+        var image = gltf.images[i];
+        var data = imgs[image.uri].data.buffer;
+
+        var bufferView = {
+            buffer: 0,
+            byteOffset: bufferOffset,
+            byteLength: data.byteLength,
+        };
+        bufferMap.set(bufferIndex, bufferOffset);
+        bufferIndex++;
+        bufferOffset += alignedLength(data.byteLength);
+
+        var bufferViewIndex = gltf.bufferViews.length;
+        gltf.bufferViews.push(bufferView);
+        outputBuffers.push(data);
+        image['bufferView'] = bufferViewIndex;
+        image['mimeType'] = getMimeType(image.uri);
+
+        delete image['uri'];
+    }
+
     var Binary = {
         Magic: 0x46546C67
     };
@@ -229,9 +284,10 @@ function fileSave(){
     var a = document.getElementById("downloadLink");
     var file = new Blob([finalBuffer],{type: 'model/json-binary'})
     a.href = URL.createObjectURL(file);
-    a.download = glbfilename+".glb";
-    document.getElementById("downloadBtn").disabled=false;
-    document.getElementById("downloadBtn").textContent="Download .glb";
+    // a.download = glbfilename+".glb";
+    a.download = "merged.glb";
+    // document.getElementById("downloadBtn").disabled=false;
+    // document.getElementById("downloadBtn").textContent="Download .glb";
     a.click();
 }
 
@@ -282,3 +338,6 @@ var gltfMimeTypes = {
     'text/plain': ['glsl', 'vert', 'vs', 'frag', 'fs', 'txt'],
     'image/vnd-ms.dds': ['dds']
 };
+
+
+export {fileSave};

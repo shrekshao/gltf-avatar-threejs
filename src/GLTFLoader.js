@@ -1662,6 +1662,8 @@ module.exports = function( THREE ) {
 
 		return this.getDependency( 'texture', textureIndex ).then( function ( texture ) {
 
+
+			// TODO: !! this has to be raw arraybuffer from xhr
 			if (imageURI && !parser.images[imageURI]) {
 				parser.images[imageURI] = texture.image;
 			}
