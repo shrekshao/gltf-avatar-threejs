@@ -234,7 +234,8 @@ function initScene(index) {
         gltf_skeleton = gltf;
 
 
-        // tmp add to gl avatar system
+        // add to gl avatar system
+        // function: switch skeleton file
         glAvatarSystem.skeletons[sceneInfo.name] = {
             gltf: data,
 
@@ -243,7 +244,17 @@ function initScene(index) {
             imgs: imgs
         };
         glAvatarSystem.curSkeleton.name = sceneInfo.name;
+        glAvatarSystem.curSkeleton.scene = gltf.scene;
 
+        for (var cat in glAvatarSystem.curAccessories) {
+            glAvatarSystem.curAccessories[cat].name = null;
+            glAvatarSystem.curAccessories[cat].scene = null;
+        }
+
+        for (var cat in glAvatarSystem.accessories) {
+            glAvatarSystem.accessories[cat] = {};
+        }
+        // --------------------------------------------
 
         console.log(gltf);
 
@@ -349,12 +360,6 @@ function animate() {
     for (var i = 0, len = skinMixers.length; i < len; i++) {
         skinMixers[i].update(delta);
     }
-
-    // sub_skeleton_scene.
-    if (gltf_skeleton) {
-        gltf_skeleton.gl_avatar.nodes['head-end'].updateMatrixWorld(true);
-    }
-    
 
     if (cameraIndex == 0)
         orbitControls.update();
@@ -536,7 +541,6 @@ document.getElementById('animation_toggle').onclick = toggleAnimations;
 onload();
 
 
-var sub_skeleton_scene;
 
 function skinOnload(type, key, data) {
 

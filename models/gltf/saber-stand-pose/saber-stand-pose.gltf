@@ -9508,6 +9508,10 @@
     "samplers": [
         {
             "name": "default"
+        },
+        {
+            "magFilter": 9728,
+            "minFilter": 9728
         }
     ],
     "scene": 0,

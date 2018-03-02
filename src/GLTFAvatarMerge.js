@@ -76,7 +76,10 @@ function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
     // }
     for (var key in skeletonObject.imgs) {
         if (! (key in merged.imgs)) {
-            merged.imgs[key] = image2PNGDataURI(skeletonObject.imgs[key]);
+            var img = skeletonObject.imgs[key];
+            canvas1.width = img.width;
+            canvas1.height = img.height;
+            merged.imgs[key] = image2PNGDataURI(img);
         }
     }
 
@@ -342,7 +345,7 @@ function visibilityAndOperation(skeleton, vi) {
 
 
 
-function bakeVisibility(skeleton, texURI, bodyIdLUTURI, visibilty) {
+function bakeVisibility(skeleton, texURI, bodyIdLUTURI, visibility) {
     if (texURI == null || bodyIdLUTURI == null) {
         console.log('No texture with visibility or body id lut in this model');
         return;
@@ -385,13 +388,13 @@ function bakeVisibility(skeleton, texURI, bodyIdLUTURI, visibilty) {
     var lut = skeleton.imgs[bodyIdLUTURI].data;
     
     // temp: assume img and lut are of the same size
-    for (var y = 0; y < tex.height; y++) {
-        for (var x = 0; x < tex.width; x++) {
-            var idx = (tex.width * y + x) << 2;     // * 4
+    for (var y = 0; y < height; y++) {
+        for (var x = 0; x < width; x++) {
+            var idx = (width * y + x) << 2;     // * 4
             
             var bodyId = lut[idx];
 
-            if (visibilty[bodyId] === 0) {
+            if (visibility[bodyId] === 0) {
                 tex[idx + 3] = 0;
             }
         }
