@@ -38,7 +38,7 @@ function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
 
     console.log(skeletonObject.json);
 
-    // TODO: change bins and imgs to array
+    // TODO: change bins and imgs to array, use index instead of uri
     var merged = {
         json: Object.assign({}, skeletonObject.json),
         bins: Object.assign({}, skeletonObject.bins),
@@ -76,10 +76,8 @@ function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
     // }
     for (var key in skeletonObject.imgs) {
         if (! (key in merged.imgs)) {
-            var img = skeletonObject.imgs[key];
-            canvas1.width = img.width;
-            canvas1.height = img.height;
-            merged.imgs[key] = image2PNGDataURI(img);
+            
+            merged.imgs[key] = image2PNGDataURI(skeletonObject.imgs[key]);
         }
     }
 
@@ -122,7 +120,10 @@ function mergeGLTFAvatar(skeletonObject, skinObjectArray) {
 
 
     // 
-    context1.putImageData(merged.imgs[textureWithVisibility], 0, 0);
+    var img = merged.imgs[textureWithVisibility];
+    canvas1.width = img.width;
+    canvas1.height = img.height;
+    context1.putImageData(img, 0, 0);
     merged.imgs[textureWithVisibility] = canvas1.toDataURL();
 
     delete merged.imgs[bodyIdLUTTexture];
@@ -168,6 +169,7 @@ function merge(skeleton, skin) {
 
 
     // images
+    // TODO: delete bodyIdLUT if exist, and change texture.source
     var imageBaseId = skeleton.images.length;
     skeleton.images = skeleton.images.concat(skin.images);
 
@@ -270,11 +272,20 @@ function merge(skeleton, skin) {
     }
 
     // nodes
+    var skinBaseId = skeleton.skins.length;
+
+    var nodeRigidBind = {};
     var nodeBaseId = skeleton.nodes.length;
     // var numLinkedSkin = 0;
     for (i = 0, len = skin.nodes.length; i < len; i++) {
         skeleton.nodes.push(skin.nodes[i]);
         var n = skeleton.nodes[i + nodeBaseId];
+
+        if (n.skin !== undefined) {
+            n.skin += skinBaseId;
+        }
+
+
         if (n.children !== undefined) {
             var c = n.children;
             for (j = 0, lenj = c.length; j < lenj; j++) {
@@ -290,16 +301,33 @@ function merge(skeleton, skin) {
         if (n.extensions) {
             // create a new skin copy of skin linked
             // replace inverseBindMatrices
-            if (n.extensions.gl_avatar && n.extensions.gl_avatar.skin !== undefined) {
-                // linked skin
-                // assume linkedSkeletons exists
-                var linkedSkinInfo = linkedSkeletons[n.extensions.gl_avatar.skin];
-                var skinKey = linkedSkinInfo.skeleton;
-                var newSkin = Object.assign({}, skeleton.skins[skeleton.extensions.gl_avatar.skins[skinKey]]);
-                skeleton.skins.push(newSkin);
-                // numLinkedSkin++;
-                n.skin = skeleton.skins.length - 1;
-                newSkin.inverseBindMatrices = linkedSkinInfo.inverseBindMatrices + accessorBaseId;
+            if (n.extensions.gl_avatar) {
+                if (n.extensions.gl_avatar.skin !== undefined) {
+                    // linked skin
+                    // assume linkedSkeletons exists
+                    var linkedSkinInfo = linkedSkeletons[n.extensions.gl_avatar.skin];
+                    var skinKey = linkedSkinInfo.skeleton;
+                    var newSkin = Object.assign({}, skeleton.skins[skeleton.extensions.gl_avatar.skins[skinKey]]);
+                    skeleton.skins.push(newSkin);
+                    // numLinkedSkin++;
+                    n.skin = skeleton.skins.length - 1;
+                    newSkin.inverseBindMatrices = linkedSkinInfo.inverseBindMatrices + accessorBaseId;
+                }
+
+                var root = n.extensions.gl_avatar.root;
+                if ( root !== undefined) {
+                    // rigid bind / sub skeleton node
+                    
+                    var nid = i + nodeBaseId;
+                    // nodeRigidBind[root] = nid;
+                    nodeRigidBind[nid] = nid;
+                    var newParentNode = skeleton.nodes[skeleton.extensions.gl_avatar.nodes[root]];
+                    
+                    if (!newParentNode.children) {
+                        newParentNode.children = [];
+                    }
+                    newParentNode.children.push(nid);
+                }
             }
 
             delete n.extensions;
@@ -307,15 +335,107 @@ function merge(skeleton, skin) {
         
     }
 
+
+    // remove rigidbind nodes' original parent node in skin
+    // var finishUnparenting = false;
+    var numUnparenting = (Object.keys(nodeRigidBind)).length;
+    for (i = nodeBaseId, len = skeleton.nodes.length; i < len; i++) {
+        var n = skeleton.nodes[i];
+        if (n.children) {
+            // for (j = 0, lenj = n.children.length; j < lenj; j++) {
+            for (j = 0; j < n.children.length; j++) {
+                if (n.children[j] in nodeRigidBind) {
+                    // delete nodeRigidBind[n.children[j]];
+                    n.children.splice(j, 1);
+                    j--;
+                    numUnparenting--;
+
+                    if (numUnparenting == 0) {
+                        i = len;    // early termination
+                        break;
+                    }
+
+                }
+            }
+        }
+    }
+
+
+
+    // skins (sub-skeleton)
+    if (skin.skins) {
+        // if (!skeleton.skins) {
+        //     skeleton.skins = [];
+        // }
+
+        for (i = 0, len = skin.skins.length; i < len; i++) {
+            var s = skin.skins[i];
+
+            skeleton.skins.push(s);
+
+            if (s.joints) {
+                for (j = 0, lenj = s.joints.length; j < lenj; j++) {
+                    s.joints[j] += nodeBaseId;
+                }
+            }
+            
+            if (s.inverseBindMatrices !== undefined) {
+                s.inverseBindMatrices += accessorBaseId;
+            }
+
+            if (s.skeleton !== undefined) {
+                s.skeleton += nodeBaseId;
+            }
+        }
+    }
+
+
+
+
+
+
+
     // scenes (assume only one scene)
     var sceneNodeBaseId = skeleton.scenes[0].nodes.length;
     skeleton.scenes[0].nodes = skeleton.scenes[0].nodes.concat(skin.scenes[0].nodes);
     for (i = 0, len = skin.scenes[0].nodes.length; i < len; i++) {
+        // WARNING: TODO: the scene root node might also be rigid bind node
         skeleton.scenes[0].nodes[i + sceneNodeBaseId] += nodeBaseId;
     }
+
     
+    // animations
+    if (skin.animations) {
+        if (!skeleton.animations) {
+            skeleton.animations = [];
+        }
+
+        for (i = 0, len = skin.animations.length; i < len; i++) {
+            var a = skin.animations[i];
+
+            skeleton.animations.push(a);
+
+            if (a.channels) {
+                for (j = 0, lenj = a.channels.length; j < lenj; j++) {
+                    var c = a.channels[j];
+                    c.target.node += nodeBaseId;
+                }
+            }
+            
+            if (a.samplers) {
+                for (j = 0, lenj = a.samplers.length; j < lenj; j++) {
+                    var s = a.samplers[j];
+                    s.input += accessorBaseId;
+                    s.output += accessorBaseId;
+                }
+            }
+        }
+    }
     
-    // TODO: animations, cameras...
+
+
+    
+    // TODO: cameras...
 
 
     // extensions: visibility array

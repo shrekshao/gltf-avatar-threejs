@@ -135,10 +135,8 @@ An dynamic avatar system based on glTF which supports:
                 }
             }
         },
-    ],
-    "skins": [
         {
-            "name": "F005_Saber_Lily_Hair",
+            "name": "Hair_bone",
             "...": "...",
             "extensions": {
                 "gl_avatar": {
@@ -146,7 +144,7 @@ An dynamic avatar system based on glTF which supports:
                 }
             }
         }
-    ],
+    ]
     "...": "..."
 }
 ```
@@ -157,7 +155,7 @@ An dynamic avatar system based on glTF which supports:
     - `linkedSkin`: corresponds to the shared skins in `skeleton` file.
 * `meshes[i].primitives[i].extensions.gl_avatar.attributes`: store `JOINT` and `WEIGHT` of skinnedmesh here.
 * `nodes[i].extensions.gl_avatar.skin`: refers to skin id in `extensions.gl_avatar.linkedSkin`.
-* `nodes/skins[i].extensions.gl_avatar.root`: rigid-bind/sub-skeleton
+* `nodes[i].extensions.gl_avatar.root`: rigid-bind/sub-skeleton
 
 
 ## Blender art asset tutorial

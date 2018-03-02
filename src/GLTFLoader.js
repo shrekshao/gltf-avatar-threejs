@@ -2248,16 +2248,16 @@ module.exports = function( THREE ) {
 					inverseBindMatrices: dependencies.accessors[ skin.inverseBindMatrices ]
 				};
 
-				// clothes file sub skeleton extensions
-				if (skin.extensions && skin.extensions.gl_avatar) {
-					var gla = skin.extensions.gl_avatar;
-					if (gla.root) {
-						// console.log(gl_avatar_linked_skeleton);
-						var root = gl_avatar_linked_skeleton.nodes[gla.root];
-						_skin.root = root;
-						// console.log(root);
-					}
-				}
+				// // clothes file sub skeleton extensions
+				// if (skin.extensions && skin.extensions.gl_avatar) {
+				// 	var gla = skin.extensions.gl_avatar;
+				// 	if (gla.root) {
+				// 		// console.log(gl_avatar_linked_skeleton);
+				// 		var root = gl_avatar_linked_skeleton.nodes[gla.root];
+				// 		_skin.root = root;
+				// 		// console.log(root);
+				// 	}
+				// }
 
 				return _skin;
 
@@ -2620,14 +2620,14 @@ module.exports = function( THREE ) {
 
 										
 
-										if (gl_avatar && gl_avatar.type === "skin") {
-											if (skinEntry.root) {
-												// sub_skeleton module
+										// if (gl_avatar && gl_avatar.type === "skin") {
+										// 	if (skinEntry.root) {
+										// 		// sub_skeleton module
 
-												// assume bones[0] is root(skeleton) of this skeleton (joint list)
-												bones[0].gl_avatar_base_root = skinEntry.root;
-											}
-										}
+										// 		// assume bones[0] is root(skeleton) of this skeleton (joint list)
+										// 		bones[0].gl_avatar_base_root = skinEntry.root;
+										// 	}
+										// }
 
 
 										// gl_avatar: only referenced skeleton will be created
@@ -2737,6 +2737,15 @@ module.exports = function( THREE ) {
 						if (gl_avatar.type === "skeleton") {
 							if (nodeId in gl_avatar.nodeId2Name) {
 								gl_avatar.nodes[gl_avatar.nodeId2Name[nodeId]] = _node;
+							}
+						} else {
+							// skin
+							if (node.extensions && node.extensions.gl_avatar) {
+								var gla = node.extensions.gl_avatar;
+								if (gla.root !== undefined) {
+									// rigid bind
+									_node.gl_avatar_base_root = gl_avatar_linked_skeleton.nodes[gla.root];
+								}
 							}
 						}
 					}

@@ -1803,8 +1803,8 @@
     "buffers": [
         {
             "byteLength": 119232,
-            "name": "buffer_combined",
-            "uri": "buffer_combined.bin"
+            "name": "buffer_combined_lily_hair",
+            "uri": "buffer_combined_lily_hair.bin"
         }
     ],
     "images": [
@@ -1922,7 +1922,12 @@
                 0.0,
                 0.0,
                 0.0
-            ]
+            ],
+            "extensions": {
+                "gl_avatar": {
+                    "root": "head-end"
+                }
+            }
         },
         {
             "children": [
@@ -2288,12 +2293,7 @@
                 15
             ],
             "name": "F005_Saber_Lily_Hair",
-            "skeleton": 2,
-            "extensions": {
-                "gl_avatar": {
-                    "root": "head-end"
-                }
-            }
+            "skeleton": 2
         }
     ],
     "textures": [
