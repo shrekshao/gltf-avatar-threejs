@@ -674,19 +674,25 @@ var button;
 
 
 button = cb.appendChild(document.createElement('button'));
-button.innerHTML = 'mixamo-dress';
+button.innerHTML = 'maid-dress';
 button.onclick = function() {
     selectGLTFAvatarSkin('clothes', 'maid-dress', 'models/gltf/saber-dress-mixamo/saber-dress.gltf');
 };
 
+// button = cb.appendChild(document.createElement('button'));
+// button.innerHTML = 'suit';
+// button.onclick = function() {
+//     selectGLTFAvatarSkin('clothes', 'suit', 'models/gltf/saber-suit/saber-suit.gltf');
+// };
+
 button = cb.appendChild(document.createElement('button'));
-button.innerHTML = 'mixamo-hair';
+button.innerHTML = 'maid-hair';
 button.onclick = function() {
     selectGLTFAvatarSkin('hair', 'maid', 'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf');
 };
 
 button = cb.appendChild(document.createElement('button'));
-button.innerHTML = 'mixamo-lily-hair';
+button.innerHTML = 'lily-hair';
 button.onclick = function() {
     selectGLTFAvatarSkin('hair', 'lily', 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf');
 };
