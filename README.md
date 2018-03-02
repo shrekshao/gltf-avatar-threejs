@@ -1,15 +1,20 @@
 # gltf-avatar-threejs loader and viewer
 
-An dynamic avatar system based on glTF which supports: 
+
+## Brief feature intro
+
+A dynamic avatar system based on glTF which supports: 
 
 - [x] switchable skin (clothes, hair, accessory) sharing a skeleton
-- [x] fragment-granuality skin visibility
-- [x] sub-skeleton and animations in skin file
-- [x] rigid bind
+- [x] pixel-granuality skin visibility control
+    - [x] threejs real time render
+    - [x] bake to merged glTF/glb
+- [x] sub-skeleton and animations in skin file (hair skeleton, face expression rigging)
+- [x] node rigid bind
 - [x] merge and output as valid standard glTF (without need for extension support loader)
     - [x] nodejs
-    - [ ] browser
-- [ ] TODO: hair, clothes physics
+    - [x] browser export glb
+- [ ] TODO: hair, clothes physics (MMD?)
 
 ## glTF Avatar Spec v0.2
 
@@ -161,6 +166,19 @@ An dynamic avatar system based on glTF which supports:
 ## Blender art asset tutorial
 
 TODO
+
+## Examples
+
+TODO
+
+* baked skin texture with invisible part
+
+![](models/merge/saber-pure-body.png)
+
+* hair sub skeleton TODO: gif
+
+* mixamo animation
+
 
 ## Credit
 
