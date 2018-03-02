@@ -150,9 +150,7 @@ function onload() {
     window.addEventListener( 'resize', onWindowResize, false );
     document.addEventListener( 'keydown', function(e) { onKeyDown(e); }, false );
     buildSceneList();
-    // switchScene(0);
-    switchScene(1);
-    // switchScene(2);
+    switchScene(0);
     animate();
 }
 function initScene(index) {
@@ -400,18 +398,16 @@ function getEnvMap() {
     envMap.format = THREE.RGBFormat;
     return envMap;
 }
+
+
+
+
 var sceneList = [
     {
-        name : 'Saber-body-walk', url : './models/gltf/saber-body-walk/saber-body-walk.gltf',
-        cameraPos: new THREE.Vector3(3, 2, 3),
-        objectRotation: new THREE.Euler(0, 0, 0),
-        addLights: true,
-        extensions: ['glTF', 'gl_avatar'],
-        addEnvMap: true
-    },
-    {
         name : 'Saber-body-mixamo', url : './models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
-        cameraPos: new THREE.Vector3(3, 2, 3),
+        cameraPos: new THREE.Vector3(1.5, 2, 1.5),
+        // cameraPos: new THREE.Vector3(3, 2, 3),
+        center: new THREE.Vector3(0, 0.8, 0),
         objectRotation: new THREE.Euler(0, 180, 0),
         addLights: true,
         extensions: ['glTF', 'gl_avatar'],
@@ -420,22 +416,18 @@ var sceneList = [
     },
     {
         name : 'Saber-body-mixamo-standpose', url : './models/gltf/saber-stand-pose/saber-stand-pose.gltf',
-        cameraPos: new THREE.Vector3(3, 2, 3),
+        cameraPos: new THREE.Vector3(1.5, 2, 1.5),
+        center: new THREE.Vector3(0, 0.8, 0),
         objectRotation: new THREE.Euler(0, 180, 0),
         addLights: true,
         extensions: ['glTF', 'gl_avatar'],
         // addEnvMap: true
         addEnvMap: false
-    },
-    {
-        name : 'BoomBox (PBR)', url : './models/gltf/BoomBox/%s/BoomBox.gltf',
-        cameraPos: new THREE.Vector3(0.02, 0.01, 0.03),
-        objectRotation: new THREE.Euler(0, Math.PI, 0),
-        addLights:true,
-        extensions: ['glTF', 'glTF-pbrSpecularGlossiness', 'glTF-Binary'],
-        addEnvMap: true
     }
 ];
+
+
+
 function buildSceneList() {
     var elt = document.getElementById('scenes_list');
     while( elt.hasChildNodes() ){

@@ -1,4 +1,4 @@
-# gltf-avatar-threejs loader and viewer
+# gltf-avatar-threejs loader, viewer, exporter
 
 
 ## Brief feature intro
@@ -15,6 +15,26 @@ A dynamic avatar system based on glTF which supports:
     - [x] nodejs
     - [x] browser export glb
 - [ ] TODO: hair, clothes physics (MMD?)
+
+
+## Feature examples
+
+
+
+* baked skin texture with invisible part
+
+| with visibility control | without visibility control |
+|-------------------------|----------------------------|
+|  ![](imgs/with-v.png)   | ![](imgs/without-v.png)    |
+
+* sub skeleton and animation ins skin (hair) file
+
+![](imgs/sub-s.gif)
+
+* mixamo animation
+
+TODO
+
 
 ## glTF Avatar Spec v0.2
 
@@ -166,18 +186,6 @@ A dynamic avatar system based on glTF which supports:
 ## Blender art asset tutorial
 
 TODO
-
-## Examples
-
-TODO
-
-* baked skin texture with invisible part
-
-![](models/merge/saber-pure-body.png)
-
-* hair sub skeleton TODO: gif
-
-* mixamo animation
 
 
 ## Credit
