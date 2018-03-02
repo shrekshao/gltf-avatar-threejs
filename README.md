@@ -19,9 +19,11 @@ A dynamic avatar system based on glTF which supports:
 
 ## Feature examples
 
+* combination of skins with shared skeleton or rigid bind
 
+![](combination.gif)
 
-* baked skin texture with invisible part
+* visibility control of skin, in real time renderer or baked
 
 | with visibility control | without visibility control |
 |-------------------------|----------------------------|
@@ -33,7 +35,11 @@ A dynamic avatar system based on glTF which supports:
 
 * mixamo animation
 
-TODO
+TODO: gif
+
+* merge and export as glb, able to get loaded on facebook, sketchfab, Godot, ...
+
+![](imgs/facebook.png)
 
 
 ## glTF Avatar Spec v0.2
@@ -169,7 +175,7 @@ TODO
                 }
             }
         }
-    ]
+    ],
     "...": "..."
 }
 ```
