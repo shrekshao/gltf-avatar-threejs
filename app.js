@@ -461,7 +461,7 @@ function getEnvMap() {
         return envMap;
     }
     // var path = 'textures/cube/Park2/';
-    var path = '/textures/cube/sky/';
+    var path = 'textures/cube/sky/';
     var format = '.jpg';
     var urls = [
         path + 'posx' + format, path + 'negx' + format,
@@ -478,7 +478,7 @@ function getEnvMap() {
 
 var sceneList = [
     {
-        name : 'Saber-body-mixamo', url : '/models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
+        name : 'Saber-body-mixamo', url : 'models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
         cameraPos: new THREE.Vector3(1.5, 2, 1.5),
         // cameraPos: new THREE.Vector3(3, 2, 3),
         center: new THREE.Vector3(0, 0.8, 0),
@@ -489,7 +489,7 @@ var sceneList = [
         addEnvMap: false
     },
     {
-        name : 'Saber-body-mixamo-standpose', url : '/models/gltf/saber-stand-pose/saber-stand-pose.gltf',
+        name : 'Saber-body-mixamo-standpose', url : 'models/gltf/saber-stand-pose/saber-stand-pose.gltf',
         cameraPos: new THREE.Vector3(1.5, 2, 1.5),
         center: new THREE.Vector3(0, 0.8, 0),
         objectRotation: new THREE.Euler(0, 180, 0),
@@ -750,25 +750,25 @@ var button;
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'maid-dress';
 button.onclick = function() {
-    selectGLTFAvatarSkin('clothes', 'maid-dress', '/models/gltf/saber-dress-mixamo/saber-dress.gltf');
+    selectGLTFAvatarSkin('clothes', 'maid-dress', 'models/gltf/saber-dress-mixamo/saber-dress.gltf');
 };
 
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'suit';
 button.onclick = function() {
-    selectGLTFAvatarSkin('clothes', 'suit', '/models/gltf/saber-suit/saber-suit.gltf');
+    selectGLTFAvatarSkin('clothes', 'suit', 'models/gltf/saber-suit/saber-suit.gltf');
 };
 
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'maid-hair';
 button.onclick = function() {
-    selectGLTFAvatarSkin('hair', 'maid', '/models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf');
+    selectGLTFAvatarSkin('hair', 'maid', 'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf');
 };
 
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'lily-hair';
 button.onclick = function() {
-    selectGLTFAvatarSkin('hair', 'lily', '/models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf');
+    selectGLTFAvatarSkin('hair', 'lily', 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf');
 };
 
 
