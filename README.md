@@ -21,7 +21,7 @@ A dynamic avatar system based on glTF which supports:
 
 * combination of skins with shared skeleton or rigid bind
 
-![](combination.gif)
+![](imgs/combination.gif)
 
 * visibility control of skin, in real time renderer or baked
 
