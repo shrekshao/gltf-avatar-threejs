@@ -5304,18 +5304,13 @@
     ],
     "materials": [
         {
-            "emissiveFactor": [
-                0,
-                0,
-                0
-            ],
             "name": "07___Default.004",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    0.4705600142478943,
-                    0.4705600142478943,
-                    0.4705600142478943,
-                    0
+                    1,
+                    1,
+                    1,
+                    1
                 ],
                 "baseColorTexture": {
                     "index": 1,

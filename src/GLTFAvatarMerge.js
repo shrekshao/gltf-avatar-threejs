@@ -371,6 +371,11 @@ function merge(skeleton, skin) {
         for (i = 0, len = skin.skins.length; i < len; i++) {
             var s = skin.skins[i];
 
+            if (s.gl_avatar) {
+                // constructed linked skin in gltf loader
+                continue;
+            }
+
             skeleton.skins.push(s);
 
             if (s.joints) {
@@ -384,7 +389,11 @@ function merge(skeleton, skin) {
             }
 
             if (s.skeleton !== undefined) {
-                s.skeleton += nodeBaseId;
+                if (typeof s.skeleton == 'number') {
+                    s.skeleton += nodeBaseId;
+                } else {
+                    s.skeleton = skeleton.extensions.gl_avatar.skins[s.skeleton];
+                }
             }
         }
     }
