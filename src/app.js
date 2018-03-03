@@ -679,11 +679,11 @@ button.onclick = function() {
     selectGLTFAvatarSkin('clothes', 'maid-dress', 'models/gltf/saber-dress-mixamo/saber-dress.gltf');
 };
 
-// button = cb.appendChild(document.createElement('button'));
-// button.innerHTML = 'suit';
-// button.onclick = function() {
-//     selectGLTFAvatarSkin('clothes', 'suit', 'models/gltf/saber-suit/saber-suit.gltf');
-// };
+button = cb.appendChild(document.createElement('button'));
+button.innerHTML = 'suit';
+button.onclick = function() {
+    selectGLTFAvatarSkin('clothes', 'suit', 'models/gltf/saber-suit/saber-suit.gltf');
+};
 
 button = cb.appendChild(document.createElement('button'));
 button.innerHTML = 'maid-hair';
