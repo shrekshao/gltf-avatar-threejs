@@ -533,6 +533,18 @@ document.getElementById('animation_toggle').onclick = toggleAnimations;
 onload();
 
 
+function updateVisibilityArray(v, v1) {
+    for (var i = 0, len = v1.length; i < len; i++) {
+        v[i] = v1[i] ? v[i] : 0;
+    }
+
+    // // gl_avatar_linked_skeleton.visibilityLUT.data = gl_avatar_linked_skeleton.visibility;
+    // for (var i, len = v.length; i < len; i++) {
+    // 	gl_avatar_linked_skeleton.visibilityLUT.image.data[i] = v[i] * 255;
+    // }
+    gltf_skeleton.gl_avatar.visibilityLUT.needsUpdate = true;
+}
+
 
 function skinOnload(type, key, data) {
 
@@ -565,9 +577,22 @@ function skinOnload(type, key, data) {
                 }
             }
         }
+
+        // refresh visibility array
+        // console.log(c.glTF.gl_avatar.visibility);
+
+        gltf_skeleton.gl_avatar.visibility.fill(255);
+        for (var t in glAvatarSystem.curAccessories) {
+            if (t !== type && glAvatarSystem.curAccessories[t].scene) {
+                var a = glAvatarSystem.curAccessories[t];
+                updateVisibilityArray(gltf_skeleton.gl_avatar.visibility, glAvatarSystem.accessories[t][a.name].gltf.gl_avatar.visibility);
+            }
+        }
     }
 
     // --------------------------
+
+    updateVisibilityArray(gltf_skeleton.gl_avatar.visibility, data.gl_avatar.visibility);
 
     gltf = data;
     var object = gltf.scene;

@@ -161,9 +161,12 @@ module.exports = function( THREE ) {
 					gl_avatar: parser.extensions && parser.extensions['gl_avatar']
 				};
 
-				if (glTF.gl_avatar && glTF.gl_avatar.type === 'skin' && glTF.gl_avatar.visibility) {
-					updateVisibilityArray(gl_avatar_linked_skeleton.visibility, glTF.gl_avatar.visibility);
-				}
+				// if (glTF.gl_avatar && glTF.gl_avatar.type === 'skin' && glTF.gl_avatar.visibility) {
+				// 	updateVisibilityArray(gl_avatar_linked_skeleton.visibility, glTF.gl_avatar.visibility);
+				// }
+				// if (glTF.gl_avatar && glTF.gl_avatar.type === 'skin' && glTF.gl_avatar.visibility) {
+				// 	glTF.scene.gl_avatar = {visibility : glTF.gl_}
+				// }
 				
 				// !note: modified
 				
