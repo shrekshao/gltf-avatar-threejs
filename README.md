@@ -35,8 +35,6 @@ A dynamic avatar system based on glTF which supports:
 
 * mixamo animation
 
-TODO: gif
-
 * merge and export as glb, able to get loaded on facebook, sketchfab, Godot, ...
 
 ![](imgs/facebook.png)
