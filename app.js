@@ -607,6 +607,18 @@ document.getElementById('animation_toggle').onclick = toggleAnimations;
 onload();
 
 
+function updateVisibilityArray(v, v1) {
+    for (var i = 0, len = v1.length; i < len; i++) {
+        v[i] = v1[i] ? v[i] : 0;
+    }
+
+    // // gl_avatar_linked_skeleton.visibilityLUT.data = gl_avatar_linked_skeleton.visibility;
+    // for (var i, len = v.length; i < len; i++) {
+    // 	gl_avatar_linked_skeleton.visibilityLUT.image.data[i] = v[i] * 255;
+    // }
+    gltf_skeleton.gl_avatar.visibilityLUT.needsUpdate = true;
+}
+
 
 function skinOnload(type, key, data) {
 
@@ -639,9 +651,22 @@ function skinOnload(type, key, data) {
                 }
             }
         }
+
+        // refresh visibility array
+        // console.log(c.glTF.gl_avatar.visibility);
+
+        gltf_skeleton.gl_avatar.visibility.fill(255);
+        for (var t in __WEBPACK_IMPORTED_MODULE_0__GLTFAvatarSystem_js__["a" /* glAvatarSystem */].curAccessories) {
+            if (t !== type && __WEBPACK_IMPORTED_MODULE_0__GLTFAvatarSystem_js__["a" /* glAvatarSystem */].curAccessories[t].scene) {
+                var a = __WEBPACK_IMPORTED_MODULE_0__GLTFAvatarSystem_js__["a" /* glAvatarSystem */].curAccessories[t];
+                updateVisibilityArray(gltf_skeleton.gl_avatar.visibility, __WEBPACK_IMPORTED_MODULE_0__GLTFAvatarSystem_js__["a" /* glAvatarSystem */].accessories[t][a.name].gltf.gl_avatar.visibility);
+            }
+        }
     }
 
     // --------------------------
+
+    updateVisibilityArray(gltf_skeleton.gl_avatar.visibility, data.gl_avatar.visibility);
 
     gltf = data;
     var object = gltf.scene;
@@ -46239,9 +46264,12 @@ module.exports = function( THREE ) {
 					gl_avatar: parser.extensions && parser.extensions['gl_avatar']
 				};
 
-				if (glTF.gl_avatar && glTF.gl_avatar.type === 'skin' && glTF.gl_avatar.visibility) {
-					updateVisibilityArray(gl_avatar_linked_skeleton.visibility, glTF.gl_avatar.visibility);
-				}
+				// if (glTF.gl_avatar && glTF.gl_avatar.type === 'skin' && glTF.gl_avatar.visibility) {
+				// 	updateVisibilityArray(gl_avatar_linked_skeleton.visibility, glTF.gl_avatar.visibility);
+				// }
+				// if (glTF.gl_avatar && glTF.gl_avatar.type === 'skin' && glTF.gl_avatar.visibility) {
+				// 	glTF.scene.gl_avatar = {visibility : glTF.gl_}
+				// }
 				
 				// !note: modified
 				
