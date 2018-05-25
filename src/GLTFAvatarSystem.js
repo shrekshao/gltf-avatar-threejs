@@ -18,9 +18,13 @@ var glAvatarSystem = {
         },
         hair: {
             name: null,
-            scene: null,
+            scene: null
             // sceneID: null
             // asset: null
+        },
+        instrument: {
+            name: null,
+            scene: null
         }
     },
 
@@ -29,7 +33,24 @@ var glAvatarSystem = {
 
     accessories: {
         clothes: {},
-        hair: {}
+        hair: {},
+        instrument: {}
+    },
+
+
+
+    repo: {
+        clothes: {
+            'maid-dress': 'models/gltf/saber-dress-mixamo/saber-dress.gltf',
+            'suit': 'models/gltf/saber-suit/saber-suit.gltf'
+        },
+        hair: {
+            'maid': 'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf',
+            'lily': 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf'
+        },
+        instrument: {
+            
+        }
     },
 
     isLoaded: function (type, key) {

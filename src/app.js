@@ -6,106 +6,7 @@ import {glAvatarSystem} from './GLTFAvatarSystem.js';
 import {mergeGLTFAvatar} from './GLTFAvatarMerge.js';
 import {fileSave} from './lib/makeglb.js';
 
-// var update = THREE.Bone.prototype.update;
-// THREE.Bone.prototype.update = function(parentSkinMatrix, forceUpdate) {
-//     update.call(this, parentSkinMatrix, forceUpdate);
-//     this.updateMatrixWorld( true );
-// };
-
-THREE.Skeleton.prototype.update = ( function () {
-
-    var offsetMatrix = new THREE.Matrix4();
-    var identityMatrix = new THREE.Matrix4();
-
-    return function update() {
-
-        var bones = this.bones;
-        var boneInverses = this.boneInverses;
-        var boneMatrices = this.boneMatrices;
-        var boneTexture = this.boneTexture;
-
-        // flatten bone matrices to array
-
-        for ( var i = 0, il = bones.length; i < il; i ++ ) {
-
-            // compute the offset between the current and the original transform
-
-            var matrix = bones[ i ] ? bones[ i ].matrixWorld : identityMatrix;
-
-            offsetMatrix.multiplyMatrices( matrix, boneInverses[ i ] );
-            offsetMatrix.toArray( boneMatrices, i * 16 );
-
-
-            // test
-            if (bones[i]) {
-                bones[i].updateMatrixWorld(true);
-            }
-            
-        }
-
-        if ( boneTexture !== undefined ) {
-
-            boneTexture.needsUpdate = true;
-
-        }
-
-    };
-
-} )();
-
-
-// import '../css/style.css';
-
-// var renderer	= new THREE.WebGLRenderer({
-//     antialias	: true
-// });
-// renderer.setClearColor(new THREE.Color('lightgrey'), 1);
-// renderer.setSize( window.innerWidth, window.innerHeight );
-// document.body.appendChild( renderer.domElement );
-// // array of functions for the rendering loop
-// var onRenderFcts= [];
-// // init scene and camera
-// var scene	= new THREE.Scene();
-// var camera	= new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
-// camera.position.z = 2;
-// var controls	= new THREE.OrbitControls(camera);
-// //////////////////////////////////////////////////////////////////////////////////
-// //		add an object in the scene
-// //////////////////////////////////////////////////////////////////////////////////
-// // add a torus	
-// var geometry	= new THREE.TorusKnotGeometry(0.5-0.12, 0.12);
-// var material	= new THREE.MeshNormalMaterial(); 
-// var mesh	= new THREE.Mesh( geometry, material );
-// scene.add( mesh );
-
-// //////////////////////////////////////////////////////////////////////////////////
-// //		render the whole thing on the page
-// //////////////////////////////////////////////////////////////////////////////////
-// // handle window resize
-// window.addEventListener('resize', function(){
-//     renderer.setSize( window.innerWidth, window.innerHeight )
-//     camera.aspect	= window.innerWidth / window.innerHeight
-//     camera.updateProjectionMatrix()		
-// }, false);
-// // render the scene
-// onRenderFcts.push(function(){
-//     renderer.render( scene, camera );		
-// });
-
-// // run the rendering loop
-// var lastTimeMsec= null;
-// requestAnimationFrame(function animate(nowMsec){
-//     // keep looping
-//     requestAnimationFrame( animate );
-//     // measure time
-//     lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
-//     var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
-//     lastTimeMsec	= nowMsec
-//     // call each update function
-//     onRenderFcts.forEach(function(onRenderFct){
-//         onRenderFct(deltaMsec/1000, nowMsec/1000)
-//     })
-// });
+import dat from 'dat.gui';
 
 
 var gltf_skeleton = null;
@@ -151,6 +52,7 @@ function onload() {
     document.addEventListener( 'keydown', function(e) { onKeyDown(e); }, false );
     buildSceneList();
     switchScene(0);
+    // switchScene(2);
     animate();
 }
 function initScene(index) {
@@ -404,9 +306,26 @@ function getEnvMap() {
 
 var sceneList = [
     {
-        name : 'Saber-body-mixamo', url : 'models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
+        name : 'Saber-body-mixamo', 
+        url : 'models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
         cameraPos: new THREE.Vector3(1.5, 2, 1.5),
         // cameraPos: new THREE.Vector3(3, 2, 3),
+        center: new THREE.Vector3(0, 0.8, 0),
+        objectRotation: new THREE.Euler(0, 180, 0),
+        addLights: true,
+        extensions: ['glTF', 'gl_avatar'],
+        // addEnvMap: true
+        addEnvMap: false,
+
+        avatar: {
+            hair: 'maid',
+            clothes: 'maid-dress'
+            // instrument: 'clarinet'
+        }
+    },
+    {
+        name : 'Saber-body-mixamo-standpose', url : 'models/gltf/saber-stand-pose/saber-stand-pose.gltf',
+        cameraPos: new THREE.Vector3(1.5, 2, 1.5),
         center: new THREE.Vector3(0, 0.8, 0),
         objectRotation: new THREE.Euler(0, 180, 0),
         addLights: true,
@@ -415,7 +334,7 @@ var sceneList = [
         addEnvMap: false
     },
     {
-        name : 'Saber-body-mixamo-standpose', url : 'models/gltf/saber-stand-pose/saber-stand-pose.gltf',
+        name : 'Saber-body-clarinet', url : 'models/gltf/clarinet-animation-test/clarinet-animation-test.gltf',
         cameraPos: new THREE.Vector3(1.5, 2, 1.5),
         center: new THREE.Vector3(0, 0.8, 0),
         objectRotation: new THREE.Euler(0, 180, 0),
@@ -722,7 +641,11 @@ button.onclick = function() {
     selectGLTFAvatarSkin('hair', 'lily', 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf');
 };
 
-
+button = cb.appendChild(document.createElement('button'));
+button.innerHTML = 'clarinet';
+button.onclick = function() {
+    selectGLTFAvatarSkin('instrument', 'clarinet', 'models/gltf/clarinet-gltf/clarinet.gltf');
+};
 
 document.getElementById('export-btn').onclick = function() {
 
