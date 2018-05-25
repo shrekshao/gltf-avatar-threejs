@@ -40,6 +40,11 @@ var glAvatarSystem = {
 
 
     repo: {
+        skeletons: {
+            'mixamo': 'models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
+            'stand-pose': 'models/gltf/saber-stand-pose/saber-stand-pose.gltf'
+
+        },
         clothes: {
             'maid-dress': 'models/gltf/saber-dress-mixamo/saber-dress.gltf',
             'suit': 'models/gltf/saber-suit/saber-suit.gltf'
