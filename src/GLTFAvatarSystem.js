@@ -57,6 +57,10 @@ var glAvatarSystem = {
             },
             'stand-pose': {
                 url: 'models/gltf/saber-stand-pose/saber-stand-pose.gltf',
+                
+                cameraPos: new THREE.Vector3(1.5, 2, 1.5),
+                center: new THREE.Vector3(0, 0.8, 0),
+                objectRotation: new THREE.Euler(0, 180, 0),
 
                 skins: {
                     hair: 'lily',

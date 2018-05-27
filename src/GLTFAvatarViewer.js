@@ -31,8 +31,6 @@ function Viewer() {
 
 Viewer.prototype.init = function(canvas) {
     
-    
-   
 
     
     if (canvas) {
@@ -45,24 +43,43 @@ Viewer.prototype.init = function(canvas) {
         this.canvas.height = window.innerHeight;
     }
 
-    this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color( 0x222222 );
+    
     // this.camera = new THREE.PerspectiveCamera( 45, container.offsetWidth / container.offsetHeight, 0.001, 1000 );
 
     this.renderer.setSize( window.innerWidth, window.innerHeight ); // test
     // this.renderer.setSize( this.canvas.width, this.canvas.height ); // test
-    this.camera = new THREE.PerspectiveCamera( 45, this.canvas.width / this.canvas.height, 0.001, 1000 );
+    this.camera = new THREE.PerspectiveCamera( 45, this.canvas.width / this.canvas.height, 0.01, 100 );
 
-    this.scene.add(this.camera);
-    
     this.renderer.setPixelRatio(window.devicePixelRatio);
     // this.renderer.setPixelRatio(this.canvas.width / this.canvas.height);
 
     // this.renderer.setSize( window.innerWidth, window.innerHeight );
     // this.renderer.setSize( container.width, container.height );
 
+    // scene info: add light, add ground, shadow
+
+    this.loader = new THREE.GLTFLoader();
+    this.orbitControls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
 
 
+    this.onWindowResize();
+    window.addEventListener( 'resize', this.onWindowResize.bind(this), false );
+
+
+    this.initScene();
+    
+
+    this.selectSkeleton('mixamo');
+
+    this.animate();
+
+};
+
+Viewer.prototype.initScene = function () {
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color( 0x222222 );
+
+    this.scene.add(this.camera);
     // test add lights
     var ambient = new THREE.AmbientLight( 0x222222 );
     this.scene.add( ambient );
@@ -83,33 +100,30 @@ Viewer.prototype.init = function(canvas) {
     //     spot1.shadow.mapSize.height = 2048;
     // }
     this.scene.add( spot1 );
-
-
-
-
-    // scene info: add light, add ground, shadow
-
-    this.loader = new THREE.GLTFLoader();
-    this.orbitControls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
-
-
-
-
-    this.onWindowResize();
-    window.addEventListener( 'resize', this.onWindowResize.bind(this), false );
-
-    this.selectSkeleton('mixamo');
-
-    this.animate();
-
 };
 
+Viewer.prototype.cleanup = function() {
+    if (this.skeletonMixer) {
+        this.skeletonMixer.stopAllAction();
+        this.skeletonMixer = null;
+    }
 
-// Viewer.prototype.cleanup = function() {
-//     if (this.skeletonMixer) {
-//         this.skeletonMixer.stopAllAction();
-//     }
-// };
+    if (this.skinMixers) {
+        for (var i = 0, len = this.skinMixers.length; i < len; i++) {
+            this.skinMixers[i].stopAllAction();
+        }
+        this.skinMixers = [];
+    }
+
+    if (this.scene) {
+        for (var i = 0, len = this.scene.children.length; i < len; i++) {
+            this.scene.remove(this.scene.children[i]);
+        }
+    }
+
+    this.initScene();
+    
+};
 
 var onWindowResize = Viewer.prototype.onWindowResize = function() {
     this.camera.aspect = this.canvas.width / this.canvas.height;
@@ -353,6 +367,8 @@ Viewer.prototype.selectSkeleton = function(key, uri) {
             imgs: imgs
         };
 
+
+        self.cleanup();
 
         // camera setting
         self.camera.position.copy(info.cameraPos);
