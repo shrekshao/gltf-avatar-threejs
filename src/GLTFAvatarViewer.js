@@ -6,6 +6,7 @@ import {glAvatarSystem} from './GLTFAvatarSystem.js';
 import {mergeGLTFAvatar} from './GLTFAvatarMerge.js';
 import {fileSave} from './lib/makeglb.js';
 
+var clock = new THREE.Clock();
 
 function Viewer() {
     // this.container = null;
@@ -19,6 +20,7 @@ function Viewer() {
     this.renderer = null;
     this.scene = null;
     this.camera = null;
+    this.orbitControls = null;
 
     this.loader = null;
 }
@@ -28,27 +30,144 @@ function Viewer() {
 // };
 
 Viewer.prototype.init = function(canvas) {
-    this.canvas = canvas;
-    this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color( 0x222222 );
-    this.camera = new THREE.PerspectiveCamera( 45, container.offsetWidth / container.offsetHeight, 0.001, 1000 );
-
-    this.scene.add(this.camera);
+    
+    
+   
 
     
+    if (canvas) {
+        this.canvas = canvas;
+        this.renderer = new THREE.WebGLRenderer( { canvas: this.canvas, antialias: true } );
+    } else {
+        this.renderer = new THREE.WebGLRenderer( { antialias: true } );
+        this.canvas = this.renderer.domElement;
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
 
-    this.renderer = new THREE.WebGLBufferRenderer( { canvas: this.canvas, antialias: true } );
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color( 0x222222 );
+    // this.camera = new THREE.PerspectiveCamera( 45, container.offsetWidth / container.offsetHeight, 0.001, 1000 );
+
+    this.renderer.setSize( window.innerWidth, window.innerHeight ); // test
+    // this.renderer.setSize( this.canvas.width, this.canvas.height ); // test
+    this.camera = new THREE.PerspectiveCamera( 45, this.canvas.width / this.canvas.height, 0.001, 1000 );
+
+    this.scene.add(this.camera);
+    
     this.renderer.setPixelRatio(window.devicePixelRatio);
+    // this.renderer.setPixelRatio(this.canvas.width / this.canvas.height);
+
     // this.renderer.setSize( window.innerWidth, window.innerHeight );
     // this.renderer.setSize( container.width, container.height );
+
+
+
+    // test add lights
+    var ambient = new THREE.AmbientLight( 0x222222 );
+    this.scene.add( ambient );
+    var directionalLight = new THREE.DirectionalLight( 0xdddddd );
+    directionalLight.position.set( 1, 1, 1 ).normalize();
+    this.scene.add( directionalLight );
+
+    var spot1   = new THREE.SpotLight( 0xffffff, 1 );
+    // spot1.position.set( 10, 20, 10 );
+    spot1.position.set( 10, 20, -30 );
+    spot1.angle = 0.25;
+    spot1.distance = 1024;
+    spot1.penumbra = 0.75;
+    // if ( sceneInfo.shadows ) {
+    //     spot1.castShadow = true;
+    //     spot1.shadow.bias = 0.0001;
+    //     spot1.shadow.mapSize.width = 2048;
+    //     spot1.shadow.mapSize.height = 2048;
+    // }
+    this.scene.add( spot1 );
+
 
 
 
     // scene info: add light, add ground, shadow
 
     this.loader = new THREE.GLTFLoader();
+    this.orbitControls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+
+
+
+
+    this.onWindowResize();
+    window.addEventListener( 'resize', this.onWindowResize.bind(this), false );
+
+    this.selectSkeleton('mixamo');
+
+    this.animate();
+
 };
 
+
+// Viewer.prototype.cleanup = function() {
+//     if (this.skeletonMixer) {
+//         this.skeletonMixer.stopAllAction();
+//     }
+// };
+
+var onWindowResize = Viewer.prototype.onWindowResize = function() {
+    this.camera.aspect = this.canvas.width / this.canvas.height;
+    this.camera.updateProjectionMatrix();
+    // var i, len = cameras.length;
+    // for (i = 0; i < len; i++) { // just do it for default
+    //     cameras[i].aspect = container.offsetWidth / container.offsetHeight;
+    //     cameras[i].updateProjectionMatrix();
+    // }
+    // renderer.setSize( window.innerWidth, window.innerHeight );
+    this.renderer.setSize( window.innerWidth, window.innerHeight );
+
+    
+};
+
+var animate = Viewer.prototype.animate = function() {
+    requestAnimationFrame( this.animate.bind(this) );
+    // requestAnimationFrame( animate );
+
+    var delta = clock.getDelta();
+
+    if (this.skeletonMixer) {
+        this.skeletonMixer.update(delta);
+    }
+
+    for (var i = 0, len = this.skinMixers.length; i < len; i++) {
+        this.skinMixers[i].update(delta);
+    }
+
+    // if (cameraIndex == 0)
+    //     orbitControls.update();
+    this.orbitControls.update();
+
+    // render();
+    this.renderer.render(this.scene, this.camera);
+};
+
+// TODO: get envmap
+
+
+Viewer.prototype.playAnimation = function(index) {
+    if (this.skeletonMixer) {
+        this.skeletonMixer.stopAllAction();
+        this.skeletonMixer.clipAction(this.gltf_skeleton.animations[index]).play();
+    }
+};
+
+Viewer.prototype.updateVisibilityArray = function(v, v1) {
+    for (var i = 0, len = v1.length; i < len; i++) {
+        v[i] = v1[i] ? v[i] : 0;
+    }
+
+    // // gl_avatar_linked_skeleton.visibilityLUT.data = gl_avatar_linked_skeleton.visibility;
+    // for (var i, len = v.length; i < len; i++) {
+    // 	gl_avatar_linked_skeleton.visibilityLUT.image.data[i] = v[i] * 255;
+    // }
+    this.gltf_skeleton.gl_avatar.visibilityLUT.needsUpdate = true;
+};
 
 Viewer.prototype.selectSkin = function(type, key, uri) {
 
@@ -63,7 +182,8 @@ Viewer.prototype.selectSkin = function(type, key, uri) {
     if (glAvatarSystem.isLoaded(type, key)) {
         this.skinOnload(type, key, glAvatarSystem.accessories[type][key].gltf);
     } else {
-        this.loader.setGlAvatarOfLinkingSkeleton(gltf_skeleton.gl_avatar);
+        var self = this;
+        this.loader.setGlAvatarOfLinkingSkeleton(this.gltf_skeleton.gl_avatar);
         this.loader.load( uri, function(data, json, bins, imgs) {
             // glAvatarSystem.accessories[type][key] = data;
             // console.log(bins);
@@ -77,7 +197,7 @@ Viewer.prototype.selectSkin = function(type, key, uri) {
                 imgs: imgs
             };
             // TODO
-            this.skinOnload(type, key, data);
+            self.skinOnload(type, key, data);
         }, undefined, function ( error ) {
             console.error( error );
         } );
@@ -122,7 +242,7 @@ Viewer.prototype.skinOnload = function(type, key, data) {
         for (var t in glAvatarSystem.curAccessories) {
             if (t !== type && glAvatarSystem.curAccessories[t].scene) {
                 var a = glAvatarSystem.curAccessories[t];
-                updateVisibilityArray(this.gltf_skeleton.gl_avatar.visibility, glAvatarSystem.accessories[t][a.name].gltf.gl_avatar.visibility);
+                this.updateVisibilityArray(this.gltf_skeleton.gl_avatar.visibility, glAvatarSystem.accessories[t][a.name].gltf.gl_avatar.visibility);
             }
         }
     }
@@ -130,7 +250,7 @@ Viewer.prototype.skinOnload = function(type, key, data) {
     // --------------------------
 
     // update current new skin file
-    updateVisibilityArray(this.gltf_skeleton.gl_avatar.visibility, data.gl_avatar.visibility);
+    this.updateVisibilityArray(this.gltf_skeleton.gl_avatar.visibility, data.gl_avatar.visibility);
 
     // gltf = data;
     var gltf = data;
@@ -190,12 +310,12 @@ Viewer.prototype.skinOnload = function(type, key, data) {
     }
     
 
-    scene.add(object);
+    this.scene.add(object);
     object.updateMatrixWorld();
     // object.updateMatrix();
     // object.children[0].updateMatrix();
 
-    onWindowResize();
+    // this.onWindowResize();
 };
 
 
@@ -206,12 +326,19 @@ Viewer.prototype.skinOnload = function(type, key, data) {
 
 
 Viewer.prototype.selectSkeleton = function(key, uri) {
+    var info = null;
     if (!uri) {
-        uri = glAvatarSystem.repo.skeletons[key];
+        // uri = glAvatarSystem.repo.skeletons[key].url;
+        info = glAvatarSystem.repo.skeletons[key];
+        uri = info.url;
     }
 
 
+    
+
+
     // scene, mixer, cleanup
+    var self = this;
 
     this.loader.load( uri, function(data, json, bins, imgs) {
         // glAvatarSystem.accessories[type][key] = data;
@@ -226,7 +353,18 @@ Viewer.prototype.selectSkeleton = function(key, uri) {
             imgs: imgs
         };
 
-        this.skeletonOnLoad(key, data);
+
+        // camera setting
+        self.camera.position.copy(info.cameraPos);
+        self.orbitControls.target.copy(info.center);
+        data.scene.rotation.copy(info.objectRotation);
+
+        self.skeletonOnLoad(key, data);
+
+        for (var key in info.skins) {
+            self.selectSkin(key, info.skins[key]);
+        }
+        
     }, undefined, function ( error ) {
         console.error( error );
     } );
@@ -235,6 +373,8 @@ Viewer.prototype.selectSkeleton = function(key, uri) {
 
 Viewer.prototype.skeletonOnLoad = function(key, data) {
     var gltf = data;
+
+    this.gltf_skeleton = gltf;
 
     glAvatarSystem.curSkeleton.name = key;
     glAvatarSystem.curSkeleton.scene = gltf.scene;
@@ -267,7 +407,10 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
             // o.text = animation.name || i;
             // animationSelector.add(o);
         }
-        playAnimation(0);
+        this.playAnimation(0);
     }
     this.scene.add( gltf.scene );
 };
+
+
+export { Viewer };

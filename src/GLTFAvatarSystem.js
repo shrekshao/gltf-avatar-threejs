@@ -1,3 +1,5 @@
+var THREE = require('three');
+
 var glAvatarSystem = {
 
     curSkeleton: {
@@ -41,8 +43,26 @@ var glAvatarSystem = {
 
     repo: {
         skeletons: {
-            'mixamo': 'models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
-            'stand-pose': 'models/gltf/saber-stand-pose/saber-stand-pose.gltf'
+            'mixamo': {
+                url: 'models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
+                // scene info (camera, light)
+                cameraPos: new THREE.Vector3(1.5, 2, 1.5),
+                center: new THREE.Vector3(0, 0.8, 0),
+                objectRotation: new THREE.Euler(0, 180, 0),
+                // init skins
+                skins: {
+                    hair: 'maid',
+                    clothes: 'maid-dress'
+                }
+            },
+            'stand-pose': {
+                url: 'models/gltf/saber-stand-pose/saber-stand-pose.gltf',
+
+                skins: {
+                    hair: 'lily',
+                    clothes: 'maid-dress'
+                }
+            }
 
         },
         clothes: {
