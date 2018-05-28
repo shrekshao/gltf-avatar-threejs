@@ -44521,7 +44521,8 @@ Viewer.prototype.init = function(canvas) {
     this.initScene();
     
 
-    this.selectSkeleton('mixamo');
+    // this.selectSkeleton('mixamo');
+    this.selectSkeleton(Object.keys(__WEBPACK_IMPORTED_MODULE_0__GLTFAvatarSystem_js__["a" /* glAvatarSystem */].repo.skeletons)[0]);
 
     this.animate();
 
