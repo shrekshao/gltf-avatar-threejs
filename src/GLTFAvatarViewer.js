@@ -81,7 +81,8 @@ Viewer.prototype.init = function(canvas) {
     this.initScene();
     
 
-    this.selectSkeleton('mixamo');
+    // this.selectSkeleton('mixamo');
+    this.selectSkeleton(Object.keys(glAvatarSystem.repo.skeletons)[0]);
 
     this.animate();
 
