@@ -23,6 +23,16 @@ function Viewer() {
     this.orbitControls = null;
 
     this.loader = null;
+
+
+    this.skeletonAnimations = [];
+    // // exposed for gui
+    // this.control = {
+
+    // };
+
+    this.skeletonUpdateCallback = null; // (key) => void
+    this.skinUpdateCallback = null; // (cat, key) => void
 }
 
 // Viewer.prototype.setCanvas = function(canvas) {
@@ -330,6 +340,10 @@ Viewer.prototype.skinOnload = function(type, key, data) {
     // object.children[0].updateMatrix();
 
     // this.onWindowResize();
+
+    if (this.skinUpdateCallback) {
+        this.skinUpdateCallback(type, key);
+    }
 };
 
 
@@ -415,6 +429,8 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
 
         // TODO: gui interface
         // removeOptions(animationSelector);
+        this.skeletonAnimations = [];
+
 
         this.skeletonMixer = new THREE.AnimationMixer( gltf.scene );
         for ( var i = 0; i < animations.length; i ++ ) {
@@ -422,11 +438,36 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
             // var o = document.createElement('option');
             // o.text = animation.name || i;
             // animationSelector.add(o);
+            this.skeletonAnimations.push(animation.name || i.toFixed());
         }
         this.playAnimation(0);
     }
     this.scene.add( gltf.scene );
+
+    if (this.skeletonUpdateCallback) {
+        this.skeletonUpdateCallback(key);
+    }
 };
+
+
+Viewer.prototype.mergeAndExport = function() {
+    var skinArray = [];
+
+    for (var cat in glAvatarSystem.curAccessories) {
+        var c = glAvatarSystem.curAccessories[cat];
+        if (c.name) {
+            skinArray.push(glAvatarSystem.accessories[cat][c.name]);
+        }
+    }
+
+    var merged = mergeGLTFAvatar(
+        glAvatarSystem.skeletons[glAvatarSystem.curSkeleton.name],
+        skinArray
+    );
+
+    fileSave(merged.json, merged.bins, merged.imgs);
+};
+
 
 
 export { Viewer };
