@@ -44362,31 +44362,45 @@ var animationFolder = gui.addFolder('animations');
 animationFolder.open();
 
 
-var animationControl; 
+// var animationControl; 
+var animationToggles = [];
 viewer.skeletonUpdateCallback = function(key) {
-    if ( animationControl ) animationFolder.remove(animationControl);
-    animationControl = animationFolder.add(control, 'animations', viewer.skeletonAnimations);
+    // if ( animationControl ) animationFolder.remove(animationControl);
+    // animationControl = animationFolder.add(control, 'animations', viewer.skeletonAnimations);
 
-    animationControl.onChange(function(value) {
-        if ( viewer.skeletonAnimations.length > 0) {
-            control.animations = viewer.skeletonAnimations[0];
+    // animationControl.onChange(function(value) {
+    //     if ( viewer.skeletonAnimations.length > 0) {
+    //         control.animations = viewer.skeletonAnimations[0];
             
-            for (var i = 0, len = viewer.skeletonAnimations.length; i < len; i++) {
-                if (value == viewer.skeletonAnimations[i]) {
-                    viewer.playAnimation(i);
-                }
-            }
+    //         for (var i = 0, len = viewer.skeletonAnimations.length; i < len; i++) {
+    //             if (value == viewer.skeletonAnimations[i]) {
+    //                 viewer.playAnimation(i);
+    //             }
+    //         }
 
-            animationControl.updateDisplay();
-        }
+    //         animationControl.updateDisplay();
+    //     }
         
-    });
-    // control.animations = viewer.skeletonAnimations;
-    // for (var i in gui.__controllers) {
-    //     gui.__controllers[i].updateDisplay();
-    // }
-    console.log('a');
-    // animationControl.updateDisplay();
+    // });
+
+
+    for (var i = 0, len = animationToggles.length; i < len; i++) {
+        animationFolder.remove(animationToggles[i]);
+    }
+    animationToggles = [];
+    for (var key in viewer.skeletonActionStates) {
+        var toggle = animationFolder.add(viewer.skeletonActionStates, key);
+        toggle.onChange((function() {
+            var k = key;
+            return function(v) {
+                viewer.playAnimationMixing(k, v);
+            };
+        })());
+        animationToggles.push(toggle);
+    }
+
+
+
 };
 
 
@@ -44451,7 +44465,9 @@ function Viewer() {
     this.loader = null;
 
 
-    this.skeletonAnimations = [];
+    this.skeletonAnimations = [];   // temp for control block, just animation name || id
+    this.skeletonClips = {};        // for mixing
+    this.skeletonActionStates = {}; // true or false
     // // exposed for gui
     // this.control = {
 
@@ -44599,11 +44615,20 @@ var animate = Viewer.prototype.animate = function() {
 
 // TODO: get envmap
 
-
+// skeleton animation
 Viewer.prototype.playAnimation = function(index) {
     if (this.skeletonMixer) {
         this.skeletonMixer.stopAllAction();
         this.skeletonMixer.clipAction(this.gltf_skeleton.animations[index]).play();
+    }
+};
+
+// skeleton animation
+Viewer.prototype.playAnimationMixing = function(key, isPlaying) {
+    if (this.skeletonMixer) {
+        var action = this.skeletonMixer.clipAction(this.skeletonClips[key]);
+        action.setEffectiveTimeScale(1);
+        isPlaying ? action.play() : action.stop();
     }
 };
 
@@ -44845,9 +44870,6 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
         __WEBPACK_IMPORTED_MODULE_0__GLTFAvatarSystem_js__["a" /* glAvatarSystem */].accessories[cat] = {};
     }
 
-    // TODO: scene info
-
-
     // animations
     var animations = gltf.animations;
     if ( animations && animations.length ) {
@@ -44855,8 +44877,11 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
 
         // TODO: gui interface
         // removeOptions(animationSelector);
-        this.skeletonAnimations = [];
+        this.skeletonAnimations = [];   // for control block
 
+        this.skeletonClips = {};
+        this.skeletonActionStates = {};
+        // this.skeletonActionStates = new Map();
 
         this.skeletonMixer = new THREE.AnimationMixer( gltf.scene );
         for ( var i = 0; i < animations.length; i ++ ) {
@@ -44865,8 +44890,20 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
             // o.text = animation.name || i;
             // animationSelector.add(o);
             this.skeletonAnimations.push(animation.name || i.toFixed());
+
+
+            // clips mixing
+            var key = animation.name || i;
+            this.skeletonActionStates[key] = false;
+            this.skeletonClips[key] = animation;
+
+            if (i === 0) {
+                this.skeletonActionStates[key] = true;
+                this.playAnimationMixing(key, true);
+            }
         }
-        this.playAnimation(0);
+
+        // this.playAnimation(0);
     }
     this.scene.add( gltf.scene );
 
