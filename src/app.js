@@ -51,31 +51,45 @@ var animationFolder = gui.addFolder('animations');
 animationFolder.open();
 
 
-var animationControl; 
+// var animationControl; 
+var animationToggles = [];
 viewer.skeletonUpdateCallback = function(key) {
-    if ( animationControl ) animationFolder.remove(animationControl);
-    animationControl = animationFolder.add(control, 'animations', viewer.skeletonAnimations);
+    // if ( animationControl ) animationFolder.remove(animationControl);
+    // animationControl = animationFolder.add(control, 'animations', viewer.skeletonAnimations);
 
-    animationControl.onChange(function(value) {
-        if ( viewer.skeletonAnimations.length > 0) {
-            control.animations = viewer.skeletonAnimations[0];
+    // animationControl.onChange(function(value) {
+    //     if ( viewer.skeletonAnimations.length > 0) {
+    //         control.animations = viewer.skeletonAnimations[0];
             
-            for (var i = 0, len = viewer.skeletonAnimations.length; i < len; i++) {
-                if (value == viewer.skeletonAnimations[i]) {
-                    viewer.playAnimation(i);
-                }
-            }
+    //         for (var i = 0, len = viewer.skeletonAnimations.length; i < len; i++) {
+    //             if (value == viewer.skeletonAnimations[i]) {
+    //                 viewer.playAnimation(i);
+    //             }
+    //         }
 
-            animationControl.updateDisplay();
-        }
+    //         animationControl.updateDisplay();
+    //     }
         
-    });
-    // control.animations = viewer.skeletonAnimations;
-    // for (var i in gui.__controllers) {
-    //     gui.__controllers[i].updateDisplay();
-    // }
-    console.log('a');
-    // animationControl.updateDisplay();
+    // });
+
+
+    for (var i = 0, len = animationToggles.length; i < len; i++) {
+        animationFolder.remove(animationToggles[i]);
+    }
+    animationToggles = [];
+    for (var key in viewer.skeletonActionStates) {
+        var toggle = animationFolder.add(viewer.skeletonActionStates, key);
+        toggle.onChange((function() {
+            var k = key;
+            return function(v) {
+                viewer.playAnimationMixing(k, v);
+            };
+        })());
+        animationToggles.push(toggle);
+    }
+
+
+
 };
 
 

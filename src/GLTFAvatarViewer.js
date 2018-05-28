@@ -25,7 +25,9 @@ function Viewer() {
     this.loader = null;
 
 
-    this.skeletonAnimations = [];
+    this.skeletonAnimations = [];   // temp for control block, just animation name || id
+    this.skeletonClips = {};        // for mixing
+    this.skeletonActionStates = {}; // true or false
     // // exposed for gui
     // this.control = {
 
@@ -173,11 +175,20 @@ var animate = Viewer.prototype.animate = function() {
 
 // TODO: get envmap
 
-
+// skeleton animation
 Viewer.prototype.playAnimation = function(index) {
     if (this.skeletonMixer) {
         this.skeletonMixer.stopAllAction();
         this.skeletonMixer.clipAction(this.gltf_skeleton.animations[index]).play();
+    }
+};
+
+// skeleton animation
+Viewer.prototype.playAnimationMixing = function(key, isPlaying) {
+    if (this.skeletonMixer) {
+        var action = this.skeletonMixer.clipAction(this.skeletonClips[key]);
+        action.setEffectiveTimeScale(1);
+        isPlaying ? action.play() : action.stop();
     }
 };
 
@@ -419,9 +430,6 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
         glAvatarSystem.accessories[cat] = {};
     }
 
-    // TODO: scene info
-
-
     // animations
     var animations = gltf.animations;
     if ( animations && animations.length ) {
@@ -429,8 +437,11 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
 
         // TODO: gui interface
         // removeOptions(animationSelector);
-        this.skeletonAnimations = [];
+        this.skeletonAnimations = [];   // for control block
 
+        this.skeletonClips = {};
+        this.skeletonActionStates = {};
+        // this.skeletonActionStates = new Map();
 
         this.skeletonMixer = new THREE.AnimationMixer( gltf.scene );
         for ( var i = 0; i < animations.length; i ++ ) {
@@ -439,8 +450,20 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
             // o.text = animation.name || i;
             // animationSelector.add(o);
             this.skeletonAnimations.push(animation.name || i.toFixed());
+
+
+            // clips mixing
+            var key = animation.name || i;
+            this.skeletonActionStates[key] = false;
+            this.skeletonClips[key] = animation;
+
+            if (i === 0) {
+                this.skeletonActionStates[key] = true;
+                this.playAnimationMixing(key, true);
+            }
         }
-        this.playAnimation(0);
+
+        // this.playAnimation(0);
     }
     this.scene.add( gltf.scene );
 
