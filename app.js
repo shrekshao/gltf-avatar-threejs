@@ -44423,7 +44423,8 @@ gui.add(control, 'mergeAndExport');
 
 
 
-viewer.init(document.getElementById('canvas'));
+// viewer.init(document.getElementById('canvas'));
+viewer.init();
 
 
 
@@ -44435,6 +44436,7 @@ viewer.init(document.getElementById('canvas'));
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Viewer; });
+/* unused harmony export AvatarSystem */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__GLTFAvatarSystem_js__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__GLTFAvatarMerge_js__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lib_makeglb_js__ = __webpack_require__(7);
@@ -44448,9 +44450,13 @@ THREE.GLTFLoader = __webpack_require__(4)(THREE);
 
 var clock = new THREE.Clock();
 
+
+
+
 function Viewer() {
     // this.container = null;
     this.canvas = null;
+    this.fullWindow = true;
 
     this.skeletonMixer = null;
     this.skinMixers = [];   // animation mixer for skin files
@@ -44487,18 +44493,22 @@ Viewer.prototype.init = function(canvas) {
     
     if (canvas) {
         this.canvas = canvas;
+        this.fullWindow = false;
         this.renderer = new THREE.WebGLRenderer( { canvas: this.canvas, antialias: true } );
     } else {
         this.renderer = new THREE.WebGLRenderer( { antialias: true } );
         this.canvas = this.renderer.domElement;
+        this.fullWindow = true;
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
+        this.renderer.setSize( window.innerWidth, window.innerHeight ); // test
+        document.getElementById('container').appendChild(this.canvas);
     }
 
     
     // this.camera = new THREE.PerspectiveCamera( 45, container.offsetWidth / container.offsetHeight, 0.001, 1000 );
 
-    this.renderer.setSize( window.innerWidth, window.innerHeight ); // test
+    
     // this.renderer.setSize( this.canvas.width, this.canvas.height ); // test
     this.camera = new THREE.PerspectiveCamera( 45, this.canvas.width / this.canvas.height, 0.01, 100 );
 
@@ -44579,17 +44589,21 @@ Viewer.prototype.cleanup = function() {
 };
 
 var onWindowResize = Viewer.prototype.onWindowResize = function() {
-    this.camera.aspect = this.canvas.width / this.canvas.height;
-    this.camera.updateProjectionMatrix();
+    
     // var i, len = cameras.length;
     // for (i = 0; i < len; i++) { // just do it for default
     //     cameras[i].aspect = container.offsetWidth / container.offsetHeight;
     //     cameras[i].updateProjectionMatrix();
     // }
     // renderer.setSize( window.innerWidth, window.innerHeight );
-    this.renderer.setSize( window.innerWidth, window.innerHeight );
-
+    if (this.fullWindow) {
+        this.renderer.setSize( window.innerWidth, window.innerHeight );
+    } else {
+        this.renderer.setSize(this.canvas.width, this.canvas.height);
+    }
     
+    this.camera.aspect = this.canvas.width / this.canvas.height;
+    this.camera.updateProjectionMatrix();
 };
 
 var animate = Viewer.prototype.animate = function() {
@@ -44933,7 +44947,7 @@ Viewer.prototype.mergeAndExport = function() {
 };
 
 
-
+var AvatarSystem = __WEBPACK_IMPORTED_MODULE_0__GLTFAvatarSystem_js__["a" /* glAvatarSystem */];
 
 
 /***/ }),
