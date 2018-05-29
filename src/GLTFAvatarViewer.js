@@ -8,9 +8,13 @@ import {fileSave} from './lib/makeglb.js';
 
 var clock = new THREE.Clock();
 
+
+
+
 function Viewer() {
     // this.container = null;
     this.canvas = null;
+    this.fullWindow = true;
 
     this.skeletonMixer = null;
     this.skinMixers = [];   // animation mixer for skin files
@@ -47,18 +51,22 @@ Viewer.prototype.init = function(canvas) {
     
     if (canvas) {
         this.canvas = canvas;
+        this.fullWindow = false;
         this.renderer = new THREE.WebGLRenderer( { canvas: this.canvas, antialias: true } );
     } else {
         this.renderer = new THREE.WebGLRenderer( { antialias: true } );
         this.canvas = this.renderer.domElement;
+        this.fullWindow = true;
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
+        this.renderer.setSize( window.innerWidth, window.innerHeight ); // test
+        document.getElementById('container').appendChild(this.canvas);
     }
 
     
     // this.camera = new THREE.PerspectiveCamera( 45, container.offsetWidth / container.offsetHeight, 0.001, 1000 );
 
-    this.renderer.setSize( window.innerWidth, window.innerHeight ); // test
+    
     // this.renderer.setSize( this.canvas.width, this.canvas.height ); // test
     this.camera = new THREE.PerspectiveCamera( 45, this.canvas.width / this.canvas.height, 0.01, 100 );
 
@@ -139,17 +147,21 @@ Viewer.prototype.cleanup = function() {
 };
 
 var onWindowResize = Viewer.prototype.onWindowResize = function() {
-    this.camera.aspect = this.canvas.width / this.canvas.height;
-    this.camera.updateProjectionMatrix();
+    
     // var i, len = cameras.length;
     // for (i = 0; i < len; i++) { // just do it for default
     //     cameras[i].aspect = container.offsetWidth / container.offsetHeight;
     //     cameras[i].updateProjectionMatrix();
     // }
     // renderer.setSize( window.innerWidth, window.innerHeight );
-    this.renderer.setSize( window.innerWidth, window.innerHeight );
-
+    if (this.fullWindow) {
+        this.renderer.setSize( window.innerWidth, window.innerHeight );
+    } else {
+        this.renderer.setSize(this.canvas.width, this.canvas.height);
+    }
     
+    this.camera.aspect = this.canvas.width / this.canvas.height;
+    this.camera.updateProjectionMatrix();
 };
 
 var animate = Viewer.prototype.animate = function() {
@@ -493,5 +505,5 @@ Viewer.prototype.mergeAndExport = function() {
 };
 
 
-
-export { Viewer };
+var AvatarSystem = glAvatarSystem;
+export { Viewer, AvatarSystem };

@@ -112,7 +112,8 @@ gui.add(control, 'mergeAndExport');
 
 
 
-viewer.init(document.getElementById('canvas'));
+// viewer.init(document.getElementById('canvas'));
+viewer.init();
 
 
 
