@@ -1,0 +1,5855 @@
+{
+    "accessors": [
+        {
+            "bufferView": 145,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "min": [
+                1,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_mixamorig:LeftForeArm_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 83,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -6.239861249923706e-7,
+                12.033415794372559,
+                3.5762786865234375e-7
+            ],
+            "min": [
+                -6.239861249923706e-7,
+                12.033415794372559,
+                3.5762786865234375e-7
+            ],
+            "name": "accessor_buffer_mixamorig:RightToeBase_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 137,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.009857624769210815,
+                2.0025572776794434,
+                -0.000008842733222991228
+            ],
+            "min": [
+                -0.009857624769210815,
+                2.0025572776794434,
+                -0.000008842733222991228
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandIndex2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 62,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                5.414642258866342e-13,
+                8.022480964660645,
+                -5.364418029785156e-7
+            ],
+            "min": [
+                5.414642258866342e-13,
+                8.022480964660645,
+                -5.364418029785156e-7
+            ],
+            "name": "accessor_buffer_mixamorig:Spine1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 20,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.018551677465438843,
+                2.2824809551239014,
+                0.00000463516335003078
+            ],
+            "min": [
+                -0.018551677465438843,
+                2.2824809551239014,
+                0.00000463516335003078
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandMiddle2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 119,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.01121482253074646,
+                2.20082426071167,
+                0.00002157763810828328
+            ],
+            "min": [
+                0.01121482253074646,
+                2.20082426071167,
+                0.00002157763810828328
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandMiddle3_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 106,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1.0000001192092896,
+                0.9999997615814209
+            ],
+            "min": [
+                1,
+                1.0000001192092896,
+                0.9999997615814209
+            ],
+            "name": "accessor_buffer_mixamorig:RightForeArm_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 51,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -1.9569284859244362e-7,
+                0.00005565229366766289,
+                -0.034311242401599884,
+                0.9994112253189087
+            ],
+            "min": [
+                -1.9569284859244362e-7,
+                0.00005565229366766289,
+                -0.034311242401599884,
+                0.9994112253189087
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandThumb3_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 71,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -4.116445779800415e-7,
+                12.089044570922852,
+                1.7881393432617188e-7
+            ],
+            "min": [
+                -4.116445779800415e-7,
+                12.089044570922852,
+                1.7881393432617188e-7
+            ],
+            "name": "accessor_buffer_mixamorig:LeftToeBase_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 86,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.09869322180747986,
+                2.222616195678711,
+                0.000005245208740234375
+            ],
+            "min": [
+                0.09869322180747986,
+                2.222616195678711,
+                0.000005245208740234375
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandThumb2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 93,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                5.549511570279719e-7,
+                -0.00003228561763535254,
+                0.0010957049671560526,
+                0.9999994039535522
+            ],
+            "min": [
+                5.549511570279719e-7,
+                -0.00003228561763535254,
+                0.0010957049671560526,
+                0.9999994039535522
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandIndex3_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 18,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.000009156999112747144,
+                0.0011933766072615981,
+                -0.015421011485159397,
+                0.9998803734779358
+            ],
+            "min": [
+                -0.000009156999112747144,
+                0.0011933766072615981,
+                -0.015421011485159397,
+                0.9998803734779358
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandIndex3_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 56,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.01632753014564514,
+                2.0911762714385986,
+                0.000011799194908235222
+            ],
+            "min": [
+                0.01632753014564514,
+                2.0911762714385986,
+                0.000011799194908235222
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandRing3_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 8,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.009776592254638672,
+                1.9066510200500488,
+                -0.000011112497304566205
+            ],
+            "min": [
+                0.009776592254638672,
+                1.9066510200500488,
+                -0.000011112497304566205
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandPinky2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 77,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.006532952189445496,
+                1.8280677795410156,
+                -0.000011722324416041374
+            ],
+            "min": [
+                -0.006532952189445496,
+                1.8280677795410156,
+                -0.000011722324416041374
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandPinky2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 80,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -5.960464477539063e-8,
+                7.4837236404418945,
+                -0.0000017881393432617188
+            ],
+            "min": [
+                -5.960464477539063e-8,
+                7.4837236404418945,
+                -0.0000017881393432617188
+            ],
+            "name": "accessor_buffer_mixamorig:LeftArm_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5121,
+            "count": 1176,
+            "max": [
+                2,
+                1,
+                0,
+                0
+            ],
+            "min": [
+                2,
+                0,
+                0,
+                0
+            ],
+            "name": "accessor_buffer_F010_Saber.000_skin_0",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 122,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -3.513521432876587,
+                8.988426208496094,
+                -0.11455392837524414
+            ],
+            "min": [
+                -3.513521432876587,
+                8.988426208496094,
+                -0.11455392837524414
+            ],
+            "name": "accessor_buffer_mixamorig:RightShoulder_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 36,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.4910941421985626,
+                -0.062034837901592255,
+                0.04505223408341408,
+                0.8677260875701904
+            ],
+            "min": [
+                0.4910941421985626,
+                -0.062034837901592255,
+                0.04505223408341408,
+                0.8677260875701904
+            ],
+            "name": "accessor_buffer_mixamorig:RightFoot_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 37,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999999403953552,
+                0.9999998211860657,
+                0.9999999403953552
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999998211860657,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_mixamorig:RightFoot_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 148,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "min": [
+                1,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandRing1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 94,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1,
+                0.9999998807907104
+            ],
+            "min": [
+                1,
+                1,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandIndex3_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 163,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0001243352890015,
+                0.9999998807907104,
+                1.000003695487976
+            ],
+            "min": [
+                1.0001243352890015,
+                0.9999998807907104,
+                1.000003695487976
+            ],
+            "name": "accessor_buffer_mixamorig:RightUpLeg_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 25,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                1.0000001192092896,
+                0.9999999403953552
+            ],
+            "min": [
+                1.0000001192092896,
+                1.0000001192092896,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_mixamorig:LeftShoulder_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 12,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.01586439274251461,
+                -0.0007755132974125445,
+                0.04963767156004906,
+                0.9986410140991211
+            ],
+            "min": [
+                -0.01586439274251461,
+                -0.0007755132974125445,
+                0.04963767156004906,
+                0.9986410140991211
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandIndex1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 24,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.5753993988037109,
+                0.4047872722148895,
+                -0.592011570930481,
+                0.39317330718040466
+            ],
+            "min": [
+                0.5753993988037109,
+                0.4047872722148895,
+                -0.592011570930481,
+                0.39317330718040466
+            ],
+            "name": "accessor_buffer_mixamorig:LeftShoulder_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 66,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.000005368752681533806,
+                -0.00042654300341382623,
+                0.007251414470374584,
+                0.999973714351654
+            ],
+            "min": [
+                -0.000005368752681533806,
+                -0.00042654300341382623,
+                0.007251414470374584,
+                0.999973714351654
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandRing3_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 109,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999998807907104,
+                1,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999998807907104,
+                1,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandMiddle1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 38,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.010961860418319702,
+                2.2484662532806396,
+                0.000009948620572686195
+            ],
+            "min": [
+                -0.010961860418319702,
+                2.2484662532806396,
+                0.000009948620572686195
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandMiddle3_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 162,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.00001167778464150615,
+                -0.0004857034655287862,
+                0.9999808073043823,
+                -0.006179941818118095
+            ],
+            "min": [
+                0.00001167778464150615,
+                -0.0004857034655287862,
+                0.9999808073043823,
+                -0.006179941818118095
+            ],
+            "name": "accessor_buffer_mixamorig:RightUpLeg_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 82,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999998807907104,
+                0.9999999403953552,
+                1
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999999403953552,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:LeftArm_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 70,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999999403953552,
+                1,
+                0.9999999403953552
+            ],
+            "min": [
+                0.9999999403953552,
+                1,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_mixamorig:RightLeg_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 98,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.018159687519073486,
+                2.1517670154571533,
+                -0.0000034263357520103455
+            ],
+            "min": [
+                -0.018159687519073486,
+                2.1517670154571533,
+                -0.0000034263357520103455
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandThumb2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 22,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999999403953552,
+                0.9999998211860657,
+                0.9999997615814209
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999998211860657,
+                0.9999997615814209
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandMiddle2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 143,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.00000198512316273991,
+                22.7723331451416,
+                0.000002205953933298588
+            ],
+            "min": [
+                -0.00000198512316273991,
+                22.7723331451416,
+                0.000002205953933298588
+            ],
+            "name": "accessor_buffer_mixamorig:LeftForeArm_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 112,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999999403953552,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandRing1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 5004,
+            "max": [
+                1175
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_F010_Saber.000_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 73,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999999403953552,
+                0.9999998211860657,
+                0.9999998807907104
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999998211860657,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:LeftToeBase_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 132,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.49219897389411926,
+                0.06156006455421448,
+                -0.04492250457406044,
+                0.8671404123306274
+            ],
+            "min": [
+                0.49219897389411926,
+                0.06156006455421448,
+                -0.04492250457406044,
+                0.8671404123306274
+            ],
+            "name": "accessor_buffer_mixamorig:LeftFoot_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 101,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.08421140909194946,
+                1.993523120880127,
+                0.0000010579824447631836
+            ],
+            "min": [
+                0.08421140909194946,
+                1.993523120880127,
+                0.0000010579824447631836
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandThumb3_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 69,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.029726667329669,
+                0.0003684632829390466,
+                -0.012829470448195934,
+                0.9994756579399109
+            ],
+            "min": [
+                -0.029726667329669,
+                0.0003684632829390466,
+                -0.012829470448195934,
+                0.9994756579399109
+            ],
+            "name": "accessor_buffer_mixamorig:RightLeg_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 60,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.039921678602695465,
+                1.0923948784392554e-13,
+                1.9801653372564232e-11,
+                0.9992028474807739
+            ],
+            "min": [
+                0.039921678602695465,
+                1.0923948784392554e-13,
+                1.9801653372564232e-11,
+                0.9992028474807739
+            ],
+            "name": "accessor_buffer_mixamorig:Neck_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 149,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                6.116943040979095e-7,
+                19.02713966369629,
+                0.00000519820605404675
+            ],
+            "min": [
+                6.116943040979095e-7,
+                19.02713966369629,
+                0.00000519820605404675
+            ],
+            "name": "accessor_buffer_mixamorig:RightHand_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 114,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.02764846757054329,
+                -0.000389853521483019,
+                0.012829817831516266,
+                0.9995352625846863
+            ],
+            "min": [
+                -0.02764846757054329,
+                -0.000389853521483019,
+                0.012829817831516266,
+                0.9995352625846863
+            ],
+            "name": "accessor_buffer_mixamorig:LeftLeg_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 74,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                6.5092010498046875,
+                -3.8089029788970947,
+                -0.3193536400794983
+            ],
+            "min": [
+                6.5092010498046875,
+                -3.8089029788970947,
+                -0.3193536400794983
+            ],
+            "name": "accessor_buffer_mixamorig:LeftUpLeg_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 33,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.0000010370887366661918,
+                0.00034277912345714867,
+                -0.0064829993061721325,
+                0.9999790191650391
+            ],
+            "min": [
+                -0.0000010370887366661918,
+                0.00034277912345714867,
+                -0.0064829993061721325,
+                0.9999790191650391
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandPinky3_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 150,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.019991455599665642,
+                -0.018730632960796356,
+                0.05151980370283127,
+                0.9982961416244507
+            ],
+            "min": [
+                0.019991455599665642,
+                -0.018730632960796356,
+                0.05151980370283127,
+                0.9982961416244507
+            ],
+            "name": "accessor_buffer_mixamorig:RightHand_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 103,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999999403953552,
+                1.000000238418579,
+                1
+            ],
+            "min": [
+                0.9999999403953552,
+                1.000000238418579,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandThumb3_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 104,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -2.460183168295771e-7,
+                22.77089500427246,
+                0.000006812736501160543
+            ],
+            "min": [
+                -2.460183168295771e-7,
+                22.77089500427246,
+                0.000006812736501160543
+            ],
+            "name": "accessor_buffer_mixamorig:RightForeArm_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 118,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1.000000238418579,
+                1
+            ],
+            "min": [
+                1,
+                1.000000238418579,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandIndex1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 90,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                6.178794933475729e-7,
+                0.00013458405737765133,
+                0.0019599406514316797,
+                0.9999980926513672
+            ],
+            "min": [
+                6.178794933475729e-7,
+                0.00013458405737765133,
+                0.0019599406514316797,
+                0.9999980926513672
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandRing2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 57,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.0000014512252164422534,
+                0.0003296945069450885,
+                -0.010418280959129333,
+                0.9999457001686096
+            ],
+            "min": [
+                0.0000014512252164422534,
+                0.0003296945069450885,
+                -0.010418280959129333,
+                0.9999457001686096
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandRing3_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 17,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.015063196420669556,
+                2.0928525924682617,
+                -0.00001477246405556798
+            ],
+            "min": [
+                0.015063196420669556,
+                2.0928525924682617,
+                -0.00001477246405556798
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandIndex3_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 120,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.0000027277535536995856,
+                0.0008116317912936211,
+                -0.011757179163396358,
+                0.9999305605888367
+            ],
+            "min": [
+                -0.0000027277535536995856,
+                0.0008116317912936211,
+                -0.011757179163396358,
+                0.9999305605888367
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandMiddle3_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 9,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.0000017708856603348977,
+                -0.00008915702346712351,
+                -0.0010598038788884878,
+                0.9999995231628418
+            ],
+            "min": [
+                -0.0000017708856603348977,
+                -0.00008915702346712351,
+                -0.0010598038788884878,
+                0.9999995231628418
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandPinky2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 107,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.615178108215332,
+                5.987785816192627,
+                -0.2521420121192932
+            ],
+            "min": [
+                0.615178108215332,
+                5.987785816192627,
+                -0.2521420121192932
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandMiddle1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 47,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                2.112320899963379,
+                5.151422500610352,
+                -0.101677805185318
+            ],
+            "min": [
+                2.112320899963379,
+                5.151422500610352,
+                -0.101677805185318
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandPinky1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 49,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1,
+                1
+            ],
+            "min": [
+                1,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandPinky1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 14,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                8.642673492431641e-7,
+                7.483717918395996,
+                -0.0000068247318267822266
+            ],
+            "min": [
+                8.642673492431641e-7,
+                7.483717918395996,
+                -0.0000068247318267822266
+            ],
+            "name": "accessor_buffer_mixamorig:RightArm_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 87,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.00004969544170307927,
+                0.0011240799212828279,
+                -0.0010827239602804184,
+                0.9999988079071045
+            ],
+            "min": [
+                0.00004969544170307927,
+                0.0011240799212828279,
+                -0.0010827239602804184,
+                0.9999988079071045
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandThumb2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 95,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -5.494803190231323e-8,
+                19.023351669311523,
+                -0.0000032789830584079027
+            ],
+            "min": [
+                -5.494803190231323e-8,
+                19.023351669311523,
+                -0.0000032789830584079027
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHand_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 39,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.000002889829829655355,
+                -0.00046613236190751195,
+                0.009517651982605457,
+                0.9999545812606812
+            ],
+            "min": [
+                -0.000002889829829655355,
+                -0.00046613236190751195,
+                0.009517651982605457,
+                0.9999545812606812
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandMiddle3_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 141,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -3.749335064640036e-9,
+                -6.563448747235262e-21,
+                5.4569682106375694e-12,
+                1
+            ],
+            "min": [
+                -3.749335064640036e-9,
+                -6.563448747235262e-21,
+                5.4569682106375694e-12,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:Head_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 27,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -5.029141902923584e-8,
+                9.422998405866911e-13,
+                -2.3584922209662906e-11,
+                1
+            ],
+            "min": [
+                -5.029141902923584e-8,
+                9.422998405866911e-13,
+                -2.3584922209662906e-11,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:Spine2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 127,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "min": [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandRing2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 126,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -8.061967378125701e-7,
+                0.00017113897774834186,
+                0.003068875055760145,
+                0.9999952912330627
+            ],
+            "min": [
+                -8.061967378125701e-7,
+                0.00017113897774834186,
+                0.003068875055760145,
+                0.9999952912330627
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandRing2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 45,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.21339857578277588,
+                -0.06705669313669205,
+                -0.26358723640441895,
+                0.9383423328399658
+            ],
+            "min": [
+                0.21339857578277588,
+                -0.06705669313669205,
+                -0.26358723640441895,
+                0.9383423328399658
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandThumb1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 64,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1,
+                1
+            ],
+            "min": [
+                1,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:Spine1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 19,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                0.9999998211860657,
+                0.9999997019767761
+            ],
+            "min": [
+                1,
+                0.9999998211860657,
+                0.9999997019767761
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandIndex3_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 157,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1,
+                1
+            ],
+            "min": [
+                1,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandMiddle2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1176,
+            "max": [
+                0.9074609279632568,
+                0.9870719909667969
+            ],
+            "min": [
+                0.0168008916079998,
+                0.018634021282196045
+            ],
+            "name": "accessor_buffer_F010_Saber.000_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 123,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.5739166140556335,
+                -0.4058528542518616,
+                0.5932961106300354,
+                0.39230477809906006
+            ],
+            "min": [
+                0.5739166140556335,
+                -0.4058528542518616,
+                0.5932961106300354,
+                0.39230477809906006
+            ],
+            "name": "accessor_buffer_mixamorig:RightShoulder_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 26,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.2692300335737094e-11,
+                9.168559074401855,
+                -4.76837158203125e-7
+            ],
+            "min": [
+                1.2692300335737094e-11,
+                9.168559074401855,
+                -4.76837158203125e-7
+            ],
+            "name": "accessor_buffer_mixamorig:Spine2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 28,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1,
+                1
+            ],
+            "min": [
+                1,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:Spine2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 91,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                0.9999998807907104,
+                0.9999998211860657
+            ],
+            "min": [
+                1.0000001192092896,
+                0.9999998807907104,
+                0.9999998211860657
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandRing2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 97,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1.0000001192092896,
+                0.9999998807907104
+            ],
+            "min": [
+                1,
+                1.0000001192092896,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHand_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 113,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -3.5517268770490773e-7,
+                45.04969024658203,
+                8.68749339133501e-9
+            ],
+            "min": [
+                -3.5517268770490773e-7,
+                45.04969024658203,
+                8.68749339133501e-9
+            ],
+            "name": "accessor_buffer_mixamorig:LeftLeg_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 108,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.02078564278781414,
+                0.003121189074590802,
+                -0.04567611962556839,
+                0.9987351894378662
+            ],
+            "min": [
+                -0.02078564278781414,
+                0.003121189074590802,
+                -0.04567611962556839,
+                0.9987351894378662
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandMiddle1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 30,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.0000019045912722504,
+                -0.0002899357641581446,
+                -0.0030352880712598562,
+                0.9999953508377075
+            ],
+            "min": [
+                -0.0000019045912722504,
+                -0.0002899357641581446,
+                -0.0030352880712598562,
+                0.9999953508377075
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandIndex2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 15,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.1844879388809204,
+                -0.0005821919767186046,
+                -0.016901638358831406,
+                0.9826892614364624
+            ],
+            "min": [
+                -0.1844879388809204,
+                -0.0005821919767186046,
+                -0.016901638358831406,
+                0.9826892614364624
+            ],
+            "name": "accessor_buffer_mixamorig:RightArm_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 58,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999998807907104,
+                0.9999999403953552,
+                0.9999998211860657
+            ],
+            "min": [
+                0.9999998807907104,
+                0.9999999403953552,
+                0.9999998211860657
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandRing3_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 78,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.0000036987858038628474,
+                0.00004930837167194113,
+                -0.000254306651186198,
+                1
+            ],
+            "min": [
+                -0.0000036987858038628474,
+                0.00004930837167194113,
+                -0.000254306651186198,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandPinky2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 34,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999997615814209,
+                0.9999997615814209,
+                0.9999998807907104
+            ],
+            "min": [
+                0.9999997615814209,
+                0.9999997615814209,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandPinky3_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 3,
+            "max": [
+                -1.0011157989501953,
+                3.76585091235726e-12,
+                -5.520964653462045e-20,
+                0,
+                1.886712574367122e-12,
+                -1.6290225346438092e-7,
+                1.0011157989501953,
+                0,
+                3.765848310272046e-12,
+                1.0011159181594849,
+                0.07986891269683838,
+                0,
+                -0.00744246831163764,
+                -122.5326919555664,
+                2.1228513717651367,
+                1
+            ],
+            "min": [
+                -1.0011157989501953,
+                -4.722267715751016e-11,
+                -1.886721247984502e-12,
+                0,
+                -6.410383498526299e-19,
+                -0.07986891269683838,
+                0.9979247450828552,
+                0,
+                -4.7222680626957114e-11,
+                0.9979248046875,
+                1.5544334530659398e-7,
+                0,
+                -0.007442474830895662,
+                -137.4109344482422,
+                -8.502774238586426,
+                1
+            ],
+            "name": "accessor_buffer_IBM_F010_Saber_Face_skin_0",
+            "type": "MAT4"
+        },
+        {
+            "bufferView": 146,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.8905045986175537,
+                5.982408046722412,
+                -0.24305573105812073
+            ],
+            "min": [
+                0.8905045986175537,
+                5.982408046722412,
+                -0.24305573105812073
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandRing1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 41,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -1.3880571126937866,
+                1.8726567029953003,
+                1.3422273397445679
+            ],
+            "min": [
+                -1.3880571126937866,
+                1.8726567029953003,
+                1.3422273397445679
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandThumb1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 50,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.07793843746185303,
+                2.1093196868896484,
+                0.0000030547380447387695
+            ],
+            "min": [
+                0.07793843746185303,
+                2.1093196868896484,
+                0.0000030547380447387695
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandThumb3_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 43,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                1,
+                1
+            ],
+            "min": [
+                1.0000001192092896,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandThumb1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 102,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.000002737616568992962,
+                -0.0000792778519098647,
+                -0.08030900359153748,
+                0.9967700242996216
+            ],
+            "min": [
+                0.000002737616568992962,
+                -0.0000792778519098647,
+                -0.08030900359153748,
+                0.9967700242996216
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandThumb3_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 140,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                5.965165861265831e-12,
+                4.3087158203125,
+                0.1199100986123085
+            ],
+            "min": [
+                5.965165861265831e-12,
+                4.3087158203125,
+                0.1199100986123085
+            ],
+            "name": "accessor_buffer_mixamorig:Head_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 29,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.02989715337753296,
+                2.250401020050049,
+                0.000006557500455528498
+            ],
+            "min": [
+                0.02989715337753296,
+                2.250401020050049,
+                0.000006557500455528498
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandIndex2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 96,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.015112828463315964,
+                0.01513464655727148,
+                -0.052329666912555695,
+                0.9984008073806763
+            ],
+            "min": [
+                0.015112828463315964,
+                0.01513464655727148,
+                -0.052329666912555695,
+                0.9984008073806763
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHand_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 84,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.29314252734184265,
+                0.06225592643022537,
+                -0.019128000363707542,
+                0.9538480043411255
+            ],
+            "min": [
+                0.29314252734184265,
+                0.06225592643022537,
+                -0.019128000363707542,
+                0.9538480043411255
+            ],
+            "name": "accessor_buffer_mixamorig:RightToeBase_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 85,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999999403953552,
+                1,
+                1
+            ],
+            "min": [
+                0.9999999403953552,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:RightToeBase_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 128,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.00007425900548696518,
+                0.4175964593887329,
+                98.80355834960938
+            ],
+            "min": [
+                -0.00007425900548696518,
+                0.4175964593887329,
+                98.80355834960938
+            ],
+            "name": "accessor_buffer_mixamorig:Hips_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 31,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                1,
+                1.0000001192092896
+            ],
+            "min": [
+                1.0000001192092896,
+                1,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandIndex2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 136,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                1,
+                1.0000001192092896
+            ],
+            "min": [
+                1.0000001192092896,
+                1,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandPinky3_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 79,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                0.9999998807907104,
+                0.9999999403953552
+            ],
+            "min": [
+                1,
+                0.9999998807907104,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandPinky2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1176,
+            "max": [
+                7.576391696929932,
+                7.6111836433410645,
+                154.5619659423828
+            ],
+            "min": [
+                -7.576313018798828,
+                -2.516939878463745,
+                136.62217712402344
+            ],
+            "name": "accessor_buffer_F010_Saber.000_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 46,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999998807907104,
+                1,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999998807907104,
+                1,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandThumb1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 68,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -2.398074059328792e-7,
+                45.050357818603516,
+                2.3865140974521637e-9
+            ],
+            "min": [
+                -2.398074059328792e-7,
+                45.050357818603516,
+                2.3865140974521637e-9
+            ],
+            "name": "accessor_buffer_mixamorig:RightLeg_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1176,
+            "max": [
+                0.9913486242294312,
+                0.9995606541633606,
+                0.9988025426864624
+            ],
+            "min": [
+                -0.9913477301597595,
+                -0.9874794483184814,
+                -0.9999688863754272
+            ],
+            "name": "accessor_buffer_F010_Saber.000_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 10,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                0.9999998807907104,
+                1
+            ],
+            "min": [
+                1.0000001192092896,
+                0.9999998807907104,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandPinky2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 124,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                1,
+                1
+            ],
+            "min": [
+                1.0000001192092896,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:RightShoulder_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 142,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1,
+                1
+            ],
+            "min": [
+                1,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:Head_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 158,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -2.0758204460144043,
+                5.181240558624268,
+                -0.15668104588985443
+            ],
+            "min": [
+                -2.0758204460144043,
+                5.181240558624268,
+                -0.15668104588985443
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandPinky1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 72,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.291592001914978,
+                -0.06168048828840256,
+                0.018840743228793144,
+                0.954366147518158
+            ],
+            "min": [
+                0.291592001914978,
+                -0.06168048828840256,
+                0.018840743228793144,
+                0.954366147518158
+            ],
+            "name": "accessor_buffer_mixamorig:LeftToeBase_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1176,
+            "max": [
+                1,
+                1,
+                1
+            ],
+            "min": [
+                1,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_F010_Saber.000_COLOR_0_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 32,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.0047144293785095215,
+                1.5559417009353638,
+                0.000002086983840854373
+            ],
+            "min": [
+                0.0047144293785095215,
+                1.5559417009353638,
+                0.000002086983840854373
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandPinky3_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 125,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.017888188362121582,
+                2.1800546646118164,
+                -0.000005649722879752517
+            ],
+            "min": [
+                -0.017888188362121582,
+                2.1800546646118164,
+                -0.000005649722879752517
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandRing2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 105,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.0000018012506188824773,
+                0.00015944617916829884,
+                -1.3720271851980215e-7,
+                1
+            ],
+            "min": [
+                0.0000018012506188824773,
+                0.00015944617916829884,
+                -1.3720271851980215e-7,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:RightForeArm_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 161,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -6.5092010498046875,
+                -3.8089101314544678,
+                -0.4497392773628235
+            ],
+            "min": [
+                -6.5092010498046875,
+                -3.8089101314544678,
+                -0.4497392773628235
+            ],
+            "name": "accessor_buffer_mixamorig:RightUpLeg_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 54,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.01581340841948986,
+                -0.0016685931477695704,
+                0.04805108159780502,
+                0.9987183213233948
+            ],
+            "min": [
+                -0.01581340841948986,
+                -0.0016685931477695704,
+                0.04805108159780502,
+                0.9987183213233948
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandMiddle1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 139,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999998211860657,
+                0.9999997019767761,
+                0.9999998807907104
+            ],
+            "min": [
+                0.9999998211860657,
+                0.9999997019767761,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandIndex2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 129,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.00000392553374695126,
+                0.7071068286895752,
+                0.7071068286895752,
+                0.000003921371899195947
+            ],
+            "min": [
+                -0.00000392553374695126,
+                0.7071068286895752,
+                0.7071068286895752,
+                0.000003921371899195947
+            ],
+            "name": "accessor_buffer_mixamorig:Hips_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 61,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1,
+                1
+            ],
+            "min": [
+                1,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:Neck_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 130,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                1,
+                1
+            ],
+            "min": [
+                1,
+                1,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:Hips_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 92,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.0033528581261634827,
+                1.9062618017196655,
+                0.000006702626706101
+            ],
+            "min": [
+                0.0033528581261634827,
+                1.9062618017196655,
+                0.000006702626706101
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandIndex3_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 40,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                1.000000238418579,
+                1.0000001192092896
+            ],
+            "min": [
+                1.0000001192092896,
+                1.000000238418579,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandMiddle3_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 121,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "min": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandMiddle3_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 153,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.03992169722914696,
+                -2.2444967839874153e-7,
+                0.000005544060059037292,
+                0.9992028474807739
+            ],
+            "min": [
+                -0.03992169722914696,
+                -2.2444967839874153e-7,
+                0.000005544060059037292,
+                0.9992028474807739
+            ],
+            "name": "accessor_buffer_mixamorig:Spine_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 133,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999998211860657,
+                0.9999999403953552,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999998211860657,
+                0.9999999403953552,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:LeftFoot_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 76,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0001250505447388,
+                0.9999999403953552,
+                1.000000238418579
+            ],
+            "min": [
+                1.0001250505447388,
+                0.9999999403953552,
+                1.000000238418579
+            ],
+            "name": "accessor_buffer_mixamorig:LeftUpLeg_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 100,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999999403953552,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999999403953552,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandThumb2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 59,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -1.632623376768283e-11,
+                10.314631462097168,
+                2.384185791015625e-7
+            ],
+            "min": [
+                -1.632623376768283e-11,
+                10.314631462097168,
+                2.384185791015625e-7
+            ],
+            "name": "accessor_buffer_mixamorig:Neck_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 53,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.6209797859191895,
+                5.933863162994385,
+                -0.1895589530467987
+            ],
+            "min": [
+                -0.6209797859191895,
+                5.933863162994385,
+                -0.1895589530467987
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandMiddle1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 16,
+            "componentType": 5126,
+            "count": 1176,
+            "max": [
+                1,
+                0.21810737252235413,
+                0.0008118848782032728,
+                0
+            ],
+            "min": [
+                0.7810807824134827,
+                0,
+                0,
+                0
+            ],
+            "name": "accessor_buffer_F010_Saber.000_skin_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 154,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "min": [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:Spine_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 147,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.015152297914028168,
+                -0.013382739387452602,
+                0.04820201173424721,
+                0.9986330270767212
+            ],
+            "min": [
+                -0.015152297914028168,
+                -0.013382739387452602,
+                0.04820201173424721,
+                0.9986330270767212
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandRing1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 63,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.30385160446167e-8,
+                9.691603259937703e-14,
+                -6.765455166576895e-13,
+                1
+            ],
+            "min": [
+                1.30385160446167e-8,
+                9.691603259937703e-14,
+                -6.765455166576895e-13,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:Spine1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 89,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.008640080690383911,
+                2.2196240425109863,
+                0.000011700321920216084
+            ],
+            "min": [
+                0.008640080690383911,
+                2.2196240425109863,
+                0.000011700321920216084
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandRing2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 21,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -6.611599019379355e-7,
+                0.00010853812273126096,
+                0.0016283623408526182,
+                0.9999986886978149
+            ],
+            "min": [
+                -6.611599019379355e-7,
+                0.00010853812273126096,
+                0.0016283623408526182,
+                0.9999986886978149
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandMiddle2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 144,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                4.818217576030293e-7,
+                -0.00015852972865104675,
+                4.313407657718926e-7,
+                1
+            ],
+            "min": [
+                4.818217576030293e-7,
+                -0.00015852972865104675,
+                4.313407657718926e-7,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:LeftForeArm_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 48,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.014275818131864071,
+                -0.030067145824432373,
+                0.05077396705746651,
+                0.998155415058136
+            ],
+            "min": [
+                -0.014275818131864071,
+                -0.030067145824432373,
+                0.05077396705746651,
+                0.998155415058136
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandPinky1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.03333333333333333
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_Character_TPose_time_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 115,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                0.9999998211860657,
+                1
+            ],
+            "min": [
+                1.0000001192092896,
+                0.9999998211860657,
+                1
+            ],
+            "name": "accessor_buffer_mixamorig:LeftLeg_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 44,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.4313478469848633,
+                1.948877215385437,
+                1.3737415075302124
+            ],
+            "min": [
+                1.4313478469848633,
+                1.948877215385437,
+                1.3737415075302124
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandThumb1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 52,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999997615814209,
+                1,
+                0.9999998807907104
+            ],
+            "min": [
+                0.9999997615814209,
+                1,
+                0.9999998807907104
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandThumb3_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 116,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                2.289442539215088,
+                5.801696300506592,
+                0.050649963319301605
+            ],
+            "min": [
+                2.289442539215088,
+                5.801696300506592,
+                0.050649963319301605
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandIndex1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 23,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                3.513521194458008,
+                8.987088203430176,
+                -0.09783625602722168
+            ],
+            "min": [
+                3.513521194458008,
+                8.987088203430176,
+                -0.09783625602722168
+            ],
+            "name": "accessor_buffer_mixamorig:LeftShoulder_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 117,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.020914429798722267,
+                0.00083109550178051,
+                -0.04451649263501167,
+                0.998789370059967
+            ],
+            "min": [
+                -0.020914429798722267,
+                0.00083109550178051,
+                -0.04451649263501167,
+                0.998789370059967
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandIndex1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 135,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.0000019077392607869115,
+                -0.00024382353876717389,
+                0.006663992069661617,
+                0.9999777674674988
+            ],
+            "min": [
+                0.0000019077392607869115,
+                -0.00024382353876717389,
+                0.006663992069661617,
+                0.9999777674674988
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandPinky3_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 55,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                1,
+                1.0000001192092896
+            ],
+            "min": [
+                1.0000001192092896,
+                1,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandMiddle1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 111,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.020383575931191444,
+                0.010770494118332863,
+                -0.049423426389694214,
+                0.9985118508338928
+            ],
+            "min": [
+                -0.020383575931191444,
+                0.010770494118332863,
+                -0.049423426389694214,
+                0.9985118508338928
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandRing1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 65,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.004050195217132568,
+                1.9782497882843018,
+                -0.000013029115507379174
+            ],
+            "min": [
+                -0.004050195217132568,
+                1.9782497882843018,
+                -0.000013029115507379174
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandRing3_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 159,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.019062332808971405,
+                0.034996457397937775,
+                -0.04927309229969978,
+                0.9979900121688843
+            ],
+            "min": [
+                -0.019062332808971405,
+                0.034996457397937775,
+                -0.04927309229969978,
+                0.9979900121688843
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandPinky1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 151,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999998211860657,
+                0.9999998807907104,
+                0.9999999403953552
+            ],
+            "min": [
+                0.9999998211860657,
+                0.9999998807907104,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_mixamorig:RightHand_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 131,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -1.1807060218416154e-7,
+                41.84932327270508,
+                -2.8172507882118225e-7
+            ],
+            "min": [
+                -1.1807060218416154e-7,
+                41.84932327270508,
+                -2.8172507882118225e-7
+            ],
+            "name": "accessor_buffer_mixamorig:LeftFoot_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 99,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -1.9003864792921377e-7,
+                0.00007007304520811886,
+                0.022684887051582336,
+                0.9997426867485046
+            ],
+            "min": [
+                -1.9003864792921377e-7,
+                0.00007007304520811886,
+                0.022684887051582336,
+                0.9997426867485046
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandThumb2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 155,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.025692284107208252,
+                2.32354736328125,
+                -0.000005896072252653539
+            ],
+            "min": [
+                0.025692284107208252,
+                2.32354736328125,
+                -0.000005896072252653539
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandMiddle2_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 16,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999998807907104,
+                1,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999998807907104,
+                1,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:RightArm_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 152,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -4.3809234018254983e-11,
+                6.854499816894531,
+                -0.5485977530479431
+            ],
+            "min": [
+                -4.3809234018254983e-11,
+                6.854499816894531,
+                -0.5485977530479431
+            ],
+            "name": "accessor_buffer_mixamorig:Spine_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 138,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -9.933781939253095e-7,
+                0.00005373970634536818,
+                0.003363647498190403,
+                0.9999943375587463
+            ],
+            "min": [
+                -9.933781939253095e-7,
+                0.00005373970634536818,
+                0.003363647498190403,
+                0.9999943375587463
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandIndex2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 110,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.8287959098815918,
+                5.778012275695801,
+                -0.20808981359004974
+            ],
+            "min": [
+                -0.8287959098815918,
+                5.778012275695801,
+                -0.20808981359004974
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandRing1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 156,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.0000013217339756010915,
+                -0.00023518799571320415,
+                -0.002985715866088867,
+                0.9999955296516418
+            ],
+            "min": [
+                -0.0000013217339756010915,
+                -0.00023518799571320415,
+                -0.002985715866088867,
+                0.9999955296516418
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandMiddle2_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 134,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.006230756640434265,
+                1.5249916315078735,
+                0.000022089123376645148
+            ],
+            "min": [
+                -0.006230756640434265,
+                1.5249916315078735,
+                0.000022089123376645148
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandPinky3_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 88,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1,
+                0.9999998211860657,
+                0.9999998211860657
+            ],
+            "min": [
+                1,
+                0.9999998211860657,
+                0.9999998211860657
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandThumb2_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 160,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999999403953552,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "min": [
+                0.9999999403953552,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "name": "accessor_buffer_mixamorig:RightHandPinky1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 35,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                2.655433490872383e-7,
+                41.85009002685547,
+                -1.4621764421463013e-7
+            ],
+            "min": [
+                2.655433490872383e-7,
+                41.85009002685547,
+                -1.4621764421463013e-7
+            ],
+            "name": "accessor_buffer_mixamorig:RightFoot_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 11,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -2.381847381591797,
+                6.0912089347839355,
+                0.09324643015861511
+            ],
+            "min": [
+                -2.381847381591797,
+                6.0912089347839355,
+                0.09324643015861511
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandIndex1_Character_TPose_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 67,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.9999999403953552,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "min": [
+                0.9999999403953552,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandRing3_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 13,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                1.0000001192092896,
+                1,
+                0.9999999403953552
+            ],
+            "min": [
+                1.0000001192092896,
+                1,
+                0.9999999403953552
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandIndex1_Character_TPose_2",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 42,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.21630768477916718,
+                0.07504062354564667,
+                0.2835485637187958,
+                0.9312251806259155
+            ],
+            "min": [
+                0.21630768477916718,
+                0.07504062354564667,
+                0.2835485637187958,
+                0.9312251806259155
+            ],
+            "name": "accessor_buffer_mixamorig:LeftHandThumb1_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 81,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                -0.1847110539674759,
+                0.001648154342547059,
+                0.014273405075073242,
+                0.9826878309249878
+            ],
+            "min": [
+                -0.1847110539674759,
+                0.001648154342547059,
+                0.014273405075073242,
+                0.9826878309249878
+            ],
+            "name": "accessor_buffer_mixamorig:LeftArm_Character_TPose_1",
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 75,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2,
+            "max": [
+                0.0000016051130842242856,
+                -0.0022346421610563993,
+                0.9999784827232361,
+                0.0061686099506914616
+            ],
+            "min": [
+                0.0000016051130842242856,
+                -0.0022346421610563993,
+                0.9999784827232361,
+                0.0061686099506914616
+            ],
+            "name": "accessor_buffer_mixamorig:LeftUpLeg_Character_TPose_1",
+            "type": "VEC4"
+        }
+    ],
+    "asset": {
+        "copyright": "",
+        "generator": "blendergltf v1.2.0",
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 14112,
+            "byteOffset": 0,
+            "byteStride": 12,
+            "name": "bufferView_buffer_F010_Saber.000_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 14112,
+            "byteOffset": 14112,
+            "byteStride": 12,
+            "name": "bufferView_buffer_F010_Saber.000_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 9408,
+            "byteOffset": 28224,
+            "byteStride": 8,
+            "name": "bufferView_buffer_F010_Saber.000_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 14112,
+            "byteOffset": 37632,
+            "byteStride": 12,
+            "name": "bufferView_buffer_F010_Saber.000_COLOR_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 10012,
+            "byteOffset": 51744,
+            "name": "bufferView_buffer_F010_Saber.000_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 37632,
+            "byteOffset": 61756,
+            "byteStride": 32,
+            "name": "bufferView_buffer_F010_Saber.000_skin_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 192,
+            "byteOffset": 99388,
+            "byteStride": 64,
+            "name": "bufferView_buffer_IBM_F010_Saber_Face_skin_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 8,
+            "byteOffset": 99580,
+            "byteStride": 4,
+            "name": "bufferView_buffer_Character_TPose_time_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99588,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandPinky2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 99612,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandPinky2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99644,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandPinky2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99668,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandIndex1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 99692,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandIndex1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99724,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandIndex1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99748,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightArm_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 99772,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightArm_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99804,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightArm_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99828,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandIndex3_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 99852,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandIndex3_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99884,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandIndex3_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99908,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandMiddle2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 99932,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandMiddle2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99964,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandMiddle2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 99988,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftShoulder_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100012,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftShoulder_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100044,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftShoulder_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100068,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Spine2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100092,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:Spine2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100124,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Spine2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100148,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandIndex2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100172,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandIndex2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100204,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandIndex2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100228,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandPinky3_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100252,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandPinky3_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100284,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandPinky3_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100308,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightFoot_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100332,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightFoot_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100364,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightFoot_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100388,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandMiddle3_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100412,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandMiddle3_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100444,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandMiddle3_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100468,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandThumb1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100492,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandThumb1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100524,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandThumb1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100548,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandThumb1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100572,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandThumb1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100604,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandThumb1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100628,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandPinky1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100652,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandPinky1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100684,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandPinky1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100708,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandThumb3_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100732,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandThumb3_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100764,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandThumb3_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100788,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandMiddle1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100812,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandMiddle1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100844,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandMiddle1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100868,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandRing3_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100892,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandRing3_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100924,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandRing3_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 100948,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Neck_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 100972,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:Neck_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101004,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Neck_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101028,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Spine1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101052,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:Spine1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101084,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Spine1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101108,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandRing3_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101132,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandRing3_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101164,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandRing3_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101188,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightLeg_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101212,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightLeg_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101244,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightLeg_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101268,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftToeBase_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101292,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftToeBase_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101324,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftToeBase_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101348,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftUpLeg_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101372,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftUpLeg_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101404,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftUpLeg_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101428,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandPinky2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101452,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandPinky2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101484,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandPinky2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101508,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftArm_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101532,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftArm_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101564,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftArm_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101588,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightToeBase_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101612,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightToeBase_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101644,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightToeBase_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101668,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandThumb2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101692,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandThumb2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101724,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandThumb2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101748,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandRing2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101772,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandRing2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101804,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandRing2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101828,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandIndex3_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101852,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandIndex3_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101884,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandIndex3_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101908,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHand_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 101932,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHand_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101964,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHand_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 101988,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandThumb2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102012,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandThumb2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102044,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandThumb2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102068,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandThumb3_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102092,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandThumb3_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102124,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandThumb3_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102148,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightForeArm_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102172,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightForeArm_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102204,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightForeArm_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102228,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandMiddle1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102252,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandMiddle1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102284,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandMiddle1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102308,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandRing1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102332,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandRing1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102364,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandRing1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102388,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftLeg_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102412,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftLeg_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102444,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftLeg_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102468,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandIndex1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102492,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandIndex1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102524,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandIndex1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102548,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandMiddle3_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102572,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandMiddle3_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102604,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandMiddle3_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102628,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightShoulder_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102652,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightShoulder_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102684,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightShoulder_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102708,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandRing2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102732,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandRing2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102764,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandRing2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102788,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Hips_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102812,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:Hips_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102844,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Hips_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102868,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftFoot_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102892,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftFoot_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102924,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftFoot_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 102948,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandPinky3_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 102972,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandPinky3_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103004,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandPinky3_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103028,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandIndex2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 103052,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandIndex2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103084,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandIndex2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103108,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Head_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 103132,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:Head_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103164,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Head_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103188,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftForeArm_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 103212,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftForeArm_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103244,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftForeArm_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103268,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandRing1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 103292,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:LeftHandRing1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103324,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:LeftHandRing1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103348,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHand_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 103372,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHand_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103404,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHand_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103428,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Spine_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 103452,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:Spine_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103484,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:Spine_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103508,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandMiddle2_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 103532,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandMiddle2_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103564,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandMiddle2_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103588,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandPinky1_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 103612,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightHandPinky1_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103644,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightHandPinky1_Character_TPose_2"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103668,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightUpLeg_Character_TPose_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 32,
+            "byteOffset": 103692,
+            "byteStride": 16,
+            "name": "bufferView_buffer_mixamorig:RightUpLeg_Character_TPose_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 24,
+            "byteOffset": 103724,
+            "byteStride": 12,
+            "name": "bufferView_buffer_mixamorig:RightUpLeg_Character_TPose_2"
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 103748,
+            "name": "buffer_saber-face",
+            "uri": "buffer_saber-face.bin"
+        }
+    ],
+    "images": [
+        {
+            "uri": "eriri-face-test.png"
+        }
+    ],
+    "materials": [
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": false,
+            "name": "face.001",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "baseColorTexture": {
+                    "index": 0,
+                    "texCoord": 0
+                },
+                "metallicFactor": 0,
+                "roughnessFactor": 1
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "F010_Saber.000",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 101,
+                        "POSITION": 98,
+                        "TEXCOORD_0": 70
+                    },
+                    "indices": 36,
+                    "material": 0,
+                    "mode": 4,
+                    "extensions": {
+                        "gl_avatar": {
+                            "attributes": {
+                                "JOINTS_0": 16,
+                                "WEIGHTS_0": 126
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "children": [
+                1,
+                2
+            ],
+            "name": "Character",
+            "rotation": [
+                -0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale": [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ],
+            "translation": [
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "mesh": 0,
+            "name": "F010_Saber_Face",
+            "rotation": [
+                -8.136032647598768e-8,
+                1.0171798302661709e-16,
+                -1.2870997341503742e-30,
+                1
+            ],
+            "scale": [
+                1.0011157989501953,
+                1.0011157989501953,
+                1.0011157989501953
+            ],
+            "translation": [
+                0,
+                -4.52195720095739e-22,
+                2.7755575615628914e-15
+            ],
+            "extensions": {
+                "gl_avatar": {
+                    "skin": 0
+                }
+            }
+        },
+        {
+            "children": [
+                3,
+                57,
+                62
+            ],
+            "name": "Armature_mixamorig:Hips",
+            "rotation": [
+                0,
+                0.7071068286895752,
+                0.7071068286895752,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                -0.007442474365234375,
+                0.6201396584510803,
+                98.82971954345703
+            ]
+        },
+        {
+            "children": [
+                4
+            ],
+            "name": "Armature_mixamorig:Spine",
+            "rotation": [
+                -0.039921652525663376,
+                0,
+                0,
+                0.9992028474807739
+            ],
+            "scale": [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "translation": [
+                0,
+                6.854499816894531,
+                -0.5485978126525879
+            ]
+        },
+        {
+            "children": [
+                5
+            ],
+            "name": "Armature_mixamorig:Spine1",
+            "rotation": [
+                1.4901162970204496e-8,
+                0,
+                0,
+                1
+            ],
+            "scale": [
+                1,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "translation": [
+                -4.656612873077393e-10,
+                8.022480964660645,
+                -2.384185791015625e-7
+            ]
+        },
+        {
+            "children": [
+                6,
+                9,
+                33
+            ],
+            "name": "Armature_mixamorig:Spine2",
+            "rotation": [
+                -5.029141902923584e-8,
+                9.423000574271256e-13,
+                -2.358492047493943e-11,
+                1
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                -4.656612873077393e-10,
+                9.168560028076172,
+                -4.76837158203125e-7
+            ]
+        },
+        {
+            "children": [
+                7
+            ],
+            "name": "Armature_mixamorig:Neck",
+            "rotation": [
+                0.03992168977856636,
+                1.427615485679809e-13,
+                2.0030548400495896e-11,
+                0.9992028474807739
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                -2.2881511962946632e-10,
+                10.314631462097168,
+                0.0000011920928955078125
+            ]
+        },
+        {
+            "children": [
+                8
+            ],
+            "name": "Armature_mixamorig:Head",
+            "rotation": [
+                -3.749335064640036e-9,
+                -6.35555176367169e-21,
+                5.4569682106375694e-12,
+                1
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                -5.1451731764018405e-11,
+                4.3087005615234375,
+                0.11991112679243088
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:HeadTop_End",
+            "rotation": [
+                0,
+                2.610143520150023e-28,
+                -1.8189894035458565e-12,
+                1
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                1.2972056762095008e-10,
+                20.857254028320312,
+                0.5804517269134521
+            ]
+        },
+        {
+            "children": [
+                10
+            ],
+            "name": "Armature_mixamorig:LeftShoulder",
+            "rotation": [
+                0.5740949511528015,
+                0.4067640006542206,
+                -0.5904093384742737,
+                0.39544278383255005
+            ],
+            "scale": [
+                1.0000001192092896,
+                1,
+                1
+            ],
+            "translation": [
+                3.513521194458008,
+                8.987089157104492,
+                -0.09783673286437988
+            ]
+        },
+        {
+            "children": [
+                11
+            ],
+            "name": "Armature_mixamorig:LeftArm",
+            "rotation": [
+                -0.19647400081157684,
+                -0.0007150349556468427,
+                0.0035684211179614067,
+                0.9805023074150085
+            ],
+            "scale": [
+                1,
+                1.0000001192092896,
+                0.9999999403953552
+            ],
+            "translation": [
+                -5.960464477539062e-7,
+                7.4837188720703125,
+                -0.00001049041748046875
+            ]
+        },
+        {
+            "children": [
+                12
+            ],
+            "name": "Armature_mixamorig:LeftForeArm",
+            "rotation": [
+                -0.005400624126195908,
+                -0.0001584456767886877,
+                0.029325975105166435,
+                0.9995554089546204
+            ],
+            "scale": [
+                1,
+                0.9999998807907104,
+                0.9999999403953552
+            ],
+            "translation": [
+                -5.364418029785156e-7,
+                22.7723331451416,
+                5.662441253662109e-7
+            ]
+        },
+        {
+            "children": [
+                13,
+                17,
+                21,
+                25,
+                29
+            ],
+            "name": "Armature_mixamorig:LeftHand",
+            "rotation": [
+                -0.0046674893237650394,
+                -0.036291614174842834,
+                -0.01584092527627945,
+                0.9992048144340515
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999998807907104,
+                0.9999998807907104
+            ],
+            "translation": [
+                4.76837158203125e-7,
+                19.02334213256836,
+                8.046627044677734e-7
+            ]
+        },
+        {
+            "children": [
+                14
+            ],
+            "name": "Armature_mixamorig:LeftHandThumb1",
+            "rotation": [
+                0.24564014375209808,
+                0.0797870084643364,
+                0.2984432578086853,
+                0.9188180565834045
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "translation": [
+                -1.3880550861358643,
+                1.872644305229187,
+                1.3422610759735107
+            ]
+        },
+        {
+            "children": [
+                15
+            ],
+            "name": "Armature_mixamorig:LeftHandThumb2",
+            "rotation": [
+                0.00489170802757144,
+                4.4890290951116185e-7,
+                4.610102450897102e-7,
+                0.9999881386756897
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                -0.018166542053222656,
+                2.1517605781555176,
+                -0.000021755695343017578
+            ]
+        },
+        {
+            "children": [
+                16
+            ],
+            "name": "Armature_mixamorig:LeftHandThumb3",
+            "rotation": [
+                0.021618247032165527,
+                -5.850072852808808e-7,
+                -3.9590455003235547e-7,
+                0.9997663497924805
+            ],
+            "scale": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1
+            ],
+            "translation": [
+                0.07795095443725586,
+                2.1093316078186035,
+                0.0000018775463104248047
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:LeftHandThumb4",
+            "rotation": [
+                4.284083487959833e-8,
+                -1.769512749660862e-7,
+                -3.3527612686157227e-8,
+                1
+            ],
+            "scale": [
+                1,
+                1,
+                1.0000001192092896
+            ],
+            "translation": [
+                -0.0597844123840332,
+                1.8846036195755005,
+                -0.000011980533599853516
+            ]
+        },
+        {
+            "children": [
+                18
+            ],
+            "name": "Armature_mixamorig:LeftHandIndex1",
+            "rotation": [
+                0.026657480746507645,
+                0.0018764277920126915,
+                0.07018843293190002,
+                0.9971757531166077
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999998807907104,
+                0.9999999403953552
+            ],
+            "translation": [
+                -2.3818466663360596,
+                6.0911946296691895,
+                0.09325551986694336
+            ]
+        },
+        {
+            "children": [
+                19
+            ],
+            "name": "Armature_mixamorig:LeftHandIndex2",
+            "rotation": [
+                -0.034092869609594345,
+                -7.741025598306805e-8,
+                1.2725772080557363e-7,
+                0.9994186758995056
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                -0.009856224060058594,
+                2.002563238143921,
+                0.0000019297003746032715
+            ]
+        },
+        {
+            "children": [
+                20
+            ],
+            "name": "Armature_mixamorig:LeftHandIndex3",
+            "rotation": [
+                -0.011232745833694935,
+                8.382431815334712e-8,
+                -1.2014818651095993e-7,
+                0.9999369382858276
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                0.0033556222915649414,
+                1.906246304512024,
+                -0.000002428889274597168
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:LeftHandIndex4",
+            "rotation": [
+                -1.6298145055770874e-8,
+                -2.116430550813675e-7,
+                -1.4435499906539917e-7,
+                1
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                0.006502628326416016,
+                1.6352357864379883,
+                -0.000007256865501403809
+            ]
+        },
+        {
+            "children": [
+                22
+            ],
+            "name": "Armature_mixamorig:LeftHandMiddle1",
+            "rotation": [
+                0.030671721324324608,
+                0.0003823289880529046,
+                0.012456541880965233,
+                0.9994519352912903
+            ],
+            "scale": [
+                0.9999999403953552,
+                1,
+                1
+            ],
+            "translation": [
+                -0.620979368686676,
+                5.9338483810424805,
+                -0.18955062329769135
+            ]
+        },
+        {
+            "children": [
+                23
+            ],
+            "name": "Armature_mixamorig:LeftHandMiddle2",
+            "rotation": [
+                -0.01664525642991066,
+                1.53325672158644e-8,
+                1.832339968643737e-8,
+                0.999861478805542
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "translation": [
+                -0.018555283546447754,
+                2.2824888229370117,
+                -0.000022992491722106934
+            ]
+        },
+        {
+            "children": [
+                24
+            ],
+            "name": "Armature_mixamorig:LeftHandMiddle3",
+            "rotation": [
+                -0.10026512295007706,
+                -6.588842182964072e-8,
+                1.4567116579655703e-7,
+                0.9949608445167542
+            ],
+            "scale": [
+                1,
+                0.9999998211860657,
+                0.9999998211860657
+            ],
+            "translation": [
+                -0.010961532592773438,
+                2.2484676837921143,
+                -0.000016957521438598633
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:LeftHandMiddle4",
+            "rotation": [
+                -4.5380154745089385e-8,
+                5.855691398437557e-8,
+                8.149073416063857e-9,
+                1
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999998807907104,
+                0.9999999403953552
+            ],
+            "translation": [
+                0.02951037883758545,
+                2.0856528282165527,
+                0.000010073184967041016
+            ]
+        },
+        {
+            "children": [
+                26
+            ],
+            "name": "Armature_mixamorig:LeftHandRing1",
+            "rotation": [
+                0.10404136031866074,
+                -0.008528899401426315,
+                -0.08125600963830948,
+                0.9912115335464478
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1
+            ],
+            "translation": [
+                0.8905025720596313,
+                5.982393264770508,
+                -0.24304264783859253
+            ]
+        },
+        {
+            "children": [
+                27
+            ],
+            "name": "Armature_mixamorig:LeftHandRing2",
+            "rotation": [
+                -0.03329118713736534,
+                -6.639353955506522e-8,
+                -3.7273565567375044e-8,
+                0.9994457960128784
+            ],
+            "scale": [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "translation": [
+                -0.017888784408569336,
+                2.1800594329833984,
+                -0.000017344951629638672
+            ]
+        },
+        {
+            "children": [
+                28
+            ],
+            "name": "Armature_mixamorig:LeftHandRing3",
+            "rotation": [
+                -0.08213821053504944,
+                5.25645127424923e-8,
+                6.078793717279041e-7,
+                0.9966209530830383
+            ],
+            "scale": [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "translation": [
+                -0.0040547847747802734,
+                1.9782464504241943,
+                -0.000038623809814453125
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:LeftHandRing4",
+            "rotation": [
+                -1.4202669262886047e-7,
+                -1.4062970876693726e-7,
+                -1.5425030142068863e-7,
+                1
+            ],
+            "scale": [
+                0.9999999403953552,
+                1,
+                1
+            ],
+            "translation": [
+                0.02194046974182129,
+                1.7619253396987915,
+                0.000026524066925048828
+            ]
+        },
+        {
+            "children": [
+                30
+            ],
+            "name": "Armature_mixamorig:LeftHandPinky1",
+            "rotation": [
+                0.13995902240276337,
+                -0.024145862087607384,
+                -0.16828545928001404,
+                0.9754529595375061
+            ],
+            "scale": [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "translation": [
+                2.112321376800537,
+                5.15140962600708,
+                -0.10163509845733643
+            ]
+        },
+        {
+            "children": [
+                31
+            ],
+            "name": "Armature_mixamorig:LeftHandPinky2",
+            "rotation": [
+                -0.012911615893244743,
+                6.519802298043942e-8,
+                6.445289386647346e-7,
+                0.999916672706604
+            ],
+            "scale": [
+                0.9999999403953552,
+                1,
+                0.9999999403953552
+            ],
+            "translation": [
+                -0.006536006927490234,
+                1.828072190284729,
+                -0.00001633167266845703
+            ]
+        },
+        {
+            "children": [
+                32
+            ],
+            "name": "Armature_mixamorig:LeftHandPinky3",
+            "rotation": [
+                -0.09343928843736649,
+                1.850952742188383e-7,
+                -2.745443339335907e-7,
+                0.9956250786781311
+            ],
+            "scale": [
+                1,
+                1.0000001192092896,
+                1
+            ],
+            "translation": [
+                -0.006233692169189453,
+                1.5249935388565063,
+                0.000025272369384765625
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:LeftHandPinky4",
+            "rotation": [
+                5.541368963690729e-8,
+                -5.9371814131736755e-9,
+                1.3969838619232178e-9,
+                1
+            ],
+            "scale": [
+                1,
+                1,
+                1.0000001192092896
+            ],
+            "translation": [
+                0.012760639190673828,
+                1.3818011283874512,
+                -0.000005304813385009766
+            ]
+        },
+        {
+            "children": [
+                34
+            ],
+            "name": "Armature_mixamorig:RightShoulder",
+            "rotation": [
+                0.5726097226142883,
+                -0.40782278776168823,
+                0.5916988849639893,
+                0.394577294588089
+            ],
+            "scale": [
+                1.0000001192092896,
+                1.0000001192092896,
+                1
+            ],
+            "translation": [
+                -3.513521194458008,
+                8.98842716217041,
+                -0.11455440521240234
+            ]
+        },
+        {
+            "children": [
+                35
+            ],
+            "name": "Armature_mixamorig:RightArm",
+            "rotation": [
+                -0.19615903496742249,
+                0.0015209860866889358,
+                -0.007602959871292114,
+                0.980541467666626
+            ],
+            "scale": [
+                0.9999998807907104,
+                0.9999998211860657,
+                0.9999998211860657
+            ],
+            "translation": [
+                6.854534149169922e-7,
+                7.4837188720703125,
+                -0.0000069588422775268555
+            ]
+        },
+        {
+            "children": [
+                36
+            ],
+            "name": "Armature_mixamorig:RightForeArm",
+            "rotation": [
+                -0.005199347157031298,
+                0.00015941221499815583,
+                -0.03064456395804882,
+                0.9995168447494507
+            ],
+            "scale": [
+                1,
+                1,
+                1.0000001192092896
+            ],
+            "translation": [
+                -0.0000010132789611816406,
+                22.770898818969727,
+                -0.0000026673078536987305
+            ]
+        },
+        {
+            "children": [
+                37,
+                41,
+                45,
+                49,
+                53
+            ],
+            "name": "Armature_mixamorig:RightHand",
+            "rotation": [
+                -0.027066726237535477,
+                0.03516821190714836,
+                0.024613087996840477,
+                0.9987115859985352
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1
+            ],
+            "translation": [
+                5.960464477539062e-7,
+                19.027141571044922,
+                -0.000011309981346130371
+            ]
+        },
+        {
+            "children": [
+                38
+            ],
+            "name": "Armature_mixamorig:RightHandThumb1",
+            "rotation": [
+                0.24496246874332428,
+                -0.07342495024204254,
+                -0.27757158875465393,
+                0.9260433316230774
+            ],
+            "scale": [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "translation": [
+                1.4313437938690186,
+                1.9488826990127563,
+                1.373734474182129
+            ]
+        },
+        {
+            "children": [
+                39
+            ],
+            "name": "Armature_mixamorig:RightHandThumb2",
+            "rotation": [
+                0.02597731165587902,
+                4.695450286362757e-7,
+                4.360061325314746e-7,
+                0.9996625781059265
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1
+            ],
+            "translation": [
+                0.09870082139968872,
+                2.2226028442382812,
+                0.000018328428268432617
+            ]
+        },
+        {
+            "children": [
+                40
+            ],
+            "name": "Armature_mixamorig:RightHandThumb3",
+            "rotation": [
+                0.0020599281415343285,
+                -4.209587416426075e-7,
+                -2.747407563674642e-7,
+                0.9999979734420776
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                0.08420944213867188,
+                1.993523359298706,
+                -0.000024646520614624023
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:RightHandThumb4",
+            "rotation": [
+                6.705523247774181e-8,
+                -7.450580596923828e-9,
+                6.05359673500061e-8,
+                1
+            ],
+            "scale": [
+                1,
+                0.9999998807907104,
+                0.9999998807907104
+            ],
+            "translation": [
+                -0.1829054355621338,
+                1.5351988077163696,
+                0.000009775161743164062
+            ]
+        },
+        {
+            "children": [
+                42
+            ],
+            "name": "Armature_mixamorig:RightHandIndex1",
+            "rotation": [
+                0.04785900563001633,
+                -0.003934510983526707,
+                -0.08183817565441132,
+                0.9954881072044373
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                2.2894375324249268,
+                5.801694393157959,
+                0.050646696239709854
+            ]
+        },
+        {
+            "children": [
+                43
+            ],
+            "name": "Armature_mixamorig:RightHandIndex2",
+            "rotation": [
+                -0.028287818655371666,
+                7.496872456158599e-8,
+                2.392710314325086e-7,
+                0.9995998740196228
+            ],
+            "scale": [
+                1,
+                1,
+                0.9999999403953552
+            ],
+            "translation": [
+                0.029898226261138916,
+                2.2504000663757324,
+                0.000021301209926605225
+            ]
+        },
+        {
+            "children": [
+                44
+            ],
+            "name": "Armature_mixamorig:RightHandIndex3",
+            "rotation": [
+                -0.14387890696525574,
+                7.74066961639619e-8,
+                1.5951893317378563e-7,
+                0.9895954132080078
+            ],
+            "scale": [
+                0.9999999403953552,
+                1,
+                0.9999999403953552
+            ],
+            "translation": [
+                0.01506185531616211,
+                2.0928609371185303,
+                0.00001971423625946045
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:RightHandIndex4",
+            "rotation": [
+                -2.57976381590197e-7,
+                -8.847565879932517e-8,
+                -1.480803035747158e-7,
+                1
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "translation": [
+                -0.04495549201965332,
+                1.9040567874908447,
+                -0.000019669532775878906
+            ]
+        },
+        {
+            "children": [
+                46
+            ],
+            "name": "Armature_mixamorig:RightHandMiddle1",
+            "rotation": [
+                0.06535934656858444,
+                -0.0012092242250218987,
+                -0.018458466976881027,
+                0.9976903200149536
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                0.6151741147041321,
+                5.987786293029785,
+                -0.2521481215953827
+            ]
+        },
+        {
+            "children": [
+                47
+            ],
+            "name": "Armature_mixamorig:RightHandMiddle2",
+            "rotation": [
+                -0.02911515347659588,
+                -1.493660128915053e-8,
+                1.2578189512169047e-7,
+                0.9995761513710022
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999998807907104,
+                0.9999998807907104
+            ],
+            "translation": [
+                0.025691747665405273,
+                2.3235480785369873,
+                0.0000058710575103759766
+            ]
+        },
+        {
+            "children": [
+                48
+            ],
+            "name": "Armature_mixamorig:RightHandMiddle3",
+            "rotation": [
+                -0.12079086899757385,
+                3.73517679008728e-8,
+                3.685922251861484e-7,
+                0.9926779866218567
+            ],
+            "scale": [
+                1,
+                0.9999998807907104,
+                0.9999998211860657
+            ],
+            "translation": [
+                0.011220812797546387,
+                2.2008121013641357,
+                0.000029072165489196777
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:RightHandMiddle4",
+            "rotation": [
+                2.531742211431265e-7,
+                -1.9557775843281888e-8,
+                2.561137080192566e-9,
+                1
+            ],
+            "scale": [
+                1,
+                1,
+                0.9999999403953552
+            ],
+            "translation": [
+                -0.036910414695739746,
+                2.00234055519104,
+                0.00000260770320892334
+            ]
+        },
+        {
+            "children": [
+                50
+            ],
+            "name": "Armature_mixamorig:RightHandRing1",
+            "rotation": [
+                0.08960019052028656,
+                0.007558114361017942,
+                0.0837147906422615,
+                0.9924246072769165
+            ],
+            "scale": [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "translation": [
+                -0.8287993669509888,
+                5.778010845184326,
+                -0.2080925703048706
+            ]
+        },
+        {
+            "children": [
+                51
+            ],
+            "name": "Armature_mixamorig:RightHandRing2",
+            "rotation": [
+                0.02305533178150654,
+                -1.0247272363983484e-8,
+                -2.6083968762691256e-8,
+                0.9997342824935913
+            ],
+            "scale": [
+                1,
+                1,
+                1.0000001192092896
+            ],
+            "translation": [
+                0.008643150329589844,
+                2.2196152210235596,
+                -0.000009953975677490234
+            ]
+        },
+        {
+            "children": [
+                52
+            ],
+            "name": "Armature_mixamorig:RightHandRing3",
+            "rotation": [
+                -0.12460635602474213,
+                6.288876619464645e-8,
+                3.815565037257329e-7,
+                0.992206335067749
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1
+            ],
+            "translation": [
+                0.016327381134033203,
+                2.091179847717285,
+                0.000004410743713378906
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:RightHandRing4",
+            "rotation": [
+                -8.42846930027008e-8,
+                -6.05359673500061e-8,
+                -6.356277282293377e-8,
+                1
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999998807907104,
+                1
+            ],
+            "translation": [
+                -0.02497267723083496,
+                1.9166507720947266,
+                -0.000018537044525146484
+            ]
+        },
+        {
+            "children": [
+                54
+            ],
+            "name": "Armature_mixamorig:RightHandPinky1",
+            "rotation": [
+                0.1575794368982315,
+                0.028793327510356903,
+                0.17742541432380676,
+                0.9710097312927246
+            ],
+            "scale": [
+                1,
+                1.0000001192092896,
+                1
+            ],
+            "translation": [
+                -2.075824737548828,
+                5.181243896484375,
+                -0.156680166721344
+            ]
+        },
+        {
+            "children": [
+                55
+            ],
+            "name": "Armature_mixamorig:RightHandPinky2",
+            "rotation": [
+                -0.021833697333931923,
+                -8.849674060229518e-8,
+                -3.185882917478011e-7,
+                0.9997616410255432
+            ],
+            "scale": [
+                1,
+                0.9999998211860657,
+                0.9999999403953552
+            ],
+            "translation": [
+                0.009781837463378906,
+                1.9066412448883057,
+                0.00003445148468017578
+            ]
+        },
+        {
+            "children": [
+                56
+            ],
+            "name": "Armature_mixamorig:RightHandPinky3",
+            "rotation": [
+                -0.0985320433974266,
+                -1.1792045739866808e-7,
+                -2.5736605735460216e-8,
+                0.9951338768005371
+            ],
+            "scale": [
+                1,
+                1.0000001192092896,
+                1
+            ],
+            "translation": [
+                0.004714488983154297,
+                1.55594801902771,
+                0.000019788742065429688
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:RightHandPinky4",
+            "rotation": [
+                1.695007227908718e-7,
+                -6.053597445543346e-8,
+                1.6530977475781583e-8,
+                1
+            ],
+            "scale": [
+                0.9999998807907104,
+                0.9999998807907104,
+                0.9999999403953552
+            ],
+            "translation": [
+                -0.014493942260742188,
+                1.4579054117202759,
+                -0.000033020973205566406
+            ]
+        },
+        {
+            "children": [
+                58
+            ],
+            "name": "Armature_mixamorig:LeftUpLeg",
+            "rotation": [
+                -0.000008872594662534539,
+                0.0009148783865384758,
+                0.9998617172241211,
+                0.016607170924544334
+            ],
+            "scale": [
+                1.0001250505447388,
+                1,
+                1.000000238418579
+            ],
+            "translation": [
+                6.5092010498046875,
+                -3.8089065551757812,
+                -0.3193536400794983
+            ]
+        },
+        {
+            "children": [
+                59
+            ],
+            "name": "Armature_mixamorig:LeftLeg",
+            "rotation": [
+                -0.019678570330142975,
+                -0.00024797735386528075,
+                0.012827177532017231,
+                0.9997241497039795
+            ],
+            "scale": [
+                0.9999999403953552,
+                1,
+                0.9999999403953552
+            ],
+            "translation": [
+                4.90503225591965e-7,
+                45.04969024658203,
+                -3.3028754842234775e-8
+            ]
+        },
+        {
+            "children": [
+                60
+            ],
+            "name": "Armature_mixamorig:LeftFoot",
+            "rotation": [
+                0.4820258617401123,
+                0.06575184315443039,
+                -0.03629865497350693,
+                0.872931957244873
+            ],
+            "scale": [
+                1,
+                1.0000001192092896,
+                1.0000001192092896
+            ],
+            "translation": [
+                -3.387158358236775e-7,
+                41.849327087402344,
+                -3.457535058259964e-8
+            ]
+        },
+        {
+            "children": [
+                61
+            ],
+            "name": "Armature_mixamorig:LeftToeBase",
+            "rotation": [
+                0.29159197211265564,
+                -0.06168047711253166,
+                0.01884075440466404,
+                0.9543660879135132
+            ],
+            "scale": [
+                1,
+                1,
+                1.0000001192092896
+            ],
+            "translation": [
+                8.810311555862427e-7,
+                12.08905029296875,
+                -0.000003889203071594238
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:LeftToe_End",
+            "rotation": [
+                9.872019290924072e-8,
+                0.000008056988008320332,
+                -1.909211277961731e-8,
+                1
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                -3.5762786865234375e-7,
+                4.706444263458252,
+                5.960464477539063e-8
+            ]
+        },
+        {
+            "children": [
+                63
+            ],
+            "name": "Armature_mixamorig:RightUpLeg",
+            "rotation": [
+                -0.00000294413257506676,
+                -0.0034815834369510412,
+                -0.9998561143875122,
+                0.01660647802054882
+            ],
+            "scale": [
+                1.000124216079712,
+                1,
+                1.0000035762786865
+            ],
+            "translation": [
+                -6.5092010498046875,
+                -3.8089065551757812,
+                -0.4497392773628235
+            ]
+        },
+        {
+            "children": [
+                64
+            ],
+            "name": "Armature_mixamorig:RightLeg",
+            "rotation": [
+                -0.022010719403624535,
+                0.00022552665905095637,
+                -0.012826679274439812,
+                0.999675452709198
+            ],
+            "scale": [
+                0.9999998807907104,
+                0.9999998807907104,
+                1
+            ],
+            "translation": [
+                4.079265636391938e-8,
+                45.050357818603516,
+                -1.5308614820241928e-8
+            ]
+        },
+        {
+            "children": [
+                65
+            ],
+            "name": "Armature_mixamorig:RightFoot",
+            "rotation": [
+                0.48082953691482544,
+                -0.06620366871356964,
+                0.03643133118748665,
+                0.8735518455505371
+            ],
+            "scale": [
+                1,
+                1.0000001192092896,
+                1.000000238418579
+            ],
+            "translation": [
+                -9.810537449084222e-8,
+                41.85009765625,
+                4.062894731760025e-8
+            ]
+        },
+        {
+            "children": [
+                66
+            ],
+            "name": "Armature_mixamorig:RightToeBase",
+            "rotation": [
+                0.29314252734184265,
+                0.06225594878196716,
+                -0.01912800408899784,
+                0.9538480043411255
+            ],
+            "scale": [
+                0.9999999403953552,
+                0.9999999403953552,
+                1.0000001192092896
+            ],
+            "translation": [
+                -6.51925802230835e-8,
+                12.033415794372559,
+                0.0000034570693969726562
+            ]
+        },
+        {
+            "name": "Armature_mixamorig:RightToe_End",
+            "rotation": [
+                -3.748573362827301e-8,
+                -0.000008230912499129772,
+                -2.9453076422214508e-8,
+                1
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "translation": [
+                1.043081283569336e-7,
+                4.712545394897461,
+                3.2782554626464844e-7
+            ]
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987,
+            "name": "Saber-Face",
+            "wrapS": 10497,
+            "wrapT": 10497
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "extras": {
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 30
+            },
+            "name": "Scene",
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "name": "Saber-Face",
+            "sampler": 0,
+            "source": 0
+        }
+    ],
+    "extensionsUsed": [
+        "gl_avatar"
+    ],
+    "extensions": {
+        "gl_avatar": {
+            "visibility": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "type": "skin",
+            "linkedSkeletons": [
+                {
+                    "inverseBindMatrices": 83,
+                    "joints": [
+                        5,
+                        6,
+                        7
+                    ],
+                    "name": "F010_Saber_Face",
+                    "skeleton": "face"
+                }
+            ]
+        }
+    }
+}

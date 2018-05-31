@@ -97,11 +97,15 @@ var glAvatarSystem = {
             'maid': 'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf',
             'lily': 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf'
         },
+        
+        face: {
+            'saber': 'models/gltf/saber-face/saber-face.gltf',
+            'eriri': 'models/gltf/saber-face/eriri-face-test.gltf'
+        },
+
+
         instrument: {
             
-        },
-        face: {
-            'saber': 'models/gltf/saber-face/saber-face.gltf'
         }
     },
 
