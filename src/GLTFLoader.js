@@ -2654,42 +2654,61 @@ module.exports = function( THREE ) {
 											// if there's manually created full joint list skin
 											// enter this branch
 											if (node.extensions && node.extensions.gl_avatar) {
-												var s = node.extensions.gl_avatar.skin;
+
+												var externalSkins;
+												if (node.extensions.gl_avatar.skin !== undefined) {
+													if (Array.isArray(node.extensions.gl_avatar.skin)) {
+														externalSkins = node.extensions.gl_avatar.skin;
+													} else {
+														// one number id
+														externalSkins = [node.extensions.gl_avatar.skin]
+													}
+												} else {
+													externalSkins = [];
+												}
+												
+
+												// var s = node.extensions.gl_avatar.skin;
 												// assert( skeleton === null )
+												var s;
+												for (var sid = 0, sidl = externalSkins.length; sid < sidl; sid++) {
+													s = externalSkins[sid];
+												
+													if (s !== undefined) {
+														console.log('manually added joint list skin: ' + s);
+														
+														skinEntry = dependencies.skins[ s ];
 
-												if (s !== undefined) {
-													console.log('manually added joint list skin: ' + s);
-													
-													skinEntry = dependencies.skins[ s ];
+														var bones = [];
+														// assert( no boneinverses )
 
-													var bones = [];
-													// assert( no boneinverses )
+														for ( var i = 0, l = skinEntry.joints.length; i < l; i ++ ) {
 
-													for ( var i = 0, l = skinEntry.joints.length; i < l; i ++ ) {
-
-														var jointId = skinEntry.joints[ i ];
-														var jointNode = __nodes[ jointId ];
-			
-														if ( jointNode ) {
-			
-															bones.push( jointNode );
-			
-															// var m = skinEntry.inverseBindMatrices.array;
-															// var mat = new THREE.Matrix4().fromArray( m, i * 16 );
-															// boneInverses.push( mat );
-			
-														} else {
-			
-															console.warn( 'THREE.GLTFLoader: Joint "%s" could not be found.', jointId );
-			
+															var jointId = skinEntry.joints[ i ];
+															var jointNode = __nodes[ jointId ];
+				
+															if ( jointNode ) {
+				
+																bones.push( jointNode );
+				
+																// var m = skinEntry.inverseBindMatrices.array;
+																// var mat = new THREE.Matrix4().fromArray( m, i * 16 );
+																// boneInverses.push( mat );
+				
+															} else {
+				
+																console.warn( 'THREE.GLTFLoader: Joint "%s" could not be found.', jointId );
+				
+															}
+				
 														}
-			
-													}
 
 
-													if (s in gl_avatar.skinId2SkeletonKey) {
-														gl_avatar.skeletons[gl_avatar.skinId2SkeletonKey[s]] = new THREE.Skeleton(bones);
+														if (s in gl_avatar.skinId2SkeletonKey) {
+															gl_avatar.skeletons[gl_avatar.skinId2SkeletonKey[s]] = new THREE.Skeleton(bones);
+														}
 													}
+
 												}
 											}
 

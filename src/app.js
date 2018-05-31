@@ -2,7 +2,7 @@
 // THREE.OrbitControls = require('three-orbit-controls')(THREE);
 // THREE.GLTFLoader = require('./GLTFLoader.js')(THREE);
 
-import {Viewer} from './GLTFAvatarViewer.js';
+import {Viewer, AvatarSystem} from './GLTFAvatarViewer.js';
 // import {mergeGLTFAvatar} from './GLTFAvatarMerge.js';
 // import {fileSave} from './lib/makeglb.js';
 
@@ -24,7 +24,9 @@ var AvatarControl = function() {
     this.skeleton = 'mixamo';
     this.skin = {
         hair: 'maid',
-        clothes: 'maid-dress'
+        clothes: 'maid-dress',
+
+        face: 'saber'
     };
 
     // skeleton animations
@@ -40,7 +42,8 @@ var control = new AvatarControl();
 
 var gui = new dat.GUI();
 
-var skeletonControl = gui.add(control, 'skeleton', ['mixamo', 'stand-pose']);   // TODO: get repo from avatar system
+// var skeletonControl = gui.add(control, 'skeleton', ['mixamo', 'stand-pose']);   // TODO: get repo from avatar system
+var skeletonControl = gui.add(control, 'skeleton', Object.keys(AvatarSystem.repo.skeletons));   // TODO: get repo from avatar system
 skeletonControl.onChange(function(value) {
     // console.log(value);
     viewer.selectSkeleton(value);
@@ -97,15 +100,21 @@ viewer.skeletonUpdateCallback = function(key) {
 
 var skinFolder = gui.addFolder('skins');
 skinFolder.open();
-// for (var cat in control.skin) {
-// skinFolder.add(control.skin, cat, ['maid-dress', 'suit']);
-skinFolder.add(control.skin, 'hair', ['maid', 'lily']).onChange(function(value) {
-    viewer.selectSkin('hair', value);
-});
-skinFolder.add(control.skin, 'clothes', ['maid-dress', 'suit']).onChange(function(value) {
-    viewer.selectSkin('clothes', value);
-});
-// }
+
+// skinFolder.add(control.skin, 'hair', Object.keys(AvatarSystem.repo.hair)).onChange(function(value) {
+//     viewer.selectSkin('hair', value);
+// });
+// skinFolder.add(control.skin, 'clothes', Object.keys(AvatarSystem.repo.clothes)).onChange(function(value) {
+//     viewer.selectSkin('clothes', value);
+// });
+
+
+
+for (var cat in control.skin) {
+    skinFolder.add(control.skin, cat, Object.keys(AvatarSystem.repo[cat])).onChange(function(value) {
+        viewer.selectSkin(cat, value);
+    });
+}
 
 
 gui.add(control, 'mergeAndExport');
