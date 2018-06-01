@@ -48509,42 +48509,61 @@ module.exports = function( THREE ) {
 											// if there's manually created full joint list skin
 											// enter this branch
 											if (node.extensions && node.extensions.gl_avatar) {
-												var s = node.extensions.gl_avatar.skin;
+
+												var externalSkins;
+												if (node.extensions.gl_avatar.skin !== undefined) {
+													if (Array.isArray(node.extensions.gl_avatar.skin)) {
+														externalSkins = node.extensions.gl_avatar.skin;
+													} else {
+														// one number id
+														externalSkins = [node.extensions.gl_avatar.skin]
+													}
+												} else {
+													externalSkins = [];
+												}
+												
+
+												// var s = node.extensions.gl_avatar.skin;
 												// assert( skeleton === null )
+												var s;
+												for (var sid = 0, sidl = externalSkins.length; sid < sidl; sid++) {
+													s = externalSkins[sid];
+												
+													if (s !== undefined) {
+														console.log('manually added joint list skin: ' + s);
+														
+														skinEntry = dependencies.skins[ s ];
 
-												if (s !== undefined) {
-													console.log('manually added joint list skin: ' + s);
-													
-													skinEntry = dependencies.skins[ s ];
+														var bones = [];
+														// assert( no boneinverses )
 
-													var bones = [];
-													// assert( no boneinverses )
+														for ( var i = 0, l = skinEntry.joints.length; i < l; i ++ ) {
 
-													for ( var i = 0, l = skinEntry.joints.length; i < l; i ++ ) {
-
-														var jointId = skinEntry.joints[ i ];
-														var jointNode = __nodes[ jointId ];
-			
-														if ( jointNode ) {
-			
-															bones.push( jointNode );
-			
-															// var m = skinEntry.inverseBindMatrices.array;
-															// var mat = new THREE.Matrix4().fromArray( m, i * 16 );
-															// boneInverses.push( mat );
-			
-														} else {
-			
-															console.warn( 'THREE.GLTFLoader: Joint "%s" could not be found.', jointId );
-			
+															var jointId = skinEntry.joints[ i ];
+															var jointNode = __nodes[ jointId ];
+				
+															if ( jointNode ) {
+				
+																bones.push( jointNode );
+				
+																// var m = skinEntry.inverseBindMatrices.array;
+																// var mat = new THREE.Matrix4().fromArray( m, i * 16 );
+																// boneInverses.push( mat );
+				
+															} else {
+				
+																console.warn( 'THREE.GLTFLoader: Joint "%s" could not be found.', jointId );
+				
+															}
+				
 														}
-			
-													}
 
 
-													if (s in gl_avatar.skinId2SkeletonKey) {
-														gl_avatar.skeletons[gl_avatar.skinId2SkeletonKey[s]] = new THREE.Skeleton(bones);
+														if (s in gl_avatar.skinId2SkeletonKey) {
+															gl_avatar.skeletons[gl_avatar.skinId2SkeletonKey[s]] = new THREE.Skeleton(bones);
+														}
 													}
+
 												}
 											}
 
@@ -48766,6 +48785,10 @@ var glAvatarSystem = {
             // sceneID: null
             // asset: null
         },
+        face: {
+            name: null,
+            scene: null
+        },
         instrument: {
             name: null,
             scene: null
@@ -48778,6 +48801,7 @@ var glAvatarSystem = {
     accessories: {
         clothes: {},
         hair: {},
+        face: {},
         instrument: {}
     },
 
@@ -48785,32 +48809,47 @@ var glAvatarSystem = {
 
     repo: {
         skeletons: {
-            'mixamo': {
-                url: 'models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
-                // scene info (camera, light)
-                cameraPos: new THREE.Vector3(1.5, 2, 1.5),
-                center: new THREE.Vector3(0, 0.8, 0),
-                objectRotation: new THREE.Euler(0, 180, 0),
-                // init skins
-                skins: {
-                    hair: 'maid',
-                    clothes: 'maid-dress'
-                }
-            },
-            'stand-pose': {
-                url: 'models/gltf/saber-stand-pose/saber-stand-pose.gltf',
+            // 'mixamo': {
+            //     url: 'models/gltf/saber-body-mixamo-animations/saber-body-animations.gltf',
+            //     // scene info (camera, light)
+            //     cameraPos: new THREE.Vector3(1.5, 2, 1.5),
+            //     center: new THREE.Vector3(0, 0.8, 0),
+            //     objectRotation: new THREE.Euler(0, 180, 0),
+            //     // init skins
+            //     skins: {
+            //         hair: 'maid',
+            //         clothes: 'maid-dress'
+            //     }
+            // },
+            // 'stand-pose': {
+            //     url: 'models/gltf/saber-stand-pose/saber-stand-pose.gltf',
+                
+            //     cameraPos: new THREE.Vector3(1.5, 2, 1.5),
+            //     center: new THREE.Vector3(0, 0.8, 0),
+            //     objectRotation: new THREE.Euler(0, 180, 0),
+
+            //     skins: {
+            //         hair: 'lily',
+            //         clothes: 'maid-dress'
+            //     }
+            // },
+            'no-face': {
+                url: 'models/gltf/saber-mixamo-body-no-face/saber-body-animations.gltf',
                 
                 cameraPos: new THREE.Vector3(1.5, 2, 1.5),
                 center: new THREE.Vector3(0, 0.8, 0),
                 objectRotation: new THREE.Euler(0, 180, 0),
 
                 skins: {
-                    hair: 'lily',
-                    clothes: 'maid-dress'
+                    hair: 'maid',
+                    clothes: 'maid-dress',
+                    face: 'saber'
                 }
             }
 
         },
+
+        // skins
         clothes: {
             'maid-dress': 'models/gltf/saber-dress-mixamo/saber-dress.gltf',
             'suit': 'models/gltf/saber-suit/saber-suit.gltf'
@@ -48819,6 +48858,13 @@ var glAvatarSystem = {
             'maid': 'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf',
             'lily': 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf'
         },
+        
+        face: {
+            'saber': 'models/gltf/saber-face/saber-face.gltf',
+            'eriri': 'models/gltf/saber-face/eriri-face-test.gltf'
+        },
+
+
         instrument: {
             
         }
