@@ -108,12 +108,17 @@ skinFolder.open();
 //     viewer.selectSkin('clothes', value);
 // });
 
-
+function getSelectSkinFunc(cat) {
+    var c = cat;
+    return function(value) {
+        viewer.selectSkin(c, value);
+    };
+}
 
 for (var cat in control.skin) {
-    skinFolder.add(control.skin, cat, Object.keys(AvatarSystem.repo[cat])).onChange(function(value) {
-        viewer.selectSkin(cat, value);
-    });
+    skinFolder.add(control.skin, cat, Object.keys(AvatarSystem.repo[cat])).onChange(
+        getSelectSkinFunc(cat)
+    );
 }
 
 

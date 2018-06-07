@@ -298,7 +298,9 @@ Viewer.prototype.skinOnload = function(type, key, data) {
     // --------------------------
 
     // update current new skin file
-    this.updateVisibilityArray(this.gltf_skeleton.gl_avatar.visibility, data.gl_avatar.visibility);
+    if (this.loader.enableGLTFAvatar) {
+        this.updateVisibilityArray(this.gltf_skeleton.gl_avatar.visibility, data.gl_avatar.visibility);
+    }
 
     // gltf = data;
     var gltf = data;
