@@ -44613,7 +44613,9 @@ Viewer.prototype.skinOnload = function(type, key, data) {
     // --------------------------
 
     // update current new skin file
-    this.updateVisibilityArray(this.gltf_skeleton.gl_avatar.visibility, data.gl_avatar.visibility);
+    if (this.loader.enableGLTFAvatar) {
+        this.updateVisibilityArray(this.gltf_skeleton.gl_avatar.visibility, data.gl_avatar.visibility);
+    }
 
     // gltf = data;
     var gltf = data;
@@ -45885,15 +45887,18 @@ module.exports = function( THREE ) {
 	GLTFLoader.prototype = {
 
 		enableGLTFAvatar: true,
-		enableGLTFAvatarPhysics: true,
+		// enableGLTFAvatar: false,
+		// enableGLTFAvatarPhysics: true,
 
 		constructor: GLTFLoader,
 
 		crossOrigin: 'Anonymous',
 
 		setGlAvatarOfLinkingSkeleton: function(g) {
-			gl_avatar_linked_skeleton = g;
-			gl_avatar_skeletons = g.skeletons;
+			if (this.enableGLTFAvatar && g) {
+				gl_avatar_linked_skeleton = g;
+				gl_avatar_skeletons = g.skeletons;
+			}
 		},
 
 		// setGlAvatarSkeltonMap : function (g) {
@@ -45968,7 +45973,7 @@ module.exports = function( THREE ) {
 
 			if ( json.extensionsUsed ) {
 
-				if( json.extensionsUsed.indexOf( EXTENSIONS.GL_AVATAR ) >= 0 ) {
+				if( json.extensionsUsed.indexOf( EXTENSIONS.GL_AVATAR ) >= 0 && this.enableGLTFAvatar) {
 
 					extensions[ EXTENSIONS.GL_AVATAR ] = new GLTFAvatarExtension( json );
 
@@ -46016,12 +46021,7 @@ module.exports = function( THREE ) {
 					gl_avatar: parser.extensions && parser.extensions['gl_avatar']
 				};
 
-				// if (glTF.gl_avatar && glTF.gl_avatar.type === 'skin' && glTF.gl_avatar.visibility) {
-				// 	updateVisibilityArray(gl_avatar_linked_skeleton.visibility, glTF.gl_avatar.visibility);
-				// }
-				// if (glTF.gl_avatar && glTF.gl_avatar.type === 'skin' && glTF.gl_avatar.visibility) {
-				// 	glTF.scene.gl_avatar = {visibility : glTF.gl_}
-				// }
+
 				
 				// !note: modified
 				
@@ -47204,6 +47204,8 @@ module.exports = function( THREE ) {
 		// loader object cache
 		this.cache = new GLTFRegistry();
 
+		this.enableGLTFAvatar = extensions[EXTENSIONS.GL_AVATAR] ? true : false;
+
 	}
 
 	GLTFParser.prototype._withDependencies = function ( dependencies ) {
@@ -47541,7 +47543,7 @@ module.exports = function( THREE ) {
 		var parser = this;
 		var json = this.json;
 		var extensions = this.extensions;
-		var gl_avatar = this.extensions[ EXTENSIONS.GL_AVATAR ];
+		var gl_avatar = this.enableGLTFAvatar ? this.extensions[ EXTENSIONS.GL_AVATAR ] : null;
 
 		return _each( json.materials, function ( material ) {
 
@@ -47551,7 +47553,7 @@ module.exports = function( THREE ) {
 
 			var pending = [];
 
-			if ( materialExtensions[ EXTENSIONS.GL_AVATAR ] ) {
+			if ( gl_avatar && materialExtensions[ EXTENSIONS.GL_AVATAR ] ) {
 
 				// bodyIdLUT
 				if (materialExtensions[ EXTENSIONS.GL_AVATAR ].bodyIdLUT !== undefined) {
@@ -47728,7 +47730,7 @@ module.exports = function( THREE ) {
 				}
 
 
-				if ( materialExtensions[ EXTENSIONS.GL_AVATAR ] ) {
+				if ( gl_avatar && materialExtensions[ EXTENSIONS.GL_AVATAR ] ) {
 					var bodyIdLUT = materialExtensions[ EXTENSIONS.GL_AVATAR ].bodyIdLUT;
 					if (bodyIdLUT !== undefined) {
 						_material.onBeforeCompile = function (shader) {
@@ -47899,7 +47901,7 @@ module.exports = function( THREE ) {
 
 		var scope = this;
 		var json = this.json;
-		var gl_avatar = this.extensions[EXTENSIONS.GL_AVATAR];
+		var gl_avatar = this.enableGLTFAvatar ? this.extensions[EXTENSIONS.GL_AVATAR] : null;
 
 		return this._withDependencies( [
 
@@ -48080,6 +48082,7 @@ module.exports = function( THREE ) {
 	GLTFParser.prototype.loadSkins = function () {
 
 		var json = this.json;
+		var parser = this;
 
 		return this._withDependencies( [
 
@@ -48093,7 +48096,7 @@ module.exports = function( THREE ) {
 
 				// this is for linked skeleton 
 				// here gl_avatar also indicates id in newly created skins array
-				if (skin.gl_avatar !== undefined) {
+				if (parser.enableGLTFAvatar && skin.gl_avatar !== undefined) {
 					var _skinlink = {
 						link: skin.skeleton,
 						inverseBindMatrices: dependencies.accessors[ skin.inverseBindMatrices ]
@@ -48258,7 +48261,7 @@ module.exports = function( THREE ) {
 
 		var nodes = json.nodes || [];
 		var skins = json.skins || [];
-		var gl_avatar = this.extensions[EXTENSIONS.GL_AVATAR];
+		var gl_avatar = this.enableGLTFAvatar ? this.extensions[EXTENSIONS.GL_AVATAR] : null;
 
 		// Nothing in the node definition indicates whether it is a Bone or an
 		// Object3D. Use the skins' joint references to mark bones.
@@ -48642,7 +48645,7 @@ module.exports = function( THREE ) {
 		var json = this.json;
 		var extensions = this.extensions;
 
-		var gl_avatar = this.extensions[EXTENSIONS.GL_AVATAR];
+		var gl_avatar = this.enableGLTFAvatar ? this.extensions[EXTENSIONS.GL_AVATAR] : null;
 
 		// scene node hierachy builder
 
