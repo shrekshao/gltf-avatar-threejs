@@ -411,15 +411,27 @@ Viewer.prototype.selectSkeleton = function(key, uri) {
         self.cleanup();
 
         // camera setting
-        self.camera.position.copy(info.cameraPos);
-        self.orbitControls.target.copy(info.center);
-        data.scene.rotation.copy(info.objectRotation);
+        if (info) {
+            self.camera.position.copy(info.cameraPos);
+            self.orbitControls.target.copy(info.center);
+            data.scene.rotation.copy(info.objectRotation);
+
+            // self.skeletonOnLoad(key, data);
+
+            
+        }
 
         self.skeletonOnLoad(key, data);
 
-        for (var key in info.skins) {
-            self.selectSkin(key, info.skins[key]);
+        if (info) {
+            for (var key in info.skins) {
+                var skin = info.skins[key];
+                if (skin) {
+                    self.selectSkin(key, info.skins[key]);
+                }
+            }
         }
+        
         
     }, undefined, function ( error ) {
         console.error( error );
