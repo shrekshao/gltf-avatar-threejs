@@ -44326,7 +44326,11 @@ var clock = new THREE.Clock();
 
 
 
-function Viewer() {
+function Viewer(preserveDrawingBuffer) {
+
+    // for canvas snapshot purpose
+    this.preserveDrawingBuffer = preserveDrawingBuffer || false;
+
     // this.container = null;
     this.canvas = null;
     this.fullWindow = true;
@@ -44367,9 +44371,18 @@ Viewer.prototype.init = function(canvas) {
     if (canvas) {
         this.canvas = canvas;
         this.fullWindow = false;
-        this.renderer = new THREE.WebGLRenderer( { canvas: this.canvas, antialias: true } );
+        this.renderer = new THREE.WebGLRenderer( 
+            { 
+                canvas: this.canvas, 
+                antialias: true,
+                preserveDrawingBuffer: this.preserveDrawingBuffer
+            } 
+        );
     } else {
-        this.renderer = new THREE.WebGLRenderer( { antialias: true } );
+        this.renderer = new THREE.WebGLRenderer( { 
+            antialias: true ,
+            preserveDrawingBuffer: this.preserveDrawingBuffer
+        } );
         this.canvas = this.renderer.domElement;
         this.fullWindow = true;
         this.canvas.width = window.innerWidth;
