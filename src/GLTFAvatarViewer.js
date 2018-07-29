@@ -230,6 +230,13 @@ Viewer.prototype.updateVisibilityArray = function(v, v1) {
     this.gltf_skeleton.gl_avatar.visibilityLUT.needsUpdate = true;
 };
 
+Viewer.prototype.updateVisibilityValue = function(id, value) {
+    this.gltf_skeleton.gl_avatar.visibility[id] = value ? 255 : 0;
+
+
+    this.gltf_skeleton.gl_avatar.visibilityLUT.needsUpdate = true;
+};
+
 Viewer.prototype.selectSkin = function(type, key, uri) {
 
     if (!uri) {
@@ -481,6 +488,7 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
 
         this.skeletonClips = {};
         this.skeletonActionStates = {};
+        this.skeletonVisibilityId2Name = gltf.gl_avatar.visibilityId2Name || []; 
         // this.skeletonActionStates = new Map();
 
         this.skeletonMixer = new THREE.AnimationMixer( gltf.scene );

@@ -5,6 +5,18 @@
     "extensions": {
         "gl_avatar": {
             "type": "skeleton",
+            "visibilityId2Name": [
+                ""
+                , "skullcap"
+                , "back neck"
+                , "neck"
+                , "left shoulder"
+                , "right shoulder"
+                , "left shoulder 2"
+                , "right shoulder 2"
+                , "left upper arm"
+                , "right upper arm"
+            ],
             "skins": {
                 "face": 1,
                 "main": 2

@@ -284,6 +284,7 @@ module.exports = function( THREE ) {
 			this.skeletons = {};
 			this.skinId2SkeletonKey = {};
 			this.visibility = new Uint8Array(256).fill(255);
+			this.visibilityId2Name = extension.visibilityId2Name || [];
 			var skins = extension.skins || {};
 
 			// store id first, will get replaced with skeleton object in parser

@@ -53,6 +53,9 @@ skeletonControl.onChange(function(value) {
 var animationFolder = gui.addFolder('animations');
 animationFolder.open();
 
+var visibilityFolder = gui.addFolder('visibility-control');
+var visibilityToggles = [];
+var visibilityValues = {};
 
 // var animationControl; 
 var animationToggles = [];
@@ -92,6 +95,28 @@ viewer.skeletonUpdateCallback = function(key) {
     }
 
 
+    for (var i = 0, len = visibilityToggles.length; i < len; i++) {
+        visibilityFolder.remove(visibilityToggles[i]);
+    }
+    visibilityToggles = [];
+    visibilityValues = {};
+    // for (var id in viewer.skeletonVisibilityId2Name) {
+    for (var id = 1, len = viewer.skeletonVisibilityId2Name.length; id < len; id++) {
+        // if (id === 0) continue;
+
+        visibilityValues[id] = true;
+
+        var toggle = visibilityFolder.add(visibilityValues, id).name(id + ' ' + viewer.skeletonVisibilityId2Name[id]);
+
+        toggle.onChange((function() {
+            var i = id;
+            return function(v) {
+                viewer.updateVisibilityValue(i, v);
+            };
+        })());
+
+        visibilityToggles.push(toggle);
+    }
 
 };
 
