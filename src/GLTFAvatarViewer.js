@@ -237,6 +237,10 @@ Viewer.prototype.updateVisibilityValue = function(id, value) {
     this.gltf_skeleton.gl_avatar.visibilityLUT.needsUpdate = true;
 };
 
+Viewer.prototype.getVisibilityArray = function() {
+    return this.gltf_skeleton.gl_avatar.visibility;
+};
+
 Viewer.prototype.selectSkin = function(type, key, uri) {
 
     if (!uri) {

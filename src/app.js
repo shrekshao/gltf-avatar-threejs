@@ -115,9 +115,20 @@ viewer.skeletonUpdateCallback = function(key) {
             };
         })());
 
+
+        toggle.listen();
+        
         visibilityToggles.push(toggle);
     }
 
+};
+
+
+viewer.skinUpdateCallback = function(type, key) {
+    var array = viewer.getVisibilityArray();
+    for (var i = 0, len = array.length; i < len; i++) {
+        visibilityValues[i] = array[i] === 255 ? true : false;
+    }
 };
 
 
