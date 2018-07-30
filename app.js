@@ -44364,6 +44364,9 @@ skeletonControl.onChange(function(value) {
 var animationFolder = gui.addFolder('animations');
 animationFolder.open();
 
+var visibilityFolder = gui.addFolder('visibility-control');
+var visibilityToggles = [];
+var visibilityValues = {};
 
 // var animationControl; 
 var animationToggles = [];
@@ -44403,7 +44406,40 @@ viewer.skeletonUpdateCallback = function(key) {
     }
 
 
+    for (var i = 0, len = visibilityToggles.length; i < len; i++) {
+        visibilityFolder.remove(visibilityToggles[i]);
+    }
+    visibilityToggles = [];
+    visibilityValues = {};
+    // for (var id in viewer.skeletonVisibilityId2Name) {
+    for (var id = 1, len = viewer.skeletonVisibilityId2Name.length; id < len; id++) {
+        // if (id === 0) continue;
 
+        visibilityValues[id] = true;
+
+        var toggle = visibilityFolder.add(visibilityValues, id).name(id + ' ' + viewer.skeletonVisibilityId2Name[id]);
+
+        toggle.onChange((function() {
+            var i = id;
+            return function(v) {
+                viewer.updateVisibilityValue(i, v);
+            };
+        })());
+
+
+        toggle.listen();
+        
+        visibilityToggles.push(toggle);
+    }
+
+};
+
+
+viewer.skinUpdateCallback = function(type, key) {
+    var array = viewer.getVisibilityArray();
+    for (var i = 0, len = array.length; i < len; i++) {
+        visibilityValues[i] = array[i] === 255 ? true : false;
+    }
 };
 
 
@@ -44467,7 +44503,11 @@ var clock = new THREE.Clock();
 
 
 
-function Viewer() {
+function Viewer(preserveDrawingBuffer) {
+
+    // for canvas snapshot purpose
+    this.preserveDrawingBuffer = preserveDrawingBuffer || false;
+
     // this.container = null;
     this.canvas = null;
     this.fullWindow = true;
@@ -44508,9 +44548,18 @@ Viewer.prototype.init = function(canvas) {
     if (canvas) {
         this.canvas = canvas;
         this.fullWindow = false;
-        this.renderer = new THREE.WebGLRenderer( { canvas: this.canvas, antialias: true } );
+        this.renderer = new THREE.WebGLRenderer( 
+            { 
+                canvas: this.canvas, 
+                antialias: true,
+                preserveDrawingBuffer: this.preserveDrawingBuffer
+            } 
+        );
     } else {
-        this.renderer = new THREE.WebGLRenderer( { antialias: true } );
+        this.renderer = new THREE.WebGLRenderer( { 
+            antialias: true ,
+            preserveDrawingBuffer: this.preserveDrawingBuffer
+        } );
         this.canvas = this.renderer.domElement;
         this.fullWindow = true;
         this.canvas.width = window.innerWidth;
@@ -44671,6 +44720,17 @@ Viewer.prototype.updateVisibilityArray = function(v, v1) {
     // 	gl_avatar_linked_skeleton.visibilityLUT.image.data[i] = v[i] * 255;
     // }
     this.gltf_skeleton.gl_avatar.visibilityLUT.needsUpdate = true;
+};
+
+Viewer.prototype.updateVisibilityValue = function(id, value) {
+    this.gltf_skeleton.gl_avatar.visibility[id] = value ? 255 : 0;
+
+
+    this.gltf_skeleton.gl_avatar.visibilityLUT.needsUpdate = true;
+};
+
+Viewer.prototype.getVisibilityArray = function() {
+    return this.gltf_skeleton.gl_avatar.visibility;
 };
 
 Viewer.prototype.selectSkin = function(type, key, uri) {
@@ -44924,6 +44984,7 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
 
         this.skeletonClips = {};
         this.skeletonActionStates = {};
+        this.skeletonVisibilityId2Name = gltf.gl_avatar.visibilityId2Name || []; 
         // this.skeletonActionStates = new Map();
 
         this.skeletonMixer = new THREE.AnimationMixer( gltf.scene );
@@ -46294,6 +46355,7 @@ module.exports = function( THREE ) {
 			this.skeletons = {};
 			this.skinId2SkeletonKey = {};
 			this.visibility = new Uint8Array(256).fill(255);
+			this.visibilityId2Name = extension.visibilityId2Name || [];
 			var skins = extension.skins || {};
 
 			// store id first, will get replaced with skeleton object in parser
