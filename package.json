@@ -36,6 +36,6 @@
     "path": "^0.12.7",
     "pngjs": "^3.3.2",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^3.1.11"
   }
 }
