@@ -190,7 +190,34 @@ A dynamic avatar system based on glTF which supports:
 
 ## Blender art asset tutorial
 
-TODO
+Thanks @zen85 for pushing me forward to finish this part (which should be done at very first but I was too lazy... -_-). 
+
+gltf exporter we use: https://github.com/Kupoman/blendergltf (master)
+
+### Prepare the base skeleton glTF file
+
+* First you should have a base skeleton rigged in blender in T-pose. Save a separate file (We will call it `base.blend` later) for this before adding any animations. You will use this file to rig other skins (clothing, hair, shoes, etc.)
+    * We do this because if you rig your clothing (`skin`) in a blender file with animation. Your clothing file will contains animation data, which is not we want. (You could still get rid of animation by delete animations and their orphan data though https://blender.stackexchange.com/questions/36129/can-not-delete-actions-in-action-editor-even-with-shift-x/38718). Also seems that exporting base skeleton with other rigged mesh in blender file would be problematic with the gltf exporter plugin I'm using.
+* To have skin visibility control, you need to have an extra texture called body id map, which labels an id number in R channel (0-255) for each part of the skeleton mesh. You can generate this by texture painting in blender, or export uv snapshot and paint in Photoshop, GIMP etc.
+* To add animation and export, you can follow the awesome tutorial by @donmccurdy: https://www.donmccurdy.com/2017/11/06/creating-animated-gltf-characters-with-mixamo-and-blender/
+* At this point you should have an exported glTF base skeleton with animations. It will be in a folder, together with `.bin` and texture images (We will call it `skeleton.gltf`).
+* Run `node tools/glavatar-pipeline.js path/to/skeleton.gltf --skeleton -o path/to/skeleton-avatar.gltf` (This tool is crappy and needs handcraft at this moment... Sorry. Consider using https://github.com/Microsoft/glTF-SDK in the future)
+    * Replace `skeleton.gltf` with `skeleton-avatar.gltf` (Save a copy of original)
+    * TODO: handcraft visibility information
+
+### Prepare the clothing (skin) glTF file
+
+* Rig your clothes in `base.blend`.
+* Export as gltf (We will call it `clothing.gltf`).
+* Run `node tools/glavatar-pipeline.js path/to/clothing.gltf --skin -o path/to/clothing-avatar.gltf`
+    * Replace `clothing.gltf` with `clothing-avatar.gltf` (Save a copy of original)
+* Handcraft (Sorry):
+    * Copy the `{...}` under `extensions.gl_avatar.linkedSkeletons` into `skeleton-avatar.gltf`, inside `skins` array.
+        * This is because blender and the exporter only write joints that has non-zero weight of cur mesh. So the skeletons could be different even you have only one set of bones.
+        * The node id could be different as well. Usually it will just be an offset for every node id under `joints`
+        * VScode gltf debug plugin by microsoft is highly recommended
+            * ![](imgs/gltf-debug-plugin.png)
+    * `TODO`
 
 
 ## Credit
